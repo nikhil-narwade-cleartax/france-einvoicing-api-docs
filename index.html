@@ -2036,7 +2036,39 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
       }
     }
   ]
-}</code></pre></div><div class="co co-w"><strong>Credit Note (381) and Corrective Invoice (384) samples pending</strong>Credit notes require negative amounts and BG-3 reference. Corrective invoices require BG-3 with BT-25 (original invoice number) and BT-26 (original invoice date).</div><hr><h2 id="response">Response</h2><div class="co co-w"><strong>Pending from engineering</strong>The following sections will be populated once engineering provides the response contract:<ul style="margin:8px 0 0 16px;font-size:12px;line-height:1.8"><li>HTTP status codes and their meanings</li><li>Success response body schema and sample JSON</li><li>Error response body schema and sample JSON</li><li>Field-level validation error format</li></ul></div></div><div id="pg-codes" class="pg">
+}</code></pre></div><div class="co co-w"><strong>Credit Note (381) and Corrective Invoice (384) samples pending</strong>Credit notes require negative amounts and BG-3 reference. Corrective invoices require BG-3 with BT-25 (original invoice number) and BT-26 (original invoice date).</div><hr><h2 id="response">Response</h2>
+<h3>Success Response</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"DocumentResponses"</span>: [
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"69f89518eb8e98651d9af6c1"</span>,
+      <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+      <span class="jk">"UniqueId"</span>: <span class="js">"732829320_INV-FR-2026-FULL-2029_380_2026"</span>,
+      <span class="jk">"ErrorDetails"</span>: [],
+      <span class="jk">"WarningDetails"</span>: <span class="jb">null</span>,
+      <span class="jk">"CustomFields"</span>: {
+        <span class="jk">"Internal Number"</span>: <span class="js">"INV-FR-2026-FULL-2029"</span>
+      }
+    }
+  ]
+}</code></pre></div>
+
+<h3>Response Schema</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Success</td><td><span class="tp tp-id">String</span></td><td>Overall request status. "true" or "false".</td></tr>
+<tr><td>ErrorDetails</td><td><span class="tp tp-code">Object</span></td><td>Request-level error details. null on success.</td></tr>
+<tr><td>DocumentResponses</td><td><span class="tp tp-code">Array</span></td><td>One response object per submitted document.</td></tr>
+<tr><td>DocumentResponses[].DocumentId</td><td><span class="tp tp-id">String</span></td><td>ClearTax-generated internal document ID.</td></tr>
+<tr><td>DocumentResponses[].UniqueId</td><td><span class="tp tp-id">String</span></td><td>Composite key: SIREN_InvoiceID_TypeCode_Year.</td></tr>
+<tr><td>DocumentResponses[].Success</td><td><span class="tp tp-id">String</span></td><td>"true" if this document was accepted, "false" otherwise.</td></tr>
+<tr><td>DocumentResponses[].ErrorDetails</td><td><span class="tp tp-code">Array</span></td><td>List of errors for this document. Empty on success.</td></tr>
+<tr><td>DocumentResponses[].WarningDetails</td><td><span class="tp tp-code">Array</span></td><td>List of warnings. null if none.</td></tr>
+<tr><td>DocumentResponses[].CustomFields</td><td><span class="tp tp-code">Object</span></td><td>Echoes back any custom fields sent in the request.</td></tr>
+</tbody></table></div>
+
+<div class="co co-w"><strong>Still pending from engineering</strong><ul style="margin:8px 0 0 16px;font-size:12px;line-height:1.8"><li>HTTP status codes and their meanings</li><li>Error response sample (when validation fails)</li><li>Error detail object structure (errorCode, errorMessage, path)</li></ul></div></div><div id="pg-codes" class="pg">
 <h1>Code Lists</h1>
 <p>Enumerated values for fields that accept only specific codes. Extracted from the compliance template.</p>
 <div class="tw" style="margin-bottom:20px"><table><thead><tr><th>Code List</th><th>Used By</th><th>Entries</th></tr></thead><tbody>
