@@ -2036,7 +2036,2474 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
       }
     }
   ]
-}</code></pre></div><div class="co co-w"><strong>Credit Note (381) and Corrective Invoice (384) samples pending</strong>Credit notes require negative amounts and BG-3 reference. Corrective invoices require BG-3 with BT-25 (original invoice number) and BT-26 (original invoice date).</div><hr><h2 id="response">Response</h2>
+}</code></pre></div><h3>Credit Note (381)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON — Credit Note 381</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"einvoice"</span>: {
+    <span class="jk">"supplyType"</span>: <span class="js">"B2B"</span>,
+    <span class="jk">"id"</span>: <span class="js">"CN-FR-2025-FULL-001"</span>,
+    <span class="jk">"customizationID"</span>: <span class="js">"urn:cen.eu:en16931: <span class="jn">2017</span>#compliant#urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">3.0</span>"</span>,
+    <span class="jk">"profileID"</span>: <span class="js">"urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">01</span>: <span class="jn">1.0</span>"</span>,
+    <span class="jk">"uuid"</span>: <span class="js">"550e8400-e29b-41d4-a716-446655440000"</span>,
+    <span class="jk">"issueDate"</span>: <span class="js">"2025-01-15"</span>,
+    <span class="jk">"dueDate"</span>: <span class="js">"2025-02-15"</span>,
+    <span class="jk">"invoiceTypeCode"</span>: {
+      <span class="jk">"value"</span>: <span class="js">"381"</span>,
+      <span class="jk">"name"</span>: <span class="js">"Credit Note"</span>
+    },
+    <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+    <span class="jk">"notes"</span>: [
+      {
+        <span class="jk">"value"</span>: <span class="js">"#REG#ACME France SARL - RCS PARIS 123456789 - TVA FR12345678901 - Capital 10000 EUR - Penalites retard: <span class="jn">3</span>x taux legal - Indemnite recouvrement: <span class="jn">40</span> EUR - Pas d'escompte"</span>
+      }
+    ],
+    <span class="jk">"accountingCost"</span>: <span class="js">"ACCT-COST-001"</span>,
+    <span class="jk">"buyerReference"</span>: <span class="js">"BUYER-REF-2025-001"</span>,
+    <span class="jk">"invoicePeriod"</span>: {
+      <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+      <span class="jk">"endDate"</span>: <span class="js">"2025-01-31"</span>,
+      <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+    },
+    <span class="jk">"orderReference"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+      <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
+    },
+    <span class="jk">"billingReference"</span>: [
+      {
+        <span class="jk">"additionalDocumentReference"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+          <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+          <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>,
+          <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>
+        },
+        <span class="jk">"billingReferenceLine"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"1"</span>,
+          <span class="jk">"amount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">1000.0</span>
+          }
+        }
+      }
+    ],
+    <span class="jk">"despatchDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"DESP-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"receiptDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"RCPT-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"originatorDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"ORIG-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"contractDocumentReferences"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"CONTRACT-2025-001"</span>
+        },
+        <span class="jk">"documentType"</span>: <span class="js">"CONTRAT"</span>
+      }
+    ],
+    <span class="jk">"projectReference"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"PROJECT-2025-001"</span>
+      }
+    ],
+    <span class="jk">"deliveryTerms"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"DAP"</span>,
+      <span class="jk">"schemeID"</span>: <span class="js">"INCOTERMS"</span>,
+      <span class="jk">"deliveryLocation"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"LOC-TERMS-001"</span>
+        },
+        <span class="jk">"address"</span>: {
+          <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        }
+      }
+    },
+    <span class="jk">"accountingSupplierParty"</span>: {
+      <span class="jk">"party"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+          <span class="jk">"value"</span>: <span class="js">"FR12345678901"</span>
+        },
+        <span class="jk">"partyIdentification"</span>: [
+          {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"123456789"</span>
+            }
+          }
+        ],
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"ACME France SARL"</span>
+        },
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"123 Rue de la Paix"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Building A, Floor 3"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Near Louvre Museum"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        },
+        <span class="jk">"partyTaxScheme"</span>: [
+          {
+            <span class="jk">"companyID"</span>: <span class="js">"FR12345678901"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"ACME France SARL"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"123456789"</span>
+          },
+          <span class="jk">"companyLegalForm"</span>: <span class="js">"SARL au capital de 10000 EUR"</span>
+        },
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Jean Dupont"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 1 23 45 67 89"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"jean.dupont@acme-france.fr"</span>
+        },
+        <span class="jk">"agentParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR98765432101"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Sales Agent"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"AGENT"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"987654321"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Agent Commercial France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"456 Avenue des Champs-Elysees"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 200"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"75008"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Etage 2"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR98765432101"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Agent Commercial France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"987654321"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Marie Martin"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 1 98 76 54 32"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"marie.martin@agent-france.fr"</span>
+          }
+        },
+        <span class="jk">"serviceProviderParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR11122233344"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Billing Service"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"BILLING"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"111222333"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Facturation Pro France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"789 Boulevard Haussmann"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 100"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"75009"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Business Center"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR11122233344"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Facturation Pro France SA"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"111222333"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Pierre Bernard"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 1 11 22 33 44"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"pierre.bernard@facturation-pro.fr"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"accountingCustomerParty"</span>: {
+      <span class="jk">"party"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+          <span class="jk">"value"</span>: <span class="js">"FR55566677788"</span>
+        },
+        <span class="jk">"partyIdentification"</span>: [
+          {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"555666777"</span>
+            }
+          }
+        ],
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Client Industrie France SA"</span>
+        },
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"100 Rue de l'Industrie"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Zone Industrielle Nord"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Lyon"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"69001"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Auvergne-Rhone-Alpes"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Batiment B"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        },
+        <span class="jk">"partyTaxScheme"</span>: [
+          {
+            <span class="jk">"companyID"</span>: <span class="js">"FR55566677788"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Client Industrie France SA"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"555666777"</span>
+          },
+          <span class="jk">"companyLegalForm"</span>: <span class="js">"SA au capital de 500000 EUR"</span>
+        },
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Sophie Leroy"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 4 72 00 00 00"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"sophie.leroy@client-industrie.fr"</span>
+        },
+        <span class="jk">"agentParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR44455566677"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Buyer Agent"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"BUYER_AGENT"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"444555666"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Agence Achat France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"200 Avenue de la Republique"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Marseille"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"13001"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR44455566677"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Agence Achat France SARL"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"444555666"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Luc Petit"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 4 91 00 00 00"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"luc.petit@agence-achat.fr"</span>
+          }
+        },
+        <span class="jk">"serviceProviderParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR33344455566"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Addressed To"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"ADDRESSED_TO"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"333444555"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Reception Service France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"300 Boulevard de la Victoire"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Etage 2"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Toulouse"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"31000"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Occitanie"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Bureau 201"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR33344455566"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Reception Service France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"333444555"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Emma Blanc"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 5 61 00 00 00"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"emma.blanc@reception-service.fr"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"payeeParty"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+        <span class="jk">"value"</span>: <span class="js">"FR77788899900"</span>
+      },
+      <span class="jk">"industryClassificationCode"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Payee"</span>,
+        <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+        <span class="jk">"value"</span>: <span class="js">"PAYEE"</span>
+      },
+      <span class="jk">"partyIdentification"</span>: [
+        {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"777888999"</span>
+          }
+        }
+      ],
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Beneficiaire Paiement France"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"400 Rue du Commerce"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Immeuble Central"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Bordeaux"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"33000"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Nouvelle-Aquitaine"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"RDC"</span>
+          }
+        ],
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR77788899900"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Beneficiaire Paiement France SA"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+          <span class="jk">"value"</span>: <span class="js">"777888999"</span>
+        }
+      },
+      <span class="jk">"contact"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Thomas Moreau"</span>,
+        <span class="jk">"telephone"</span>: <span class="js">"+33 5 56 00 00 00"</span>,
+        <span class="jk">"electronicMail"</span>: <span class="js">"thomas.moreau@beneficiaire.fr"</span>
+      }
+    },
+    <span class="jk">"taxRepresentativeParty"</span>: {
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Representant Fiscal France"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"500 Avenue Fiscal"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Bureau Fiscal"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Nice"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"06000"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"Etage 1"</span>
+          }
+        ],
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR66677788899"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ]
+    },
+    <span class="jk">"delivery"</span>: {
+      <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2025-01-10"</span>,
+      <span class="jk">"deliveryLocation"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+          <span class="jk">"value"</span>: <span class="js">"LOC-DELIVERY-001"</span>
+        },
+        <span class="jk">"address"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        }
+      },
+      <span class="jk">"deliveryParty"</span>: {
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
+        },
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
+        }
+      }
+    },
+    <span class="jk">"paymentMeans"</span>: {
+      <span class="jk">"paymentMeansCode"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Credit transfer"</span>,
+        <span class="jk">"value"</span>: <span class="js">"30"</span>
+      },
+      <span class="jk">"paymentDueDate"</span>: <span class="js">"2025-02-15"</span>,
+      <span class="jk">"instructionNote"</span>: <span class="js">"Virement SEPA uniquement"</span>,
+      <span class="jk">"paymentID"</span>: [
+        {
+          <span class="jk">"value"</span>: <span class="js">"PAY-ID-2025-001"</span>
+        }
+      ],
+      <span class="jk">"cardAccount"</span>: {
+        <span class="jk">"primaryAccountNumberID"</span>: <span class="js">"************1234"</span>,
+        <span class="jk">"networkID"</span>: <span class="js">"VISA"</span>
+      },
+      <span class="jk">"payeeFinancialAccount"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"FR7630001007941234567890185"</span>
+        },
+        <span class="jk">"name"</span>: <span class="js">"Compte Principal ACME France"</span>,
+        <span class="jk">"financialInstitutionBranch"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"BNPAFRPP"</span>
+        }
+      },
+      <span class="jk">"paymentMandate"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"MANDATE-2025-001"</span>
+        },
+        <span class="jk">"payerParty"</span>: {
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"222333444"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Payeur Delegue France"</span>
+          },
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Payeur Delegue France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"222333444"</span>
+            }
+          }
+        },
+        <span class="jk">"payerFinancialAccount"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"FR7630004000031234567890143"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"paymentTerms"</span>: {
+      <span class="jk">"note"</span>: <span class="js">"Paiement a 30 jours fin de mois. Penalites de retard: <span class="jn">3</span> fois le taux d'interet legal."</span>
+    },
+    <span class="jk">"prepaidPayment"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"PREPAID-2025-001"</span>,
+      <span class="jk">"paidAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">200.0</span>
+      },
+      <span class="jk">"receivedDate"</span>: <span class="js">"2025-01-06"</span>,
+      <span class="jk">"instructionID"</span>: <span class="js">"PREPAY-INST-001"</span>
+    },
+    <span class="jk">"allowanceCharge"</span>: [
+      {
+        <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+        <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise commerciale annuelle"</span>,
+        <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+        <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">5.0</span>,
+        <span class="jk">"amount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
+        },
+        <span class="jk">"baseAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">2000.0</span>
+        },
+        <span class="jk">"taxCategory"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"S"</span>,
+          <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      },
+      {
+        <span class="jk">"chargeIndicator"</span>: <span class="jb">true</span>,
+        <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Frais de dossier"</span>,
+        <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"CLERICAL_SERVICES"</span>,
+        <span class="jk">"amount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">25.0</span>
+        },
+        <span class="jk">"taxCategory"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"S"</span>,
+          <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      }
+    ],
+    <span class="jk">"taxTotal"</span>: [
+      {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">285.0</span>
+        },
+        <span class="jk">"taxSubtotal"</span>: [
+          {
+            <span class="jk">"taxableAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">1425.0</span>
+            },
+            <span class="jk">"taxAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">285.0</span>
+            },
+            <span class="jk">"taxCategory"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          },
+          {
+            <span class="jk">"taxableAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">500.0</span>
+            },
+            <span class="jk">"taxAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">0.0</span>
+            },
+            <span class="jk">"taxCategory"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"E"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+              <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI"</span>,
+              <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    <span class="jk">"legalMonetaryTotal"</span>: {
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2000.0</span>
+      },
+      <span class="jk">"taxExclusiveAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">1925.0</span>
+      },
+      <span class="jk">"taxInclusiveAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2210.0</span>
+      },
+      <span class="jk">"allowanceTotalAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">100.0</span>
+      },
+      <span class="jk">"chargeTotalAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">25.0</span>
+      },
+      <span class="jk">"prepaidAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">200.0</span>
+      },
+      <span class="jk">"payableRoundingAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">0.0</span>
+      },
+      <span class="jk">"payableAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2010.0</span>
+      }
+    },
+    <span class="jk">"additionalDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-001"</span>,
+        <span class="jk">"documentTypeCode"</span>: <span class="js">"130"</span>
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-002"</span>,
+        <span class="jk">"documentDescription"</span>: <span class="js">"Specifications techniques du projet"</span>,
+        <span class="jk">"attachment"</span>: {
+          <span class="jk">"embeddedDocumentBinaryObject"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"UERGIGNvbnRlbnQ="</span>,
+            <span class="jk">"mimeCode"</span>: <span class="js">"application/pdf"</span>,
+            <span class="jk">"filename"</span>: <span class="js">"specifications.pdf"</span>
+          }
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-003"</span>,
+        <span class="jk">"documentDescription"</span>: <span class="js">"Plan de livraison"</span>,
+        <span class="jk">"attachment"</span>: {
+          <span class="jk">"externalReference"</span>: {
+            <span class="jk">"uri"</span>: <span class="js">"https://example.com/docs/plan-livraison.pdf"</span>
+          }
+        }
+      }
+    ],
+    <span class="jk">"invoiceLine"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"1"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 1 - Produit principal avec remise volume"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">900.0</span>
+        },
+        <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-001"</span>,
+        <span class="jk">"invoicePeriod"</span>: {
+          <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+          <span class="jk">"endDate"</span>: <span class="js">"2025-01-15"</span>,
+          <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+        },
+        <span class="jk">"orderLineReference"</span>: [
+          {
+            <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-001"</span>,
+            <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-001"</span>,
+            <span class="jk">"orderReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+              <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
+            }
+          }
+        ],
+        <span class="jk">"despatchLineReference"</span>: {
+          <span class="jk">"lineID"</span>: <span class="js">"DESP-LINE-001"</span>
+        },
+        <span class="jk">"receiptLineReference"</span>: {
+          <span class="jk">"lineID"</span>: <span class="js">"RCPT-LINE-001"</span>
+        },
+        <span class="jk">"billingReference"</span>: [
+          {
+            <span class="jk">"additionalDocumentReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+              <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+              <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>,
+              <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>
+            },
+            <span class="jk">"billingReferenceLine"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"1"</span>,
+              <span class="jk">"amount"</span>: {
+                <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+                <span class="jk">"value"</span>: <span class="jn">500.0</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"documentReference"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"DOC-REF-001"</span>,
+            <span class="jk">"schemeID"</span>: <span class="js">"ABT"</span>
+          }
+        },
+        <span class="jk">"lineDelivery"</span>: {
+          <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2025-01-10"</span>,
+          <span class="jk">"deliveryPeriod"</span>: {
+            <span class="jk">"startDate"</span>: <span class="js">"2025-01-08"</span>,
+            <span class="jk">"endDate"</span>: <span class="js">"2025-01-12"</span>
+          },
+          <span class="jk">"deliveryLocation"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+              <span class="jk">"value"</span>: <span class="js">"LOC-LINE-001"</span>
+            },
+            <span class="jk">"description"</span>: <span class="js">"Entrepot principal Nantes"</span>,
+            <span class="jk">"address"</span>: {
+              <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+              <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+              <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+              <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+              <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+              <span class="jk">"addressLine"</span>: [
+                {
+                  <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
+                }
+              ],
+              <span class="jk">"country"</span>: {
+                <span class="jk">"identificationCode"</span>: {
+                  <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+                }
+              }
+            }
+          },
+          <span class="jk">"deliveryParty"</span>: {
+            <span class="jk">"partyName"</span>: {
+              <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
+            },
+            <span class="jk">"partyLegalEntity"</span>: {
+              <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
+            }
+          }
+        },
+        <span class="jk">"allowanceCharge"</span>: [
+          {
+            <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+            <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise volume"</span>,
+            <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+            <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">10.0</span>,
+            <span class="jk">"amount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">100.0</span>
+            },
+            <span class="jk">"baseAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">1000.0</span>
+            }
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Widget Premium - Version 2025 avec fonctionnalites avancees"</span>,
+          <span class="jk">"packQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          },
+          <span class="jk">"name"</span>: <span class="js">"Widget Premium V2025"</span>,
+          <span class="jk">"buyersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"BUYER-SKU-001"</span>
+            }
+          },
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-SKU-WP2025"</span>
+            }
+          },
+          <span class="jk">"standardItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0160"</span>,
+              <span class="jk">"value"</span>: <span class="js">"3456789012345"</span>
+            }
+          },
+          <span class="jk">"additionalItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"INTERNAL"</span>,
+              <span class="jk">"value"</span>: <span class="js">"INT-WP-2025-001"</span>
+            }
+          },
+          <span class="jk">"originCountry"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          },
+          <span class="jk">"commodityClassification"</span>: [
+            {
+              <span class="jk">"itemClassificationCode"</span>: {
+                <span class="jk">"listID"</span>: <span class="js">"STI"</span>,
+                <span class="jk">"value"</span>: <span class="js">"44423000"</span>
+              }
+            }
+          ],
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"additionalItemProperty"</span>: [
+            {
+              <span class="jk">"name"</span>: <span class="js">"Couleur"</span>,
+              <span class="jk">"value"</span>: <span class="js">"Bleu"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"COLOR"</span>
+            },
+            {
+              <span class="jk">"name"</span>: <span class="js">"Poids"</span>,
+              <span class="jk">"value"</span>: <span class="js">"2.5 KGM"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"WEIGHT"</span>,
+              <span class="jk">"valueQuantity"</span>: {
+                <span class="jk">"quantity"</span>: <span class="jn">2.5</span>,
+                <span class="jk">"unitCode"</span>: <span class="js">"KGM"</span>
+              }
+            },
+            {
+              <span class="jk">"name"</span>: <span class="js">"Dimensions"</span>,
+              <span class="jk">"value"</span>: <span class="js">"30x20x10"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"DIMENSIONS"</span>
+            }
+          ],
+          <span class="jk">"manufacturerParty"</span>: {
+            <span class="jk">"partyIdentification"</span>: [
+              {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                  <span class="jk">"value"</span>: <span class="js">"888999000"</span>
+                }
+              }
+            ],
+            <span class="jk">"partyName"</span>: {
+              <span class="jk">"name"</span>: <span class="js">"Fabricant Widgets France"</span>
+            },
+            <span class="jk">"partyLegalEntity"</span>: {
+              <span class="jk">"registrationName"</span>: <span class="js">"Fabricant Widgets France SA"</span>,
+              <span class="jk">"companyID"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"888999000"</span>
+              }
+            }
+          }
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          },
+          <span class="jk">"allowanceCharge"</span>: {
+            <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+            <span class="jk">"amount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">5.0</span>
+            },
+            <span class="jk">"baseAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">105.0</span>
+            }
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">180.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"2"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 2 - Service associe"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">5.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">500.0</span>
+        },
+        <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-002"</span>,
+        <span class="jk">"invoicePeriod"</span>: {
+          <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+          <span class="jk">"endDate"</span>: <span class="js">"2025-01-31"</span>,
+          <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+        },
+        <span class="jk">"orderLineReference"</span>: [
+          {
+            <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-002"</span>,
+            <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-002"</span>
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Service d'installation et configuration"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Installation Premium"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-SVC-INSTALL"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"additionalItemProperty"</span>: [
+            {
+              <span class="jk">"name"</span>: <span class="js">"Type de service"</span>,
+              <span class="jk">"value"</span>: <span class="js">"Installation sur site"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"SERVICE_TYPE"</span>
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"3"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 3 - Produit exonere de TVA"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">2.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">500.0</span>
+        },
+        <span class="jk">"billingReference"</span>: [
+          {
+            <span class="jk">"additionalDocumentReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00200"</span>,
+              <span class="jk">"issueDate"</span>: <span class="js">"2024-11-01"</span>,
+              <span class="jk">"documentTypeCode"</span>: <span class="js">"381"</span>,
+              <span class="jk">"documentStatusCode"</span>: <span class="js">"CORRECTED"</span>
+            }
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Equipement medical exonere de TVA"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Equipement Medical Type A"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-MED-001"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"E"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+              <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI - Equipement medical"</span>,
+              <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">250.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">0.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"4"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 4 - Produit simple sans extras"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
+        },
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Accessoire standard"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Accessoire Standard AS-100"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-ACC-100"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">20.0</span>
+          }
+        }
+      }
+    ]
+  }
+}</code></pre></div>
+
+<h3>Corrective Invoice (384)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON — Corrective Invoice 384</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"einvoice"</span>: {
+    <span class="jk">"supplyType"</span>: <span class="js">"B2B"</span>,
+    <span class="jk">"id"</span>: <span class="js">"CORR-FR-2025-FULL-001"</span>,
+    <span class="jk">"customizationID"</span>: <span class="js">"urn:cen.eu:en16931: <span class="jn">2017</span>#compliant#urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">3.0</span>"</span>,
+    <span class="jk">"profileID"</span>: <span class="js">"urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">01</span>: <span class="jn">1.0</span>"</span>,
+    <span class="jk">"uuid"</span>: <span class="js">"550e8400-e29b-41d4-a716-446655440000"</span>,
+    <span class="jk">"issueDate"</span>: <span class="js">"2025-01-15"</span>,
+    <span class="jk">"dueDate"</span>: <span class="js">"2025-02-15"</span>,
+    <span class="jk">"invoiceTypeCode"</span>: {
+      <span class="jk">"value"</span>: <span class="js">"384"</span>,
+      <span class="jk">"name"</span>: <span class="js">"Corrective Invoice"</span>
+    },
+    <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+    <span class="jk">"notes"</span>: [
+      {
+        <span class="jk">"value"</span>: <span class="js">"#REG#ACME France SARL - RCS PARIS 123456789 - TVA FR12345678901 - Capital 10000 EUR - Penalites retard: <span class="jn">3</span>x taux legal - Indemnite recouvrement: <span class="jn">40</span> EUR - Pas d'escompte"</span>
+      }
+    ],
+    <span class="jk">"accountingCost"</span>: <span class="js">"ACCT-COST-001"</span>,
+    <span class="jk">"buyerReference"</span>: <span class="js">"BUYER-REF-2025-001"</span>,
+    <span class="jk">"invoicePeriod"</span>: {
+      <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+      <span class="jk">"endDate"</span>: <span class="js">"2025-01-31"</span>,
+      <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+    },
+    <span class="jk">"orderReference"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+      <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
+    },
+    <span class="jk">"billingReference"</span>: [
+      {
+        <span class="jk">"additionalDocumentReference"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+          <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+          <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>,
+          <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>
+        },
+        <span class="jk">"billingReferenceLine"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"1"</span>,
+          <span class="jk">"amount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">1000.0</span>
+          }
+        }
+      }
+    ],
+    <span class="jk">"despatchDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"DESP-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"receiptDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"RCPT-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"originatorDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"ORIG-2025-001"</span>
+        }
+      }
+    ],
+    <span class="jk">"contractDocumentReferences"</span>: [
+      {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"CONTRACT-2025-001"</span>
+        },
+        <span class="jk">"documentType"</span>: <span class="js">"CONTRAT"</span>
+      }
+    ],
+    <span class="jk">"projectReference"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"PROJECT-2025-001"</span>
+      }
+    ],
+    <span class="jk">"deliveryTerms"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"DAP"</span>,
+      <span class="jk">"schemeID"</span>: <span class="js">"INCOTERMS"</span>,
+      <span class="jk">"deliveryLocation"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"LOC-TERMS-001"</span>
+        },
+        <span class="jk">"address"</span>: {
+          <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        }
+      }
+    },
+    <span class="jk">"accountingSupplierParty"</span>: {
+      <span class="jk">"party"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+          <span class="jk">"value"</span>: <span class="js">"FR12345678901"</span>
+        },
+        <span class="jk">"partyIdentification"</span>: [
+          {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"123456789"</span>
+            }
+          }
+        ],
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"ACME France SARL"</span>
+        },
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"123 Rue de la Paix"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Building A, Floor 3"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Near Louvre Museum"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        },
+        <span class="jk">"partyTaxScheme"</span>: [
+          {
+            <span class="jk">"companyID"</span>: <span class="js">"FR12345678901"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"ACME France SARL"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"123456789"</span>
+          },
+          <span class="jk">"companyLegalForm"</span>: <span class="js">"SARL au capital de 10000 EUR"</span>
+        },
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Jean Dupont"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 1 23 45 67 89"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"jean.dupont@acme-france.fr"</span>
+        },
+        <span class="jk">"agentParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR98765432101"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Sales Agent"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"AGENT"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"987654321"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Agent Commercial France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"456 Avenue des Champs-Elysees"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 200"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"75008"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Etage 2"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR98765432101"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Agent Commercial France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"987654321"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Marie Martin"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 1 98 76 54 32"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"marie.martin@agent-france.fr"</span>
+          }
+        },
+        <span class="jk">"serviceProviderParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR11122233344"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Billing Service"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"BILLING"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"111222333"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Facturation Pro France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"789 Boulevard Haussmann"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 100"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"75009"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Business Center"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR11122233344"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Facturation Pro France SA"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"111222333"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Pierre Bernard"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 1 11 22 33 44"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"pierre.bernard@facturation-pro.fr"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"accountingCustomerParty"</span>: {
+      <span class="jk">"party"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+          <span class="jk">"value"</span>: <span class="js">"FR55566677788"</span>
+        },
+        <span class="jk">"partyIdentification"</span>: [
+          {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"555666777"</span>
+            }
+          }
+        ],
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Client Industrie France SA"</span>
+        },
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"100 Rue de l'Industrie"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Zone Industrielle Nord"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Lyon"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"69001"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Auvergne-Rhone-Alpes"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Batiment B"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        },
+        <span class="jk">"partyTaxScheme"</span>: [
+          {
+            <span class="jk">"companyID"</span>: <span class="js">"FR55566677788"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Client Industrie France SA"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"555666777"</span>
+          },
+          <span class="jk">"companyLegalForm"</span>: <span class="js">"SA au capital de 500000 EUR"</span>
+        },
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Sophie Leroy"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 4 72 00 00 00"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"sophie.leroy@client-industrie.fr"</span>
+        },
+        <span class="jk">"agentParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR44455566677"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Buyer Agent"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"BUYER_AGENT"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"444555666"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Agence Achat France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"200 Avenue de la Republique"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Marseille"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"13001"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR44455566677"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Agence Achat France SARL"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"444555666"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Luc Petit"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 4 91 00 00 00"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"luc.petit@agence-achat.fr"</span>
+          }
+        },
+        <span class="jk">"serviceProviderParty"</span>: {
+          <span class="jk">"endPointID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+            <span class="jk">"value"</span>: <span class="js">"FR33344455566"</span>
+          },
+          <span class="jk">"industryClassificationCode"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Addressed To"</span>,
+            <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+            <span class="jk">"value"</span>: <span class="js">"ADDRESSED_TO"</span>
+          },
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"333444555"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Reception Service France"</span>
+          },
+          <span class="jk">"postalAddress"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"300 Boulevard de la Victoire"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Etage 2"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Toulouse"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"31000"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Occitanie"</span>,
+            <span class="jk">"addressLine"</span>: [
+              {
+                <span class="jk">"line"</span>: <span class="js">"Bureau 201"</span>
+              }
+            ],
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+              }
+            }
+          },
+          <span class="jk">"partyTaxScheme"</span>: [
+            {
+              <span class="jk">"companyID"</span>: <span class="js">"FR33344455566"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Reception Service France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"333444555"</span>
+            }
+          },
+          <span class="jk">"contact"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Emma Blanc"</span>,
+            <span class="jk">"telephone"</span>: <span class="js">"+33 5 61 00 00 00"</span>,
+            <span class="jk">"electronicMail"</span>: <span class="js">"emma.blanc@reception-service.fr"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"payeeParty"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"0009"</span>,
+        <span class="jk">"value"</span>: <span class="js">"FR77788899900"</span>
+      },
+      <span class="jk">"industryClassificationCode"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Payee"</span>,
+        <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+        <span class="jk">"value"</span>: <span class="js">"PAYEE"</span>
+      },
+      <span class="jk">"partyIdentification"</span>: [
+        {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"777888999"</span>
+          }
+        }
+      ],
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Beneficiaire Paiement France"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"400 Rue du Commerce"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Immeuble Central"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Bordeaux"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"33000"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Nouvelle-Aquitaine"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"RDC"</span>
+          }
+        ],
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR77788899900"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Beneficiaire Paiement France SA"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+          <span class="jk">"value"</span>: <span class="js">"777888999"</span>
+        }
+      },
+      <span class="jk">"contact"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Thomas Moreau"</span>,
+        <span class="jk">"telephone"</span>: <span class="js">"+33 5 56 00 00 00"</span>,
+        <span class="jk">"electronicMail"</span>: <span class="js">"thomas.moreau@beneficiaire.fr"</span>
+      }
+    },
+    <span class="jk">"taxRepresentativeParty"</span>: {
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Representant Fiscal France"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"500 Avenue Fiscal"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Bureau Fiscal"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Nice"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"06000"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"Etage 1"</span>
+          }
+        ],
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR66677788899"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ]
+    },
+    <span class="jk">"delivery"</span>: {
+      <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2025-01-10"</span>,
+      <span class="jk">"deliveryLocation"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+          <span class="jk">"value"</span>: <span class="js">"LOC-DELIVERY-001"</span>
+        },
+        <span class="jk">"address"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+          <span class="jk">"addressLine"</span>: [
+            {
+              <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
+            }
+          ],
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          }
+        }
+      },
+      <span class="jk">"deliveryParty"</span>: {
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
+        },
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
+        }
+      }
+    },
+    <span class="jk">"paymentMeans"</span>: {
+      <span class="jk">"paymentMeansCode"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Credit transfer"</span>,
+        <span class="jk">"value"</span>: <span class="js">"30"</span>
+      },
+      <span class="jk">"paymentDueDate"</span>: <span class="js">"2025-02-15"</span>,
+      <span class="jk">"instructionNote"</span>: <span class="js">"Virement SEPA uniquement"</span>,
+      <span class="jk">"paymentID"</span>: [
+        {
+          <span class="jk">"value"</span>: <span class="js">"PAY-ID-2025-001"</span>
+        }
+      ],
+      <span class="jk">"cardAccount"</span>: {
+        <span class="jk">"primaryAccountNumberID"</span>: <span class="js">"************1234"</span>,
+        <span class="jk">"networkID"</span>: <span class="js">"VISA"</span>
+      },
+      <span class="jk">"payeeFinancialAccount"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"FR7630001007941234567890185"</span>
+        },
+        <span class="jk">"name"</span>: <span class="js">"Compte Principal ACME France"</span>,
+        <span class="jk">"financialInstitutionBranch"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"BNPAFRPP"</span>
+        }
+      },
+      <span class="jk">"paymentMandate"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"MANDATE-2025-001"</span>
+        },
+        <span class="jk">"payerParty"</span>: {
+          <span class="jk">"partyIdentification"</span>: [
+            {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"222333444"</span>
+              }
+            }
+          ],
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Payeur Delegue France"</span>
+          },
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Payeur Delegue France SAS"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"222333444"</span>
+            }
+          }
+        },
+        <span class="jk">"payerFinancialAccount"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"FR7630004000031234567890143"</span>
+          }
+        }
+      }
+    },
+    <span class="jk">"paymentTerms"</span>: {
+      <span class="jk">"note"</span>: <span class="js">"Paiement a 30 jours fin de mois. Penalites de retard: <span class="jn">3</span> fois le taux d'interet legal."</span>
+    },
+    <span class="jk">"prepaidPayment"</span>: {
+      <span class="jk">"id"</span>: <span class="js">"PREPAID-2025-001"</span>,
+      <span class="jk">"paidAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">200.0</span>
+      },
+      <span class="jk">"receivedDate"</span>: <span class="js">"2025-01-06"</span>,
+      <span class="jk">"instructionID"</span>: <span class="js">"PREPAY-INST-001"</span>
+    },
+    <span class="jk">"allowanceCharge"</span>: [
+      {
+        <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+        <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise commerciale annuelle"</span>,
+        <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+        <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">5.0</span>,
+        <span class="jk">"amount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
+        },
+        <span class="jk">"baseAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">2000.0</span>
+        },
+        <span class="jk">"taxCategory"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"S"</span>,
+          <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      },
+      {
+        <span class="jk">"chargeIndicator"</span>: <span class="jb">true</span>,
+        <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Frais de dossier"</span>,
+        <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"CLERICAL_SERVICES"</span>,
+        <span class="jk">"amount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">25.0</span>
+        },
+        <span class="jk">"taxCategory"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"S"</span>,
+          <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      }
+    ],
+    <span class="jk">"taxTotal"</span>: [
+      {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">285.0</span>
+        },
+        <span class="jk">"taxSubtotal"</span>: [
+          {
+            <span class="jk">"taxableAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">1425.0</span>
+            },
+            <span class="jk">"taxAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">285.0</span>
+            },
+            <span class="jk">"taxCategory"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          },
+          {
+            <span class="jk">"taxableAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">500.0</span>
+            },
+            <span class="jk">"taxAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">0.0</span>
+            },
+            <span class="jk">"taxCategory"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"E"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+              <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI"</span>,
+              <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    <span class="jk">"legalMonetaryTotal"</span>: {
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2000.0</span>
+      },
+      <span class="jk">"taxExclusiveAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">1925.0</span>
+      },
+      <span class="jk">"taxInclusiveAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2210.0</span>
+      },
+      <span class="jk">"allowanceTotalAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">100.0</span>
+      },
+      <span class="jk">"chargeTotalAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">25.0</span>
+      },
+      <span class="jk">"prepaidAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">200.0</span>
+      },
+      <span class="jk">"payableRoundingAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">0.0</span>
+      },
+      <span class="jk">"payableAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2010.0</span>
+      }
+    },
+    <span class="jk">"additionalDocumentReference"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-001"</span>,
+        <span class="jk">"documentTypeCode"</span>: <span class="js">"130"</span>
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-002"</span>,
+        <span class="jk">"documentDescription"</span>: <span class="js">"Specifications techniques du projet"</span>,
+        <span class="jk">"attachment"</span>: {
+          <span class="jk">"embeddedDocumentBinaryObject"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"UERGIGNvbnRlbnQ="</span>,
+            <span class="jk">"mimeCode"</span>: <span class="js">"application/pdf"</span>,
+            <span class="jk">"filename"</span>: <span class="js">"specifications.pdf"</span>
+          }
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"ATTACH-003"</span>,
+        <span class="jk">"documentDescription"</span>: <span class="js">"Plan de livraison"</span>,
+        <span class="jk">"attachment"</span>: {
+          <span class="jk">"externalReference"</span>: {
+            <span class="jk">"uri"</span>: <span class="js">"https://example.com/docs/plan-livraison.pdf"</span>
+          }
+        }
+      }
+    ],
+    <span class="jk">"invoiceLine"</span>: [
+      {
+        <span class="jk">"id"</span>: <span class="js">"1"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 1 - Produit principal avec remise volume"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">900.0</span>
+        },
+        <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-001"</span>,
+        <span class="jk">"invoicePeriod"</span>: {
+          <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+          <span class="jk">"endDate"</span>: <span class="js">"2025-01-15"</span>,
+          <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+        },
+        <span class="jk">"orderLineReference"</span>: [
+          {
+            <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-001"</span>,
+            <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-001"</span>,
+            <span class="jk">"orderReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+              <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
+            }
+          }
+        ],
+        <span class="jk">"despatchLineReference"</span>: {
+          <span class="jk">"lineID"</span>: <span class="js">"DESP-LINE-001"</span>
+        },
+        <span class="jk">"receiptLineReference"</span>: {
+          <span class="jk">"lineID"</span>: <span class="js">"RCPT-LINE-001"</span>
+        },
+        <span class="jk">"billingReference"</span>: [
+          {
+            <span class="jk">"additionalDocumentReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+              <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+              <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>,
+              <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>
+            },
+            <span class="jk">"billingReferenceLine"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"1"</span>,
+              <span class="jk">"amount"</span>: {
+                <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+                <span class="jk">"value"</span>: <span class="jn">500.0</span>
+              }
+            }
+          }
+        ],
+        <span class="jk">"documentReference"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"DOC-REF-001"</span>,
+            <span class="jk">"schemeID"</span>: <span class="js">"ABT"</span>
+          }
+        },
+        <span class="jk">"lineDelivery"</span>: {
+          <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2025-01-10"</span>,
+          <span class="jk">"deliveryPeriod"</span>: {
+            <span class="jk">"startDate"</span>: <span class="js">"2025-01-08"</span>,
+            <span class="jk">"endDate"</span>: <span class="js">"2025-01-12"</span>
+          },
+          <span class="jk">"deliveryLocation"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+              <span class="jk">"value"</span>: <span class="js">"LOC-LINE-001"</span>
+            },
+            <span class="jk">"description"</span>: <span class="js">"Entrepot principal Nantes"</span>,
+            <span class="jk">"address"</span>: {
+              <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+              <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+              <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+              <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+              <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+              <span class="jk">"addressLine"</span>: [
+                {
+                  <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
+                }
+              ],
+              <span class="jk">"country"</span>: {
+                <span class="jk">"identificationCode"</span>: {
+                  <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+                }
+              }
+            }
+          },
+          <span class="jk">"deliveryParty"</span>: {
+            <span class="jk">"partyName"</span>: {
+              <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
+            },
+            <span class="jk">"partyLegalEntity"</span>: {
+              <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
+            }
+          }
+        },
+        <span class="jk">"allowanceCharge"</span>: [
+          {
+            <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+            <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise volume"</span>,
+            <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+            <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">10.0</span>,
+            <span class="jk">"amount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">100.0</span>
+            },
+            <span class="jk">"baseAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">1000.0</span>
+            }
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Widget Premium - Version 2025 avec fonctionnalites avancees"</span>,
+          <span class="jk">"packQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          },
+          <span class="jk">"name"</span>: <span class="js">"Widget Premium V2025"</span>,
+          <span class="jk">"buyersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"BUYER-SKU-001"</span>
+            }
+          },
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-SKU-WP2025"</span>
+            }
+          },
+          <span class="jk">"standardItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0160"</span>,
+              <span class="jk">"value"</span>: <span class="js">"3456789012345"</span>
+            }
+          },
+          <span class="jk">"additionalItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"INTERNAL"</span>,
+              <span class="jk">"value"</span>: <span class="js">"INT-WP-2025-001"</span>
+            }
+          },
+          <span class="jk">"originCountry"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
+            }
+          },
+          <span class="jk">"commodityClassification"</span>: [
+            {
+              <span class="jk">"itemClassificationCode"</span>: {
+                <span class="jk">"listID"</span>: <span class="js">"STI"</span>,
+                <span class="jk">"value"</span>: <span class="js">"44423000"</span>
+              }
+            }
+          ],
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"additionalItemProperty"</span>: [
+            {
+              <span class="jk">"name"</span>: <span class="js">"Couleur"</span>,
+              <span class="jk">"value"</span>: <span class="js">"Bleu"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"COLOR"</span>
+            },
+            {
+              <span class="jk">"name"</span>: <span class="js">"Poids"</span>,
+              <span class="jk">"value"</span>: <span class="js">"2.5 KGM"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"WEIGHT"</span>,
+              <span class="jk">"valueQuantity"</span>: {
+                <span class="jk">"quantity"</span>: <span class="jn">2.5</span>,
+                <span class="jk">"unitCode"</span>: <span class="js">"KGM"</span>
+              }
+            },
+            {
+              <span class="jk">"name"</span>: <span class="js">"Dimensions"</span>,
+              <span class="jk">"value"</span>: <span class="js">"30x20x10"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"DIMENSIONS"</span>
+            }
+          ],
+          <span class="jk">"manufacturerParty"</span>: {
+            <span class="jk">"partyIdentification"</span>: [
+              {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                  <span class="jk">"value"</span>: <span class="js">"888999000"</span>
+                }
+              }
+            ],
+            <span class="jk">"partyName"</span>: {
+              <span class="jk">"name"</span>: <span class="js">"Fabricant Widgets France"</span>
+            },
+            <span class="jk">"partyLegalEntity"</span>: {
+              <span class="jk">"registrationName"</span>: <span class="js">"Fabricant Widgets France SA"</span>,
+              <span class="jk">"companyID"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"888999000"</span>
+              }
+            }
+          }
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          },
+          <span class="jk">"allowanceCharge"</span>: {
+            <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+            <span class="jk">"amount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">5.0</span>
+            },
+            <span class="jk">"baseAmount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">105.0</span>
+            }
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">180.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"2"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 2 - Service associe"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">5.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">500.0</span>
+        },
+        <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-002"</span>,
+        <span class="jk">"invoicePeriod"</span>: {
+          <span class="jk">"startDate"</span>: <span class="js">"2025-01-01"</span>,
+          <span class="jk">"endDate"</span>: <span class="js">"2025-01-31"</span>,
+          <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
+        },
+        <span class="jk">"orderLineReference"</span>: [
+          {
+            <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-002"</span>,
+            <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-002"</span>
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Service d'installation et configuration"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Installation Premium"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-SVC-INSTALL"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ],
+          <span class="jk">"additionalItemProperty"</span>: [
+            {
+              <span class="jk">"name"</span>: <span class="js">"Type de service"</span>,
+              <span class="jk">"value"</span>: <span class="js">"Installation sur site"</span>,
+              <span class="jk">"nameCode"</span>: <span class="js">"SERVICE_TYPE"</span>
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"3"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 3 - Produit exonere de TVA"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">2.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">500.0</span>
+        },
+        <span class="jk">"billingReference"</span>: [
+          {
+            <span class="jk">"additionalDocumentReference"</span>: {
+              <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00200"</span>,
+              <span class="jk">"issueDate"</span>: <span class="js">"2024-11-01"</span>,
+              <span class="jk">"documentTypeCode"</span>: <span class="js">"381"</span>,
+              <span class="jk">"documentStatusCode"</span>: <span class="js">"CORRECTED"</span>
+            }
+          }
+        ],
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Equipement medical exonere de TVA"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Equipement Medical Type A"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-MED-001"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"E"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+              <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI - Equipement medical"</span>,
+              <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">250.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">0.0</span>
+          }
+        },
+        <span class="jk">"deliveryTerms"</span>: {
+          <span class="jk">"id"</span>: <span class="js">"DAP"</span>
+        }
+      },
+      {
+        <span class="jk">"id"</span>: <span class="js">"4"</span>,
+        <span class="jk">"note"</span>: [
+          "Ligne 4 - Produit simple sans extras"
+        ],
+        <span class="jk">"invoicedQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+        },
+        <span class="jk">"lineExtensionAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
+        },
+        <span class="jk">"item"</span>: {
+          <span class="jk">"description"</span>: <span class="js">"Accessoire standard"</span>,
+          <span class="jk">"name"</span>: <span class="js">"Accessoire Standard AS-100"</span>,
+          <span class="jk">"sellersItemIdentification"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"SELLER-ACC-100"</span>
+            }
+          },
+          <span class="jk">"classifiedTaxCategory"</span>: [
+            {
+              <span class="jk">"id"</span>: <span class="js">"S"</span>,
+              <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+              <span class="jk">"taxScheme"</span>: {
+                <span class="jk">"id"</span>: {
+                  <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+                }
+              }
+            }
+          ]
+        },
+        <span class="jk">"price"</span>: {
+          <span class="jk">"priceAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
+          },
+          <span class="jk">"baseQuantity"</span>: {
+            <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+            <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
+          }
+        },
+        <span class="jk">"taxTotal"</span>: {
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">20.0</span>
+          }
+        }
+      }
+    ]
+  }
+}</code></pre></div><hr><h2 id="response">Response</h2>
+
 <h3>Success Response</h3>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
@@ -2055,20 +4522,44 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-<h3>Response Schema</h3>
+<h3>Error Response</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"Success"</span>: <span class="jb">true</span>,
+  <span class="jk">"DocumentResponses"</span>: [
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"66b4561e202c4723d71a9e58"</span>,
+      <span class="jk">"Success"</span>: <span class="jb">false</span>,
+      <span class="jk">"UniqueId"</span>: <span class="js">"C10709273050_20240410035_01_2024"</span>,
+      <span class="jk">"ErrorDetails"</span>: [
+        {
+          <span class="jk">"ErrorCode"</span>: <span class="js">""</span>,
+          <span class="jk">"ErrorMessage"</span>: <span class="js">""</span>,
+          <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>
+        }
+      ],
+      <span class="jk">"WarningDetails"</span>: []
+    }
+  ]
+}</code></pre></div>
+
+<h3>Response Fields</h3>
 <div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
-<tr><td>Success</td><td><span class="tp tp-id">String</span></td><td>Overall request status. "true" or "false".</td></tr>
-<tr><td>ErrorDetails</td><td><span class="tp tp-code">Object</span></td><td>Request-level error details. null on success.</td></tr>
-<tr><td>DocumentResponses</td><td><span class="tp tp-code">Array</span></td><td>One response object per submitted document.</td></tr>
-<tr><td>DocumentResponses[].DocumentId</td><td><span class="tp tp-id">String</span></td><td>ClearTax-generated internal document ID.</td></tr>
-<tr><td>DocumentResponses[].UniqueId</td><td><span class="tp tp-id">String</span></td><td>Composite key: SIREN_InvoiceID_TypeCode_Year.</td></tr>
-<tr><td>DocumentResponses[].Success</td><td><span class="tp tp-id">String</span></td><td>"true" if this document was accepted, "false" otherwise.</td></tr>
-<tr><td>DocumentResponses[].ErrorDetails</td><td><span class="tp tp-code">Array</span></td><td>List of errors for this document. Empty on success.</td></tr>
-<tr><td>DocumentResponses[].WarningDetails</td><td><span class="tp tp-code">Array</span></td><td>List of warnings. null if none.</td></tr>
-<tr><td>DocumentResponses[].CustomFields</td><td><span class="tp tp-code">Object</span></td><td>Echoes back any custom fields sent in the request.</td></tr>
+<tr><td>Success</td><td></td><td>To be filled</td></tr>
+<tr><td>ErrorDetails</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].DocumentId</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].UniqueId</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].Success</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].ErrorDetails</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].ErrorDetails[].ErrorCode</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].ErrorDetails[].ErrorMessage</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].ErrorDetails[].ErrorSource</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].WarningDetails</td><td></td><td>To be filled</td></tr>
+<tr><td>DocumentResponses[].CustomFields</td><td></td><td>To be filled</td></tr>
 </tbody></table></div>
 
-<div class="co co-w"><strong>Still pending from engineering</strong><ul style="margin:8px 0 0 16px;font-size:12px;line-height:1.8"><li>HTTP status codes and their meanings</li><li>Error response sample (when validation fails)</li><li>Error detail object structure (errorCode, errorMessage, path)</li></ul></div></div><div id="pg-codes" class="pg">
+<div class="co co-w"><strong>Still pending from engineering</strong><ul style="margin:8px 0 0 16px;font-size:12px;line-height:1.8"><li>HTTP status codes and their meanings</li><li>Response field descriptions</li></ul></div></div><div id="pg-codes" class="pg">
 <h1>Code Lists</h1>
 <p>Enumerated values for fields that accept only specific codes. Extracted from the compliance template.</p>
 <div class="tw" style="margin-bottom:20px"><table><thead><tr><th>Code List</th><th>Used By</th><th>Entries</th></tr></thead><tbody>
