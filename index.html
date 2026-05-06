@@ -5248,7 +5248,7 @@ chosen from UN/CEFACT list 6313</td></tr>
 <h1>Code Lists</h1>
 <p>Where a field accepts only specific values, the accepted codes are listed here. All values extracted from the compliance template.</p>
 <h2 id="enum-invoice-type-codes">Invoice Type Codes</h2>
-<p>Used in <code>invoiceTypeCode.value</code>.</p>
+<p>Used in <code>invoice.invoiceTypeCode.value</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Self billed credit note</code></td><td>Credit Note</td></tr>
 <tr><td><code>Consolidated credit note - goods and services</code></td><td>Credit Note</td></tr>
@@ -5268,8 +5268,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 <tr><td><code>Prepayment credit note, credit note type, Corrected</code></td><td>Credit Note</td></tr>
 </tbody></table></div>
 <h2 id="enum-payment-means-codes">Payment Means Codes</h2>
-<p>Used in <code>paymentMeans.paymentMeansCode.value</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">168 entries — click to expand</summary>
+<p>Used in <code>invoice.paymentMeans.paymentMeansCode.value</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">168 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Instrument not defined</code></td><td></td></tr>
 <tr><td><code>Not defined legally enforceable agreement between two or more parties (expressing a contractual right or a right to the payment of money).</code></td><td></td></tr>
@@ -5442,7 +5442,7 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-special-service-description-code-bt-145-bt-105-charge-reason-code">Special service description code : BT-145 / BT-105 (charge reason code)</h2>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">356 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">356 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Advertising</code></td><td></td></tr>
 <tr><td><code>The service of providing advertising.</code></td><td></td></tr>
@@ -5803,7 +5803,7 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-subset-for-allowance-identification-code-bt-140-bt-98">Subset for Allowance identification code : BT-140 / BT-98</h2>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">38 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">38 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Bonus for works ahead of schedule</code></td><td>rec20</td></tr>
 <tr><td><code>Bonus for completing work ahead of schedule.</code></td><td>rec20</td></tr>
@@ -5846,8 +5846,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-unit-of-measure-codes">Unit of Measure Codes</h2>
-<p>Used in <code>invoiceLine[].invoicedQuantity.unitCode</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">2162 entries — click to expand</summary>
+<p>Used in <code>invoice.invoiceLine[].invoicedQuantity.unitCode</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">2162 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>square metre</code></td><td></td></tr>
 <tr><td><code>one</code></td><td></td></tr>
@@ -8014,8 +8014,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-text-subject-codes">Text Subject Codes</h2>
-<p>Used in <code>notes[].value (subject code prefix)</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">802 entries — click to expand</summary>
+<p>Used in <code>invoice.notes[].value (subject code as prefix)</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">802 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Goods item description</code></td><td></td></tr>
 <tr><td><code>[7002] Plain language description of the nature of a goods item sufficient to identify it for customs, statistical or transport purposes.</code></td><td></td></tr>
@@ -8822,8 +8822,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-country-codes">Country Codes</h2>
-<p>Used in <code>Multiple address fields</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">251 entries — click to expand</summary>
+<p>Used in <code>invoice.accountingSupplierParty.party.postalAddress.country.identificationCode.countryCode</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">251 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Afghanistan (l')</code></td><td>AF</td></tr>
 <tr><td><code>Åland(les Îles)</code></td><td>AX</td></tr>
@@ -9079,8 +9079,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-currency-codes">Currency Codes</h2>
-<p>Used in <code>documentCurrencyCode</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">277 entries — click to expand</summary>
+<p>Used in <code>invoice.documentCurrencyCode</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">277 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>UAE Dirham</code></td><td>AED</td></tr>
 <tr><td><code>Afghani</code></td><td>AFN</td></tr>
@@ -9362,8 +9362,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-reference-type-codes">Reference Type Codes</h2>
-<p>Used in <code>additionalDocumentReference[].id</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">1636 entries — click to expand</summary>
+<p>Used in <code>MISSING: AdditionalDocumentReferenceType.id is String not ID</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">1636 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Order acknowledgement document identifier</code></td><td></td></tr>
 <tr><td><code>[1018] Reference number identifying the acknowledgement of an order.</code></td><td></td></tr>
@@ -11004,8 +11004,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-item-type-codes">Item Type Codes</h2>
-<p>Used in <code>invoiceLine[].item.commodityClassification[].classCode</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">370 entries — click to expand</summary>
+<p>Used in <code>invoice.invoiceLine[].item.commodityClassification[].itemClassificationCode.listID</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">370 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Product version number</code></td><td></td></tr>
 <tr><td><code>Number assigned by manufacturer or seller to identify the release of a product.</code></td><td></td></tr>
@@ -11380,7 +11380,6 @@ chosen from UN/CEFACT list 6313</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-identification-scheme-ids">Identification Scheme IDs</h2>
-<p>Used in <code>partyIdentification[].id.schemeID</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>FR:SIRENE</code></td><td>0002</td></tr>
 <tr><td><code>DUNS</code></td><td>0060</td></tr>
@@ -11402,8 +11401,8 @@ chosen from UN/CEFACT list 6313</td></tr>
 <tr><td><code>UBLBE</code></td><td>0193</td></tr>
 </tbody></table></div>
 <h2 id="enum-party-identification-scheme-ids">Party Identification Scheme IDs</h2>
-<p>Used in <code>partyIdentification[].id.schemeID</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">239 entries — click to expand</summary>
+<p>Used in <code>invoice.accountingSupplierParty.party.partyIdentification[].id.schemeID</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">239 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>System Information et Repertoire des Entreprise et des Etablissements: SIRENE</code></td><td>1) Number of characters: 9 characters ("SIREN") 14 " 9+5 ("SIRET"), The 9 character number designates an organization, The 14 character number designates a specific establishment of the organization designated by the first 9 characters. 2) Check digits: 9th &amp; 14th character respectively</td></tr>
 <tr><td><code>Data Universal Numbering System (D-U-N-S Number)</code></td><td>1) Eight identification digits and a check digit. A two digit prefix will be added in the future but it will not be used to calculate the check digit. 2) The Organization name is not part of the D-U-N-S number.</td></tr>
@@ -11661,8 +11660,8 @@ A-Z and 0-9 for 6 characters completed with 3 digits 0-9 (special characters all
 </tbody></table></div>
 </details>
 <h2 id="enum-electronic-address-scheme-ids">Electronic Address Scheme IDs</h2>
-<p>Used in <code>endPointID.schemeID</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">98 entries — click to expand</summary>
+<p>Used in <code>invoice.accountingSupplierParty.party.endPointID.schemeID</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">98 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>O.F.T.P. (ODETTE File Transfer Protocol)</code></td><td>VATEX-EU-79-C</td></tr>
 <tr><td><code>X.400 address for mail text</code></td><td>VATEX-EU-132</td></tr>
@@ -11767,8 +11766,8 @@ Organisationskennzeichen</code></td><td>VATEX-EU-O</td></tr>
 </tbody></table></div>
 </details>
 <h2 id="enum-vat-exemption-reason-codes">VAT Exemption Reason Codes</h2>
-<p>Used in <code>taxTotal[].taxSubtotal[].taxCategory.taxExemptionReasonCode</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">87 entries — click to expand</summary>
+<p>Used in <code>invoice.taxTotal[].taxSubtotal[].taxCategory.taxExemptionReasonCode</code>.</p>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">87 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Exempt based on article 79, point c of Council Directive 2006/112/EC</code></td><td>Exemptions relating to repayment of expenditures.</td></tr>
 <tr><td><code>Exempt based on article 132 of Council Directive 2006/112/EC</code></td><td>Exemptions for certain activities in public interest.</td></tr>
@@ -11867,7 +11866,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 </tbody></table></div>
 </details>
 <h2 id="enum-due-date-codes">Due Date Codes</h2>
-<p>Used in <code>invoicePeriod.descriptionCode</code>.</p>
+<p>Used in <code>invoice.invoicePeriod.descriptionCode</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>Date of invoice</code></td><td></td></tr>
 <tr><td><code>Date of delivery of goods to establishments/domicile/site</code></td><td></td></tr>
@@ -11879,7 +11878,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>Paid to date</code></td><td></td></tr>
 </tbody></table></div>
 <h2 id="enum-vat-category-codes">VAT Category Codes</h2>
-<p>Used in <code>taxTotal[].taxSubtotal[].taxCategory.id</code>.</p>
+<p>Used in <code>invoice.invoiceLine[].item.classifiedTaxCategory[].id</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>S</code></td><td>Standard rate</td></tr>
 <tr><td><code>Z</code></td><td>Zero rated goods</td></tr>
@@ -11892,7 +11891,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>M</code></td><td>Tax for production, services and importation in Ceuta and Melilla</td></tr>
 </tbody></table></div>
 <h2 id="enum-vat-identifier-codes">VAT Identifier Codes</h2>
-<p>Used in <code>partyTaxScheme[].taxScheme.id</code>.</p>
+<p>Used in <code>invoice.accountingSupplierParty.party.partyTaxScheme[].companyID</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>VA</code></td><td>Value added tax</td></tr>
 <tr><td><code>Fiscal ID for CII, for BT-32</code></td><td></td></tr>
@@ -11904,7 +11903,6 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>VAT</code></td><td>Value added tax</td></tr>
 </tbody></table></div>
 <h2 id="enum-vat-type-codes">VAT Type Codes</h2>
-<p>Used in <code>partyTaxScheme[].taxScheme.id</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>VAT</code></td><td>Value added tax</td></tr>
 </tbody></table></div>
@@ -11914,14 +11912,14 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>205</code></td><td>CCYYMMDDHHMMZHHMM</td></tr>
 </tbody></table></div>
 <h2 id="enum-line-reason-codes-extended">Line Reason Codes (Extended)</h2>
-<p>Used in <code>invoiceLine[].lineType</code>.</p>
+<p>Used in <code>invoice.invoiceLine[].billingReference[].additionalDocumentReference.documentStatusCode</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>DETAIL</code></td><td>Regular item position (standard case)</td></tr>
 <tr><td><code>GROUP</code></td><td>Subtotal or group</td></tr>
 <tr><td><code>INFORMATION</code></td><td>For information only</td></tr>
 </tbody></table></div>
 <h2 id="enum-incoterms-extended">INCOTERMS (Extended)</h2>
-<p>Used in <code>deliveryTerms.id</code>.</p>
+<p>Used in <code>invoice.accountingCustomerParty.party.agentParty.industryClassificationCode.value</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>1</code></td><td>Delivery arranged by supplier</td></tr>
 <tr><td><code>2</code></td><td>Delivery arranged by logistic service provider</td></tr>
@@ -11938,8 +11936,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>FOB</code></td><td>Free On Board (insert named port of shipment)</td></tr>
 </tbody></table></div>
 <h2 id="enum-item-attribute-codes-extended">Item Attribute Codes (Extended)</h2>
-<p>Used in <code>invoiceLine[].item.additionalItemProperty</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">315 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">315 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>6313</code></td><td>A</td></tr>
 <tr><td><code>6313</code></td><td>AAA</td></tr>
@@ -12259,8 +12256,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 </tbody></table></div>
 </details>
 <h2 id="enum-line-status-codes-extended">Line Status Codes (Extended)</h2>
-<p>Used in <code>invoiceLine[].statusCode</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">119 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">119 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>1</code></td><td>Added</td></tr>
 <tr><td><code>2</code></td><td>Deleted</td></tr>
@@ -12384,8 +12380,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 </tbody></table></div>
 </details>
 <h2 id="enum-language-codes-extended">Language Codes (Extended)</h2>
-<p>Used in <code>languageID</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">483 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">483 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>aar</code></td><td>Afar</td></tr>
 <tr><td><code>abk</code></td><td>Abkhazian</td></tr>
@@ -12873,7 +12868,6 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 </tbody></table></div>
 </details>
 <h2 id="enum-transport-mode-codes-extended">Transport Mode Codes (Extended)</h2>
-<p>Used in <code>delivery.transportMode</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>0</code></td><td>Transport mode not specified</td></tr>
 <tr><td><code>1</code></td><td>Maritime transport</td></tr>
@@ -12887,7 +12881,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>9</code></td><td>Transport mode not applicable</td></tr>
 </tbody></table></div>
 <h2 id="enum-business-process-type">Business Process Type</h2>
-<p>Used in <code>profileID</code>.</p>
+<p>Used in <code>invoice.profileID</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>B1: Submission of a Goods invoice</code></td><td>0</td></tr>
 <tr><td><code>S1: Submission of a service invoice</code></td><td>10</td></tr>
@@ -12908,8 +12902,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 <tr><td><code>M8: Submission of a duplicate multi-vendor invoice containing individual invoices that are not all Sx or Bx.</code></td><td></td></tr>
 </tbody></table></div>
 <h2 id="enum-party-qualifier-codes-extended">Party Qualifier Codes (Extended)</h2>
-<p>Used in <code>Party role qualifier</code>.</p>
-<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">259 entries — click to expand</summary>
+<details><summary style="cursor:pointer;font-size:12px;color:#4299e1;margin-bottom:8px">259 entries â click to expand</summary>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>AA</code></td><td>Party to be billed (AAR Accounting rule 11)</td></tr>
 <tr><td><code>AB</code></td><td>Buyer's agent/representative</td></tr>
@@ -13173,7 +13166,6 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</code></td
 </tbody></table></div>
 </details>
 <h2 id="enum-delivery-terms-codes-extended">Delivery Terms Codes (Extended)</h2>
-<p>Used in <code>deliveryTerms</code>.</p>
 <div class="tw"><table><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>1</code></td><td>Delivery arranged by the supplier
 Indicates that the supplier will arrange delivery of the goods.</td></tr>
