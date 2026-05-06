@@ -15362,4 +15362,29 @@ var ct=document.getElementById('search-count');
 if(q){ct.textContent=shown+' of '+total+' fields matching "'+q+'"'}
 else{ct.textContent=''}
 }
+
+function trackScroll(){
+var page=document.querySelector('.pg.ac');
+if(\!page)return;
+var headings=page.querySelectorAll('h2[id],h3[id]');
+if(\!headings.length)return;
+var scrollY=window.scrollY+140;
+var current=null;
+headings.forEach(function(h){
+if(h.offsetTop<=scrollY)current=h;
+});
+if(\!current)return;
+var pid=page.id.replace('pg-','');
+var aid=current.id;
+var items=document.querySelectorAll('.ni.s1,.ni.s2');
+items.forEach(function(n){
+var np=n.getAttribute('data-p');
+var na=n.getAttribute('data-a');
+if(np===pid&&na===aid){
+items.forEach(function(x){if(x.getAttribute('data-p')===pid)x.classList.remove('ac')});
+n.classList.add('ac');
+}
+});
+}
+window.addEventListener('scroll',function(){requestAnimationFrame(trackScroll)});
 </script></body></html>
