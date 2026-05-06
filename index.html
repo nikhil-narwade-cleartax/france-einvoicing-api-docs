@@ -139,63 +139,63 @@ tr.gr td{font-weight:600}
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="codes" onclick="go('codes','Code Lists')">Code Lists</a><a class="ni" data-p="log" onclick="go('log','Changelog')">Changelog</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send API for submitting invoices from your ERP to ClearTax.</p><h2>Submission Flow</h2>
 <div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
 <svg viewBox="0 0 820 200" style="width:100%;max-width:820px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
-<\!-- Your ERP -->
+<!-- Your ERP -->
 <rect x="10" y="75" width="100" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
 <text x="60" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Your ERP</text>
 
-<\!-- Arrow 1 -->
+<!-- Arrow 1 -->
 <line x1="110" y1="95" x2="150" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
 
-<\!-- ClearTax API -->
+<!-- ClearTax API -->
 <rect x="150" y="75" width="110" height="40" rx="6" fill="#667eea" stroke="#667eea" stroke-width="1.5"/>
 <text x="205" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">ClearTax API</text>
 
-<\!-- Arrow 2 -->
+<!-- Arrow 2 -->
 <line x1="260" y1="95" x2="300" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
 
-<\!-- Validate -->
+<!-- Validate -->
 <rect x="300" y="75" width="90" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
 <text x="345" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Validate</text>
 
-<\!-- Branch point -->
-<\!-- Upper branch: PPF -->
+<!-- Branch point -->
+<!-- Upper branch: PPF -->
 <line x1="390" y1="85" x2="430" y2="40" stroke="#ed8936" stroke-width="1.5"/>
 <line x1="430" y1="40" x2="530" y2="40" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
 
-<\!-- F6 label -->
+<!-- F6 label -->
 <text x="460" y="30" font-size="9" fill="#ed8936" font-weight="600">F6 (Status)</text>
 
-<\!-- F1 branch -->
+<!-- F1 branch -->
 <line x1="390" y1="88" x2="430" y2="60" stroke="#ed8936" stroke-width="1.5"/>
 <line x1="430" y1="60" x2="530" y2="60" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
 
-<\!-- F1 label -->
+<!-- F1 label -->
 <text x="460" y="72" font-size="9" fill="#ed8936" font-weight="600">F1 (Tax Data)</text>
 
-<\!-- PPF box -->
+<!-- PPF box -->
 <rect x="530" y="25" width="80" height="50" rx="6" fill="#fffff0" stroke="#ed8936" stroke-width="1.5"/>
 <text x="570" y="48" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">PPF</text>
 <text x="570" y="62" text-anchor="middle" font-size="8" fill="#975a16">(Government)</text>
 
-<\!-- Lower branch: Peppol to Buyer -->
+<!-- Lower branch: Peppol to Buyer -->
 <line x1="390" y1="105" x2="430" y2="150" stroke="#48bb78" stroke-width="1.5"/>
 <line x1="430" y1="150" x2="530" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
-<\!-- F2 label -->
+<!-- F2 label -->
 <text x="460" y="143" font-size="9" fill="#276749" font-weight="600">F2 (Invoice)</text>
 
-<\!-- Peppol box -->
+<!-- Peppol box -->
 <rect x="530" y="130" width="90" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
 <text x="575" y="154" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">Peppol</text>
 
-<\!-- Arrow Peppol to Buyer -->
+<!-- Arrow Peppol to Buyer -->
 <line x1="620" y1="150" x2="660" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
 
-<\!-- Buyer's PA -->
+<!-- Buyer's PA -->
 <rect x="660" y="130" width="100" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
 <text x="710" y="154" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Buyer's PA</text>
 
-<\!-- Arrow definitions -->
+<!-- Arrow definitions -->
 <defs>
 <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#a0aec0"/></marker>
 <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#ed8936"/></marker>
