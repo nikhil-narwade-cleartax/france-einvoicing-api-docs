@@ -15365,15 +15365,15 @@ else{ct.textContent=''}
 
 function trackScroll(){
 var page=document.querySelector('.pg.ac');
-if(\!page)return;
+if(!page)return;
 var headings=page.querySelectorAll('h2[id],h3[id]');
-if(\!headings.length)return;
+if(!headings.length)return;
 var scrollY=window.scrollY+140;
 var current=null;
 headings.forEach(function(h){
 if(h.offsetTop<=scrollY)current=h;
 });
-if(\!current)return;
+if(!current)return;
 var pid=page.id.replace('pg-','');
 var aid=current.id;
 var items=document.querySelectorAll('.ni.s1,.ni.s2');
