@@ -207,8 +207,12 @@ tr.gr td{font-weight:600}
 <h2>APIs and Structure</h2>
 <div class="tw"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th><th>Status</th></tr></thead><tbody>
 <tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/documents/send</code></td><td>Submit one or more invoice documents for validation and routing to the buyer via Peppol.</td><td>Available</td></tr>
-<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/status</code></td><td>Get document current lifecycle status and check whether this document was successfully reported to PPF.</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/{document_id}/status</code></td><td>Get document current lifecycle status and check whether this document was successfully reported to PPF.</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/query</code></td><td>Retrieve a list of e-invoice documents filtered by date range, type, and pagination.</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents</code></td><td>Retrieve a single e-invoice document by its document number.</td><td>Coming soon</td></tr>
 <tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/documents/action</code></td><td>Update the lifecycle status of an invoice (e.g. approve, refuse, dispute).</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/print</code></td><td>Get the PDF version of an e-invoice based on the invoice identifiers.</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/documents/email</code></td><td>Send an e-invoice to the buyer via email.</td><td>Coming soon</td></tr>
 <tr><td><span class="mt mt-p">POST</span></td><td><code>Customer-configured URL</code></td><td>Webhook callback. ClearTax pushes lifecycle event notifications (e.g. buyer approved, refused, disputed, payment received) to your registered endpoint in real-time.</td><td>Coming soon</td></tr>
 </tbody></table></div>
 
