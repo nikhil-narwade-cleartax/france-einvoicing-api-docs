@@ -4533,7 +4533,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-<h3>Error Response</h3>
+<h3>Error Response — Validation Error</h3>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
   <span class="jk">"Success"</span>: <span class="jb">true</span>,
@@ -4544,12 +4544,53 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
       <span class="jk">"UniqueId"</span>: <span class="js">"C10709273050_20240410035_01_2024"</span>,
       <span class="jk">"ErrorDetails"</span>: [
         {
-          <span class="jk">"ErrorCode"</span>: <span class="js">""</span>,
-          <span class="jk">"ErrorMessage"</span>: <span class="js">""</span>,
+          <span class="jk">"ErrorCode"</span>: <span class="js">"ERR-10001"</span>,
+          <span class="jk">"ErrorMessage"</span>: <span class="js">"Supplier VAT is not matching the VAT present in the account"</span>,
           <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>
         }
       ],
       <span class="jk">"WarningDetails"</span>: []
+    }
+  ]
+}</code></pre></div>
+
+<h3>Error Response — Peppol Validation Error</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"DocumentResponses"</span>: [
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"689c5712eaeedb6b81893deb"</span>,
+      <span class="jk">"Success"</span>: <span class="js">"false"</span>,
+      <span class="jk">"UniqueId"</span>: <span class="js">"BE1234567890_INV-001_388_2025"</span>,
+      <span class="jk">"ErrorDetails"</span>: [
+        {
+          <span class="jk">"ErrorCode"</span>: <span class="js">"PEPPOL-EN16931-R120"</span>,
+          <span class="jk">"ErrorMessage"</span>: <span class="js">"Invoice line net amount MUST equal (Invoiced quantity * (Item net price/item price base quantity) + Sum of invoice line charge amount - Sum of invoice line allowance amount"</span>,
+          <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>
+        }
+      ],
+      <span class="jk">"WarningDetails"</span>: []
+    }
+  ]
+}</code></pre></div>
+
+<h3>Warning Response — Duplicate Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"DocumentResponses"</span>: [
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"689c5712eaeedb6b81893deb"</span>,
+      <span class="jk">"Success"</span>: <span class="js">"false"</span>,
+      <span class="jk">"UniqueId"</span>: <span class="js">"BE1234567890_INV-001_388_2025"</span>,
+      <span class="jk">"ErrorDetails"</span>: [],
+      <span class="jk">"WarningDetails"</span>: [
+        {
+          <span class="jk">"Code"</span>: <span class="js">"DUP-202"</span>,
+          <span class="jk">"Message"</span>: <span class="js">"Invoice is already submitted, we are returning the response from the Previously submitted Invoice"</span>
+        }
+      ]
     }
   ]
 }</code></pre></div>
