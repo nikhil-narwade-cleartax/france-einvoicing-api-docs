@@ -136,6 +136,7 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="send" data-a="sample-380" onclick="go('send','Send e-Invoice','sample-380')">Invoice (380)</a>
 <a class="ni s2" data-p="send" data-a="sample-381" onclick="go('send','Send e-Invoice','sample-381')">Credit Note (381)</a>
 <a class="ni s2" data-p="send" data-a="sample-384" onclick="go('send','Send e-Invoice','sample-384')">Corrective Invoice (384)</a><a class="ni s1" data-p="send" data-a="response" onclick="go('send','Send e-Invoice','response')">Sample Response</a></div><div class="sb-sec"><div class="sb-lbl">Resources</div>
+<a class="ni" data-p="limits" onclick="go('limits','API Limits')">API Limits</a>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
 <a class="ni" data-p="codes" onclick="go('codes','Code Lists')">Code Lists</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send API for submitting invoices from your ERP to ClearTax.</p><h2>Submission Flow</h2>
 <div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
@@ -4706,7 +4707,12 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-</div><div id="pg-validations" class="pg">
+</div><div id="pg-limits" class="pg">
+<h1>API Limits</h1>
+<div class="co co-w"><strong>Pending from engineering</strong>The following details will be updated once confirmed by engineering:<ul style="margin:8px 0 0 16px;font-size:12px;line-height:1.8"><li>Rate limits (requests per minute/hour)</li><li>Maximum payload size</li><li>Maximum documents per batch request</li><li>Request timeout</li><li>Character encoding requirements</li></ul></div>
+</div>
+
+<div id="pg-validations" class="pg">
 <h1>Validations</h1>
 <h2>Field Requirements</h2>
 <p>Field-level validation rules applied by ClearTax during invoice processing. These are extracted from the compliance template. 122 fields have specific validation rules.</p>
