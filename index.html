@@ -46,7 +46,7 @@ hr{border:none;border-top:1px solid #e2e8f0;margin:24px 0}
 .cbl-l{font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .cpb{background:none;border:1px solid #4a5568;color:#a0aec0;padding:1px 8px;border-radius:3px;cursor:pointer;font-size:9px}
 .cpb:hover{border-color:#2D5BE3;color:#2D5BE3}
-pre{margin:0}pre code{display:block;padding:14px;overflow-x:auto;font-size:12px;line-height:1.7;color:#e2e8f0;white-space:pre;background:transparent}
+pre{margin:0}pre code{display:block;padding:14px;overflow-x:auto;overflow-y:auto;max-height:500px;font-size:12px;line-height:1.7;color:#e2e8f0;white-space:pre;background:transparent}
 .jk{color:#7CB9FF}.js{color:#6EE7B7}.jn{color:#f78c6c}.jb{color:#c792ea}
 
 /* Tables */
@@ -13385,24 +13385,21 @@ else{ct.textContent=''}
 function trackScroll(){
 var page=document.querySelector('.pg.ac');
 if(!page)return;
-var headings=page.querySelectorAll('h2[id],h3[id]');
-if(!headings.length)return;
-var scrollY=window.scrollY+140;
-var current=null;
-headings.forEach(function(h){
-if(h.offsetTop<=scrollY)current=h;
-});
-if(!current)return;
 var pid=page.id.replace('pg-','');
-var aid=current.id;
-var items=document.querySelectorAll('.ni.s1,.ni.s2');
-items.forEach(function(n){
-var np=n.getAttribute('data-p');
-var na=n.getAttribute('data-a');
-if(np===pid&&na===aid){
-items.forEach(function(x){if(x.getAttribute('data-p')===pid)x.classList.remove('ac')});
-n.classList.add('ac');
+var headings=Array.from(page.querySelectorAll('h2[id],h3[id]'));
+if(!headings.length)return;
+var current=null;
+for(var i=headings.length-1;i>=0;i--){
+var rect=headings[i].getBoundingClientRect();
+if(rect.top<=160){current=headings[i];break;}
 }
+if(!current)return;
+var aid=current.id;
+var items=document.querySelectorAll('.ni.s1[data-p="'+pid+'"],.ni.s2[data-p="'+pid+'"]');
+items.forEach(function(n){
+var na=n.getAttribute('data-a');
+if(na===aid){n.classList.add('ac');}
+else{n.classList.remove('ac');}
 });
 }
 window.addEventListener('scroll',function(){requestAnimationFrame(trackScroll)});
