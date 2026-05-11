@@ -166,73 +166,7 @@ tr.gr td{font-weight:600}
 <div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
 <a class="ni" data-p="codes" onclick="go('codes','Code Lists')">Code Lists</a>
-<a class="ni" data-p="limits" onclick="go('limits','API Limits')">API Limits</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send API for submitting invoices from your source system to ClearTax.</p><h2>Submission Flow</h2>
-<div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
-<svg viewBox="0 0 880 200" style="width:100%;max-width:820px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
-<!-- Your ERP -->
-<rect x="10" y="75" width="130" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
-<text x="75" y="99" text-anchor="middle" font-size="10" font-weight="600" fill="#2d3748">Your Source System</text>
-
-<!-- Arrow 1 -->
-<line x1="140" y1="95" x2="170" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-
-<!-- ClearTax API -->
-<rect x="170" y="75" width="110" height="40" rx="6" fill="#2D5BE3" stroke="#2D5BE3" stroke-width="1.5"/>
-<text x="225" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">ClearTax API</text>
-
-<!-- Arrow 2 -->
-<line x1="280" y1="95" x2="320" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-
-<!-- Validate -->
-<rect x="320" y="75" width="90" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
-<text x="365" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Validate</text>
-
-<!-- Branch point -->
-<!-- Upper branch: PPF -->
-<line x1="410" y1="85" x2="450" y2="40" stroke="#ed8936" stroke-width="1.5"/>
-<line x1="450" y1="40" x2="550" y2="40" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
-
-<!-- F6 label -->
-<text x="480" y="30" font-size="9" fill="#ed8936" font-weight="600">F6 (Status)</text>
-
-<!-- F1 branch -->
-<line x1="410" y1="88" x2="450" y2="60" stroke="#ed8936" stroke-width="1.5"/>
-<line x1="450" y1="60" x2="550" y2="60" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
-
-<!-- F1 label -->
-<text x="480" y="72" font-size="9" fill="#ed8936" font-weight="600">F1 (Tax Data)</text>
-
-<!-- PPF box -->
-<rect x="550" y="25" width="80" height="50" rx="6" fill="#fffff0" stroke="#ed8936" stroke-width="1.5"/>
-<text x="590" y="48" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">PPF</text>
-<text x="590" y="62" text-anchor="middle" font-size="8" fill="#975a16">(Government)</text>
-
-<!-- Lower branch: Peppol to Buyer -->
-<line x1="410" y1="105" x2="450" y2="150" stroke="#48bb78" stroke-width="1.5"/>
-<line x1="450" y1="150" x2="550" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-
-<!-- F2 label -->
-<text x="480" y="143" font-size="9" fill="#276749" font-weight="600">F2 (Invoice)</text>
-
-<!-- Peppol box -->
-<rect x="550" y="130" width="90" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
-<text x="595" y="154" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">Peppol</text>
-
-<!-- Arrow Peppol to Buyer -->
-<line x1="640" y1="150" x2="680" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-
-<!-- Buyer's PA -->
-<rect x="680" y="130" width="100" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
-<text x="730" y="154" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Buyer's PA</text>
-
-<!-- Arrow definitions -->
-<defs>
-<marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#a0aec0"/></marker>
-<marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#ed8936"/></marker>
-<marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#48bb78"/></marker>
-</defs>
-</svg>
-</div>
+<a class="ni" data-p="limits" onclick="go('limits','API Limits')">API Limits</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send and Receive APIs for France e-invoicing.</p>
 
 <h2>Methods and Endpoints</h2>
 <div class="tw"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th><th>Status</th></tr></thead><tbody>
@@ -252,7 +186,42 @@ tr.gr td{font-weight:600}
 <p>ClearTax validates every invoice before submission against ClearTax platform rules, France-specific Schematron rules (BR-FR), and Peppol business rules. Details can be found in the <a onclick="go('validations','Validations')">Validations</a> and <a onclick="go('errors','Error Messages')">Error Messages</a> pages.</p>
 <h2>Identity system</h2><div class="tw"><table><thead><tr><th>Identifier</th><th>Format</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><code>SIREN</code></td><td>9 digits</td><td>Legal entity identifier</td><td><code>732829320</code></td></tr><tr><td><code>SIRET</code></td><td>14 digits</td><td>14 numeric digits</td><td></td></tr></tbody></table></div></div>
 <div id="pg-auth" class="pg"><h1>Authentication</h1><p>All requests must include a valid auth token. Country-specific headers are documented in the <a onclick="go('send','Send e-Invoice','headers')">Send e-Invoice</a> section.</p><div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>User auth token. Unique per workspace.</td></tr><tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Must be <code>application/json</code></td></tr></tbody></table></div></div><div id="pg-env" class="pg"><h1>Environments</h1><div class="tw"><table><thead><tr><th>Environment</th><th>Base URL</th><th>Status</th></tr></thead><tbody><tr><td>Production</td><td><code>https://api.fr.cleartax.com</code></td><td><span class="bp">Under Development</span></td></tr></tbody></table></div>
-</div><div id="pg-send" class="pg"><div class="sb-lbl" style="color:#718096;margin-bottom:4px">SEND FLOW</div><h1>Send e-Invoice</h1><div class="ep"><div class="ep-h"><span class="mt mt-p">POST</span><span class="ep-u">/einvoice/v1/documents/send</span></div></div><p>Submit one or more invoice documents for validation and routing. ClearTax validates, transforms to UBL, files with PPF, and delivers via Peppol.</p><hr><h2 id="headers">Request Headers</h2><div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody><tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr><tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr><tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> for outbound invoices</td></tr><tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 9-digit SIREN. e.g. <code>732829320</code></td></tr><tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 14-digit SIRET</td></tr><tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr></tbody></table></div><hr><h2 id="body">Request Body</h2><p>The request body wraps one or more documents. The invoice data is <strong>Base64-encoded JSON</strong> inside <code>documentData</code>.</p><div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>documents</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>List of invoice documents.</td></tr><tr><td>documents[].documentData</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Base64-encoded JSON of the invoice object.</td></tr></tbody></table></div><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+</div><div id="pg-send" class="pg"><div class="sb-lbl" style="color:#718096;margin-bottom:4px">SEND FLOW</div><h1>Send e-Invoice</h1><div class="ep"><div class="ep-h"><span class="mt mt-p">POST</span><span class="ep-u">/einvoice/v1/documents/send</span></div></div><p>Submit one or more invoice documents for validation and routing. ClearTax validates, transforms to UBL, files with PPF, and delivers via Peppol.</p>
+<h2>Submission Flow</h2>
+<div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
+<svg viewBox="0 0 880 200" style="width:100%;max-width:820px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+<rect x="10" y="75" width="130" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="75" y="99" text-anchor="middle" font-size="10" font-weight="600" fill="#2d3748">Your Source System</text>
+<line x1="140" y1="95" x2="170" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<rect x="170" y="75" width="110" height="40" rx="6" fill="#2D5BE3" stroke="#2D5BE3" stroke-width="1.5"/>
+<text x="225" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">ClearTax API</text>
+<line x1="280" y1="95" x2="320" y2="95" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<rect x="320" y="75" width="90" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="365" y="99" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Validate</text>
+<line x1="410" y1="85" x2="450" y2="40" stroke="#ed8936" stroke-width="1.5"/>
+<line x1="450" y1="40" x2="550" y2="40" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+<text x="480" y="30" font-size="9" fill="#ed8936" font-weight="600">F6 (Status)</text>
+<line x1="410" y1="88" x2="450" y2="60" stroke="#ed8936" stroke-width="1.5"/>
+<line x1="450" y1="60" x2="550" y2="60" stroke="#ed8936" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+<text x="480" y="72" font-size="9" fill="#ed8936" font-weight="600">F1 (Tax Data)</text>
+<rect x="550" y="25" width="80" height="50" rx="6" fill="#fffff0" stroke="#ed8936" stroke-width="1.5"/>
+<text x="590" y="48" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">PPF</text>
+<text x="590" y="62" text-anchor="middle" font-size="8" fill="#975a16">(Government)</text>
+<line x1="410" y1="105" x2="450" y2="150" stroke="#48bb78" stroke-width="1.5"/>
+<line x1="450" y1="150" x2="550" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+<text x="480" y="143" font-size="9" fill="#276749" font-weight="600">F2 (Invoice)</text>
+<rect x="550" y="130" width="90" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
+<text x="595" y="154" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">Peppol</text>
+<line x1="640" y1="150" x2="680" y2="150" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+<rect x="680" y="130" width="100" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="730" y="154" text-anchor="middle" font-size="11" font-weight="600" fill="#2d3748">Buyer's PA</text>
+<defs>
+<marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#a0aec0"/></marker>
+<marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#ed8936"/></marker>
+<marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#48bb78"/></marker>
+</defs>
+</svg>
+</div><hr><h2 id="headers">Request Headers</h2><div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody><tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr><tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr><tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> for outbound invoices</td></tr><tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 9-digit SIREN. e.g. <code>732829320</code></td></tr><tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 14-digit SIRET</td></tr><tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr></tbody></table></div><hr><h2 id="body">Request Body</h2><p>The request body wraps one or more documents. The invoice data is <strong>Base64-encoded JSON</strong> inside <code>documentData</code>.</p><div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>documents</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>List of invoice documents.</td></tr><tr><td>documents[].documentData</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Base64-encoded JSON of the invoice object.</td></tr></tbody></table></div><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"documents"</span>: [
     {
       <span class="jk">"documentData"</span>: <span class="js">"eyJpZCI6IklOVi0wMDEiLC4uLn0="</span>
