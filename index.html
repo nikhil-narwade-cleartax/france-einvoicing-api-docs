@@ -4720,75 +4720,54 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-</div><div id="pg-receive" class="pg">
-<h1>Receive e-Invoice</h1>
-<p>ClearTax receives invoices from your suppliers via Peppol, validates and normalises them, and makes them available for you to pull into your system. ClearTax acts as your PA (C3) &mdash; handling format detection (UBL, CII, Factur-X), schema validation, and storage on your behalf.</p>
+</div><div id="pg-receive" class="pg"><div class="sb-lbl" style="color:#718096;margin-bottom:4px">RECEIVE FLOW</div><h1>Receive e-Invoice</h1><div class="ep"><div class="ep-h"><span class="mt mt-g">GET</span><span class="ep-u">/einvoice/v1/documents/query</span></div></div><p>ClearTax receives invoices from your suppliers via Peppol, validates and normalises them, and makes them available for you to pull into your system. ClearTax acts as your PA (C3) &mdash; handling format detection (UBL, CII, Factur-X), schema validation, and storage on your behalf.</p>
 
-<!-- How It Works -->
-<h2 id="receive-how">How It Works</h2>
+<h2 id="receive-how">Receive Flow</h2>
 <div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
 <svg viewBox="0 0 580 80" style="width:100%;max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
-<!-- Peppol -->
 <rect x="10" y="20" width="90" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
 <text x="55" y="44" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">Peppol</text>
-<!-- Arrow to ClearTax -->
 <line x1="100" y1="40" x2="140" y2="40" stroke="#48bb78" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-<!-- ClearTax PA (C3) -->
 <rect x="140" y="15" width="150" height="50" rx="6" fill="#2D5BE3" stroke="#2D5BE3" stroke-width="1.5"/>
 <text x="215" y="37" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">ClearTax PA (C3)</text>
 <text x="215" y="52" text-anchor="middle" font-size="8" fill="#dbeafe">Validate &bull; Normalise &bull; Store</text>
-<!-- Arrow to Your System -->
 <line x1="290" y1="40" x2="370" y2="40" stroke="#a0aec0" stroke-width="1.5" marker-end="url(#arrowhead)"/>
 <text x="330" y="33" text-anchor="middle" font-size="9" fill="#718096" font-weight="600">API Pull</text>
-<!-- Your System -->
 <rect x="370" y="20" width="130" height="40" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
 <text x="435" y="44" text-anchor="middle" font-size="10" font-weight="600" fill="#2d3748">Your System (C4)</text>
 </svg>
 </div>
 
-<p>ClearTax receives invoices from the seller's platform via Peppol AS4, validates and normalises them (UBL, CII, or Factur-X), and makes them available for retrieval via the Query API. Your system polls <code>GET /einvoice/v1/documents/query</code> with <code>einvoice-type=PURCHASE</code> to fetch received invoices by date range.</p>
-
-<!-- ================================================================ -->
-<!-- QUERY PURCHASE DOCUMENTS -->
-<!-- ================================================================ -->
-<h2 id="receive-query">Query Purchase Documents</h2>
-<p>Retrieve a list of purchase e-invoice documents filtered by date range. Use this endpoint to pull received invoices into your ERP or accounting system.</p>
-
-<div style="margin:16px 0;padding:12px 16px;background:#f0fff4;border-radius:8px;border:1px solid #c6f6d5;display:flex;align-items:center;gap:10px">
-<span class="mt mt-g" style="flex-shrink:0">GET</span>
-<code style="font-size:14px;font-weight:600;color:#276749">/einvoice/v1/documents/query</code>
-</div>
-
-<h3 id="receive-query-headers">Request Headers</h3>
-<div class="tw"><table><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>x-cleartax-auth-token</code></td><td>String</td><td>Yes</td><td>Authentication token. Format: <code>1.{token_value}</code></td></tr>
-<tr><td><code>x-clear-country-code</code></td><td>String</td><td>Yes</td><td>Country code. Must be <code>FR</code> for France.</td></tr>
-<tr><td><code>x-clear-siren</code></td><td>String</td><td>Yes</td><td>9-digit SIREN of the buyer entity querying received invoices.</td></tr>
-<tr><td><code>einvoice-type</code></td><td>String</td><td>Yes</td><td>Must be <code>PURCHASE</code> for the receive flow.</td></tr>
+<hr><h2 id="receive-query-headers">Request Headers</h2>
+<div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
+<tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Authentication token. Format: <code>1.{token_value}</code></td></tr>
+<tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr>
+<tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN of the buyer entity. e.g. <code>784671695</code></td></tr>
+<tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code></td></tr>
 </tbody></table></div>
 
-<h3 id="receive-query-params">Query Parameters</h3>
-<div class="tw"><table><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>einvoice-type</code></td><td>String</td><td>Yes</td><td>Must be <code>PURCHASE</code>.</td></tr>
-<tr><td><code>start-date</code></td><td>String</td><td>Yes</td><td>Start of date range. Format: <code>YYYY-MM-DD</code>.</td></tr>
-<tr><td><code>end-date</code></td><td>String</td><td>Yes</td><td>End of date range. Format: <code>YYYY-MM-DD</code>.</td></tr>
-<tr><td><code>page-number</code></td><td>Integer</td><td>No</td><td>Page index for pagination. <span style="color:#718096">Pending confirmation from engineering.</span></td></tr>
-<tr><td><code>page-size</code></td><td>Integer</td><td>No</td><td>Number of results per page. <span style="color:#718096">Pending confirmation from engineering.</span></td></tr>
-<tr><td><code>status</code></td><td>String</td><td>No</td><td>Filter by invoice lifecycle status. <span style="color:#718096">Pending confirmation from engineering.</span></td></tr>
+<hr><h2 id="receive-query-params">Query Parameters</h2>
+<div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code></td></tr>
+<tr><td>start-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Start of date range. Format: <code>YYYY-MM-DD</code></td></tr>
+<tr><td>end-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>End of date range. Format: <code>YYYY-MM-DD</code></td></tr>
+<tr><td>page-number</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Page index for pagination. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
+<tr><td>page-size</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Number of results per page. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
+<tr><td>status</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-opt">Optional</span></td><td>Filter by lifecycle status. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
 </tbody></table></div>
-<div class="co co-w"><strong>Pending from engineering:</strong> Full list of supported query parameters (filters by invoice number, seller SIREN, invoice type, status), maximum date range, pagination behaviour (0-based vs 1-based, default/max page size), and default sort order.</div>
+<div class="co co-w"><strong>Pending from engineering:</strong> Full list of supported query parameters, maximum date range, pagination behaviour, and default sort order.</div>
 
-<h3 id="receive-query-sample">Sample Request</h3>
+<hr><h2 id="receive-query-sample">Sample Request</h2>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
-<pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents/query?einvoice-type=PURCHASE&start-date=2026-04-28&end-date=2026-04-30' \
+<pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents/query?einvoice-type=PURCHASE&amp;start-date=2026-04-28&amp;end-date=2026-04-30' \
 --header 'x-clear-country-code: FR' \
 --header 'x-clear-siren: 784671695' \
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}'</code></pre></div>
 
-<h3 id="receive-query-response">Response</h3>
-<h4>Success Response</h4>
-<div class="co co-w"><strong>Pending from engineering:</strong> Sample success response JSON showing the full structure of returned purchase documents. Expected to include document metadata (DocumentId, invoice number, status, dates) and the invoice payload in the same PINT JSON format as the Send flow.</div>
+<hr><h2 id="receive-query-response">Response</h2>
+<h3>Success Response</h3>
+<div class="co co-w"><strong>Pending from engineering:</strong> Sample success response JSON. Expected to include document metadata and the invoice payload in PINT JSON format (same field structure as Send flow).</div>
 
 <p>Based on the ClearTax platform pattern, the response is expected to follow this structure:</p>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">Expected Response Structure (to be confirmed)</span></div>
@@ -4808,30 +4787,17 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-<h4>Error Responses</h4>
-<div class="tw"><table><thead><tr><th>HTTP Status</th><th>Condition</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>400</code></td><td>Bad Request</td><td>Missing required parameters (<code>start-date</code>, <code>end-date</code>), invalid date format, or date range exceeds maximum allowed.</td></tr>
+<h3>Error Responses</h3>
+<div class="tw"><table class="ht"><thead><tr><th>HTTP Status</th><th>Condition</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>400</code></td><td>Bad Request</td><td>Missing required parameters (<code>start-date</code>, <code>end-date</code>), invalid date format, or date range exceeds maximum.</td></tr>
 <tr><td><code>401</code></td><td>Unauthorized</td><td>Missing or invalid <code>x-cleartax-auth-token</code>.</td></tr>
-<tr><td><code>403</code></td><td>Forbidden</td><td>Valid token but user does not have the required role to query purchase documents.</td></tr>
+<tr><td><code>403</code></td><td>Forbidden</td><td>Valid token but user lacks the required role to query purchase documents.</td></tr>
 </tbody></table></div>
 <div class="co co-w"><strong>Pending from engineering:</strong> Sample error response JSON for 400, 401, and 403 scenarios.</div>
 
-
-
-<!-- ================================================================ -->
-<!-- RESPONSE FIELD REFERENCE -->
-<!-- ================================================================ -->
-<h2>Response Field Reference</h2>
-<p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, "Mandatory" means the field will always be present in the response; "Optional" means it may or may not be present depending on what the seller included.</p>
-<p>Refer to the <a href="#" onclick="go('send','Send e-Invoice','schema');return false" style="color:#2D5BE3;text-decoration:underline">Send Flow &mdash; Request Schema</a> for the complete field reference. The JSON paths, data types, and descriptions are identical.</p>
-
-<h3>Download Formats</h3>
-<p>When retrieving a received invoice, the following downloads are available depending on the original format:</p>
-<div class="tw"><table><thead><tr><th>Original Format</th><th>Available Downloads</th></tr></thead><tbody>
-<tr><td>UBL 2.1</td><td>Original UBL XML</td></tr>
-<tr><td>CII</td><td>Original CII XML + ClearTax-generated UBL 2.1</td></tr>
-<tr><td>Factur-X</td><td>Original PDF/A-3 + Extracted XML (CII or UBL) + ClearTax-generated UBL 2.1</td></tr>
-</tbody></table></div>
+<hr><h2>Response Field Reference</h2>
+<p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, &ldquo;Mandatory&rdquo; means the field will always be present; &ldquo;Optional&rdquo; means it may or may not be present depending on what the seller included.</p>
+<p>Refer to the <a href="#" onclick="go('send','Send e-Invoice','schema');return false" style="color:#2D5BE3;text-decoration:underline">Send Flow &mdash; Request Schema</a> for the complete field reference.</p>
 
 </div>
 
