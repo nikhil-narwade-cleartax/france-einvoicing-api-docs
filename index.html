@@ -157,6 +157,7 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="receive" data-a="receive-query-params" onclick="go('receive','Receive e-Invoice','receive-query-params')">Query Parameters</a>
 <a class="ni s2" data-p="receive" data-a="receive-query-sample" onclick="go('receive','Receive e-Invoice','receive-query-sample')">Sample Request</a>
 <a class="ni s2" data-p="receive" data-a="receive-query-response" onclick="go('receive','Receive e-Invoice','receive-query-response')">Sample Response</a>
+<a class="ni s1" data-p="receive" data-a="receive-getdoc" onclick="go('receive','Receive e-Invoice','receive-getdoc')">Get Document <span class="post" style="background:#48bb78">GET</span></a>
 </div>
 <div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -4729,13 +4730,12 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <hr><h2 id="receive-query-params">Query Parameters</h2>
 <div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
 <tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code></td></tr>
-<tr><td>start-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Start of date range. Format: <code>YYYY-MM-DD</code></td></tr>
-<tr><td>end-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>End of date range. Format: <code>YYYY-MM-DD</code></td></tr>
-<tr><td>page-number</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Page index for pagination. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
-<tr><td>page-size</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Number of results per page. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
-<tr><td>status</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-opt">Optional</span></td><td>Filter by lifecycle status. <span style="color:#a0aec0;font-style:italic">Pending from engineering.</span></td></tr>
+<tr><td>start-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Start of date range. Format: <code>YYYY-MM-DD</code>. No maximum date range limit.</td></tr>
+<tr><td>end-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>End of date range. Format: <code>YYYY-MM-DD</code>. No maximum date range limit.</td></tr>
+<tr><td>page-number</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>0-based page index. Default: <code>0</code></td></tr>
+<tr><td>page-size</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Number of results per page. Default: <code>100</code></td></tr>
 </tbody></table></div>
-<div class="co co-w"><strong>Pending from engineering:</strong> Full list of supported query parameters, maximum date range, pagination behaviour, and default sort order.</div>
+<p style="font-size:12px;color:#718096;margin-top:8px"><strong>Sort order:</strong> Results sorted by <code>documentId</code> (by <code>receivedTime</code> for inbound documents).</p>
 
 <hr><h2 id="receive-query-sample">Sample Request</h2>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
@@ -4745,8 +4745,92 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}'</code></pre></div>
 
-<hr><h2 id="receive-query-response">Response</h2>
-<div class="co co-w"><strong>Pending from engineering:</strong> Success response schema, error response schema, and sample JSON for all scenarios.</div>
+<hr><h2 id="receive-query-response">Sample Response</h2>
+
+<h3>Success (200 OK)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"Documents"</span>: [
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"69f9de833d765e54659a9c87"</span>,
+      <span class="jk">"DocumentNumber"</span>: <span class="js">"INV-FR-2026-FULL-010"</span>,
+      <span class="jk">"Status"</span>: <span class="js">"ACKNOWLEDGED"</span>,
+      <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>
+    },
+    {
+      <span class="jk">"DocumentId"</span>: <span class="js">"69f9e2cd35838511b64053b9"</span>,
+      <span class="jk">"DocumentNumber"</span>: <span class="js">"INV-FR-2026-FULL-011"</span>,
+      <span class="jk">"Status"</span>: <span class="js">"ACCEPTED"</span>,
+      <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>
+    }
+  ],
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"PageNumber"</span>: <span class="jn">0</span>,
+  <span class="jk">"PageSize"</span>: <span class="jn">2</span>
+}</code></pre></div>
+
+<h3>Response Fields</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Success</td><td><span class="tp tp-text">String</span></td><td><code>"true"</code> if the request was successful.</td></tr>
+<tr><td>Documents</td><td><span class="tp tp-code">Array</span></td><td>List of matching purchase documents. Empty array <code>[]</code> if no documents match.</td></tr>
+<tr><td>Documents[].DocumentId</td><td><span class="tp tp-id">String</span></td><td>ClearTax internal document ID.</td></tr>
+<tr><td>Documents[].DocumentNumber</td><td><span class="tp tp-id">String</span></td><td>Invoice number as submitted by the seller.</td></tr>
+<tr><td>Documents[].Status</td><td><span class="tp tp-code">Enum</span></td><td>Current lifecycle status (e.g. <code>ACKNOWLEDGED</code>, <code>ACCEPTED</code>).</td></tr>
+<tr><td>Documents[].ErrorDetails</td><td><span class="tp tp-text">Object</span></td><td>Error details if applicable. <code>null</code> when no errors.</td></tr>
+<tr><td>ErrorDetails</td><td><span class="tp tp-text">Object</span></td><td>Request-level error details. <code>null</code> on success.</td></tr>
+<tr><td>PageNumber</td><td><span class="tp tp-text">Integer</span></td><td>Current page index (0-based).</td></tr>
+<tr><td>PageSize</td><td><span class="tp tp-text">Integer</span></td><td>Number of documents returned in this page.</td></tr>
+</tbody></table></div>
+
+<h3>Empty Response (no matching documents)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"Documents"</span>: [],
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
+  <span class="jk">"PageNumber"</span>: <span class="jn">0</span>,
+  <span class="jk">"PageSize"</span>: <span class="jn">0</span>
+}</code></pre></div>
+
+<h3>Error Responses</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Invalid filter request</span></div>
+<pre><code>{
+  <span class="jk">"success"</span>: <span class="jb">false</span>,
+  <span class="jk">"documents"</span>: <span class="jb">null</span>,
+  <span class="jk">"errorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"300108"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Invalid filter request"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ],
+  <span class="jk">"paginationMetadata"</span>: <span class="jb">null</span>
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Invalid date range</span></div>
+<pre><code>{
+  <span class="jk">"success"</span>: <span class="jb">false</span>,
+  <span class="jk">"documents"</span>: <span class="jb">null</span>,
+  <span class="jk">"errorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"300107"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Invalid date range in filter"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="js">"filterMetaDataList[0].value"</span>
+    }
+  ],
+  <span class="jk">"paginationMetadata"</span>: <span class="jb">null</span>
+}</code></pre></div>
+
+<div class="tw"><table class="ht"><thead><tr><th>Error Code</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>300107</code></td><td>Invalid date range in filter</td></tr>
+<tr><td><code>300108</code></td><td>Invalid filter request</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="receive-getdoc">Get Document</h2>
+<div class="co co-w"><strong>Pending from engineering:</strong> Endpoint URL, request parameters, and sample request/response for fetching a single purchase document by its document ID or document number.</div>
 
 <hr><h2>Response Field Reference</h2>
 <p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, &ldquo;Mandatory&rdquo; means the field will always be present; &ldquo;Optional&rdquo; means it may or may not be present depending on what the seller included.</p>
