@@ -4766,34 +4766,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'x-cleartax-auth-token: {your_auth_token}'</code></pre></div>
 
 <hr><h2 id="receive-query-response">Response</h2>
-<h3>Success Response</h3>
-<div class="co co-w"><strong>Pending from engineering:</strong> Sample success response JSON. Expected to include document metadata and the invoice payload in PINT JSON format (same field structure as Send flow).</div>
-
-<p>Based on the ClearTax platform pattern, the response is expected to follow this structure:</p>
-<div class="cbl"><div class="cbl-h"><span class="cbl-l">Expected Response Structure (to be confirmed)</span></div>
-<pre><code>{
-  <span class="jk">"Success"</span>: <span class="jb">true</span>,
-  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>,
-  <span class="jk">"DocumentResponses"</span>: [
-    {
-      <span class="jk">"DocumentId"</span>: <span class="js">"..."</span>,
-      <span class="jk">"UniqueId"</span>: <span class="js">"..."</span>,
-      <span class="jk">"Success"</span>: <span class="jb">true</span>,
-      <span class="jk">"ErrorDetails"</span>: [],
-      <span class="jk">"WarningDetails"</span>: <span class="jb">null</span>,
-      <span class="jc">// Full invoice data in PINT JSON format</span>
-      <span class="jc">// (same field structure as Send flow)</span>
-    }
-  ]
-}</code></pre></div>
-
-<h3>Error Responses</h3>
-<div class="tw"><table class="ht"><thead><tr><th>HTTP Status</th><th>Condition</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>400</code></td><td>Bad Request</td><td>Missing required parameters (<code>start-date</code>, <code>end-date</code>), invalid date format, or date range exceeds maximum.</td></tr>
-<tr><td><code>401</code></td><td>Unauthorized</td><td>Missing or invalid <code>x-cleartax-auth-token</code>.</td></tr>
-<tr><td><code>403</code></td><td>Forbidden</td><td>Valid token but user lacks the required role to query purchase documents.</td></tr>
-</tbody></table></div>
-<div class="co co-w"><strong>Pending from engineering:</strong> Sample error response JSON for 400, 401, and 403 scenarios.</div>
+<div class="co co-w"><strong>Pending from engineering:</strong> Success response schema, error response schema, and sample JSON for all scenarios.</div>
 
 <hr><h2>Response Field Reference</h2>
 <p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, &ldquo;Mandatory&rdquo; means the field will always be present; &ldquo;Optional&rdquo; means it may or may not be present depending on what the seller included.</p>
