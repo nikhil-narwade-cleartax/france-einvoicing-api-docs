@@ -901,739 +901,739 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   }]
 }</code></pre></div><hr><h2 id="sample-payload">Sample Payload</h2>
 <h3 id="sample-380">Invoice (380)</h3><p>Complete invoice (380) &mdash; this is the JSON that gets Base64-encoded into <code>documentData</code>.</p><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Invoice Object (DocumentData decoded)</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
-  &quot;supplyType&quot;: &quot;B2B&quot;,
-  &quot;id&quot;: &quot;INV-FR-2026-FULL-2016&quot;,
-  &quot;customizationID&quot;: &quot;urn:cen.eu:en16931: <span class="jn">2017</span>#compliant#urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">3.0</span>&quot;,
-  &quot;profileID&quot;: &quot;urn:fdc:peppol.eu: <span class="jn">2017</span>:poacc:billing: <span class="jn">01</span>: <span class="jn">1.0</span>&quot;,
-  &quot;uuid&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-  &quot;issueDate&quot;: &quot;2026-04-15&quot;,
-  &quot;dueDate&quot;: &quot;2026-04-15&quot;,
-  &quot;invoiceTypeCode&quot;: {
-    &quot;value&quot;: &quot;380&quot;,
-    &quot;name&quot;: &quot;Commercial Invoice&quot;
+  <span class="jk">"supplyType"</span>: <span class="js">"B2B"</span>,
+  <span class="jk">"id"</span>: <span class="js">"INV-FR-2026-FULL-2016"</span>,
+  <span class="jk">"customizationID"</span>: <span class="js">"urn:cen.eu:en16931: 2017#compliant#urn:fdc:peppol.eu: 2017:poacc:billing: 3.0"</span>,
+  <span class="jk">"profileID"</span>: <span class="js">"urn:fdc:peppol.eu: 2017:poacc:billing: 01: 1.0"</span>,
+  <span class="jk">"uuid"</span>: <span class="js">"550e8400-e29b-41d4-a716-446655440000"</span>,
+  <span class="jk">"issueDate"</span>: <span class="js">"2026-04-15"</span>,
+  <span class="jk">"dueDate"</span>: <span class="js">"2026-04-15"</span>,
+  <span class="jk">"invoiceTypeCode"</span>: {
+    <span class="jk">"value"</span>: <span class="js">"380"</span>,
+    <span class="jk">"name"</span>: <span class="js">"Commercial Invoice"</span>
   },
-  &quot;documentCurrencyCode&quot;: &quot;EUR&quot;,
-  &quot;notes&quot;: [
+  <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+  <span class="jk">"notes"</span>: [
     {
-      &quot;value&quot;: &quot;#REG#ACME France SARL - RCS PARIS 123456789 - TVA FR12345678901 - Capital 10000 EUR - Penalites retard: <span class="jn">3</span>x taux legal - Indemnite recouvrement: <span class="jn">40</span> EUR - Pas d'escompte&quot;
+      <span class="jk">"value"</span>: <span class="js">"#REG#ACME France SARL - RCS PARIS 123456789 - TVA FR12345678901 - Capital 10000 EUR - Penalites retard: 3x taux legal - Indemnite recouvrement: 40 EUR - Pas d'escompte"</span>
     }
   ],
-  &quot;accountingCost&quot;: &quot;ACCT-COST-001&quot;,
-  &quot;buyerReference&quot;: &quot;BUYER-REF-2025-001&quot;,
-  &quot;invoicePeriod&quot;: {
-    &quot;startDate&quot;: &quot;2026-04-01&quot;,
-    &quot;endDate&quot;: &quot;2026-05-15&quot;,
-    &quot;descriptionCode&quot;: &quot;35&quot;
+  <span class="jk">"accountingCost"</span>: <span class="js">"ACCT-COST-001"</span>,
+  <span class="jk">"buyerReference"</span>: <span class="js">"BUYER-REF-2025-001"</span>,
+  <span class="jk">"invoicePeriod"</span>: {
+    <span class="jk">"startDate"</span>: <span class="js">"2026-04-01"</span>,
+    <span class="jk">"endDate"</span>: <span class="js">"2026-05-15"</span>,
+    <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
   },
-  &quot;orderReference&quot;: {
-    &quot;id&quot;: &quot;PO-2025-00123&quot;,
-    &quot;salesOrderID&quot;: &quot;SO-2025-00456&quot;
+  <span class="jk">"orderReference"</span>: {
+    <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+    <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
   },
-  &quot;billingReference&quot;: [
+  <span class="jk">"billingReference"</span>: [
     {
-      &quot;additionalDocumentReference&quot;: {
-        &quot;id&quot;: &quot;INV-FR-2024-00100&quot;,
-        &quot;issueDate&quot;: &quot;2024-12-15&quot;,
-        &quot;documentStatusCode&quot;: &quot;ORIGINAL&quot;,
-        &quot;documentTypeCode&quot;: &quot;380&quot;
+      <span class="jk">"additionalDocumentReference"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+        <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+        <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>,
+        <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>
       },
-      &quot;billingReferenceLine&quot;: {
-        &quot;id&quot;: &quot;1&quot;,
-        &quot;amount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">1000.0</span>
+      <span class="jk">"billingReferenceLine"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"1"</span>,
+        <span class="jk">"amount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">1000.0</span>
         }
       }
     }
   ],
-  &quot;despatchDocumentReference&quot;: [
+  <span class="jk">"despatchDocumentReference"</span>: [
     {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;DESP-2025-001&quot;
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"DESP-2025-001"</span>
       }
     }
   ],
-  &quot;receiptDocumentReference&quot;: [
+  <span class="jk">"receiptDocumentReference"</span>: [
     {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;RCPT-2025-001&quot;
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"RCPT-2025-001"</span>
       }
     }
   ],
-  &quot;originatorDocumentReference&quot;: [
+  <span class="jk">"originatorDocumentReference"</span>: [
     {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;ORIG-2025-001&quot;
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"ORIG-2025-001"</span>
       }
     }
   ],
-  &quot;contractDocumentReferences&quot;: [
+  <span class="jk">"contractDocumentReferences"</span>: [
     {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;CONTRACT-2025-001&quot;
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"CONTRACT-2025-001"</span>
       },
-      &quot;documentType&quot;: &quot;CONTRAT&quot;
+      <span class="jk">"documentType"</span>: <span class="js">"CONTRAT"</span>
     }
   ],
-  &quot;projectReference&quot;: [
+  <span class="jk">"projectReference"</span>: [
     {
-      &quot;id&quot;: &quot;PROJECT-2025-001&quot;
+      <span class="jk">"id"</span>: <span class="js">"PROJECT-2025-001"</span>
     }
   ],
-  &quot;deliveryTerms&quot;: {
-    &quot;id&quot;: &quot;DAP&quot;,
-    &quot;schemeID&quot;: &quot;INCOTERMS&quot;,
-    &quot;deliveryLocation&quot;: {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;LOC-TERMS-001&quot;
+  <span class="jk">"deliveryTerms"</span>: {
+    <span class="jk">"id"</span>: <span class="js">"DAP"</span>,
+    <span class="jk">"schemeID"</span>: <span class="js">"INCOTERMS"</span>,
+    <span class="jk">"deliveryLocation"</span>: {
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"LOC-TERMS-001"</span>
       },
-      &quot;address&quot;: {
-        &quot;cityName&quot;: &quot;Nantes&quot;,
-        &quot;country&quot;: {
-          &quot;identificationCode&quot;: {
-            &quot;countryCode&quot;: &quot;FRA&quot;
+      <span class="jk">"address"</span>: {
+        <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
           }
         }
       }
     }
   },
-  &quot;accountingSupplierParty&quot;: {
-    &quot;party&quot;: {
-      &quot;endPointID&quot;: {
-        &quot;schemeID&quot;: &quot;0225&quot;,
-        &quot;value&quot;: &quot;119821782&quot;
+  <span class="jk">"accountingSupplierParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+        <span class="jk">"value"</span>: <span class="js">"119821782"</span>
       },
-      &quot;partyIdentification&quot;: [
+      <span class="jk">"partyIdentification"</span>: [
         {
-          &quot;id&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;123456789&quot;
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"123456789"</span>
           }
         }
       ],
-      &quot;partyName&quot;: {
-        &quot;name&quot;: &quot;ACME France SARL&quot;
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"ACME France SARL"</span>
       },
-      &quot;postalAddress&quot;: {
-        &quot;streetName&quot;: &quot;123 Rue de la Paix&quot;,
-        &quot;additionalStreetName&quot;: &quot;Building A, Floor 3&quot;,
-        &quot;cityName&quot;: &quot;Paris&quot;,
-        &quot;postalZone&quot;: &quot;75001&quot;,
-        &quot;countrySubentity&quot;: &quot;Ile-de-France&quot;,
-        &quot;addressLine&quot;: [
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"123 Rue de la Paix"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Building A, Floor 3"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+        <span class="jk">"addressLine"</span>: [
           {
-            &quot;line&quot;: &quot;Near Louvre Museum&quot;
+            <span class="jk">"line"</span>: <span class="js">"Near Louvre Museum"</span>
           }
         ],
-        &quot;country&quot;: {
-          &quot;identificationCode&quot;: {
-            &quot;countryCode&quot;: &quot;FRA&quot;
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
           }
         }
       },
-      &quot;partyTaxScheme&quot;: [
+      <span class="jk">"partyTaxScheme"</span>: [
         {
-          &quot;companyID&quot;: &quot;732829320&quot;,
-          &quot;taxScheme&quot;: {
-            &quot;id&quot;: {
-              &quot;value&quot;: &quot;VAT&quot;
+          <span class="jk">"companyID"</span>: <span class="js">"732829320"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
             }
           }
         }
       ],
-      &quot;partyLegalEntity&quot;: {
-        &quot;registrationName&quot;: &quot;ACME France SARL&quot;,
-        &quot;companyID&quot;: {
-          &quot;schemeID&quot;: &quot;_0002&quot;,
-          &quot;value&quot;: &quot;123456789&quot;
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"ACME France SARL"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+          <span class="jk">"value"</span>: <span class="js">"123456789"</span>
         },
-        &quot;companyLegalForm&quot;: &quot;SARL au capital de 10000 EUR&quot;
+        <span class="jk">"companyLegalForm"</span>: <span class="js">"SARL au capital de 10000 EUR"</span>
       },
-      &quot;contact&quot;: {
-        &quot;name&quot;: &quot;Jean Dupont&quot;,
-        &quot;telephone&quot;: &quot;+33 1 23 45 67 89&quot;,
-        &quot;electronicMail&quot;: &quot;jean.dupont@acme-france.fr&quot;
+      <span class="jk">"contact"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Jean Dupont"</span>,
+        <span class="jk">"telephone"</span>: <span class="js">"+33 1 23 45 67 89"</span>,
+        <span class="jk">"electronicMail"</span>: <span class="js">"jean.dupont@acme-france.fr"</span>
       },
-      &quot;agentParty&quot;: {
-        &quot;endPointID&quot;: {
-          &quot;schemeID&quot;: &quot;0225&quot;,
-          &quot;value&quot;: &quot;119821782&quot;
+      <span class="jk">"agentParty"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+          <span class="jk">"value"</span>: <span class="js">"119821782"</span>
         },
-        &quot;industryClassificationCode&quot;: {
-          &quot;name&quot;: &quot;Sales Agent&quot;,
-          &quot;listID&quot;: &quot;ROLE&quot;,
-          &quot;value&quot;: &quot;AGENT&quot;
+        <span class="jk">"industryClassificationCode"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Sales Agent"</span>,
+          <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+          <span class="jk">"value"</span>: <span class="js">"AGENT"</span>
         },
-        &quot;partyIdentification&quot;: [
+        <span class="jk">"partyIdentification"</span>: [
           {
-            &quot;id&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;987654321&quot;
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"987654321"</span>
             }
           }
         ],
-        &quot;partyName&quot;: {
-          &quot;name&quot;: &quot;Agent Commercial France&quot;
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Agent Commercial France"</span>
         },
-        &quot;postalAddress&quot;: {
-          &quot;streetName&quot;: &quot;456 Avenue des Champs-Elysees&quot;,
-          &quot;additionalStreetName&quot;: &quot;Suite 200&quot;,
-          &quot;cityName&quot;: &quot;Paris&quot;,
-          &quot;postalZone&quot;: &quot;75008&quot;,
-          &quot;countrySubentity&quot;: &quot;Ile-de-France&quot;,
-          &quot;addressLine&quot;: [
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"456 Avenue des Champs-Elysees"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 200"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"75008"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+          <span class="jk">"addressLine"</span>: [
             {
-              &quot;line&quot;: &quot;Etage 2&quot;
+              <span class="jk">"line"</span>: <span class="js">"Etage 2"</span>
             }
           ],
-          &quot;country&quot;: {
-            &quot;identificationCode&quot;: {
-              &quot;countryCode&quot;: &quot;FRA&quot;
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
             }
           }
         },
-        &quot;partyTaxScheme&quot;: [
+        <span class="jk">"partyTaxScheme"</span>: [
           {
-            &quot;companyID&quot;: &quot;784671695&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"companyID"</span>: <span class="js">"784671695"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;partyLegalEntity&quot;: {
-          &quot;registrationName&quot;: &quot;Agent Commercial France SAS&quot;,
-          &quot;companyID&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;987654321&quot;
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Agent Commercial France SAS"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"987654321"</span>
           }
         },
-        &quot;contact&quot;: {
-          &quot;name&quot;: &quot;Marie Martin&quot;,
-          &quot;telephone&quot;: &quot;+33 1 98 76 54 32&quot;,
-          &quot;electronicMail&quot;: &quot;marie.martin@agent-france.fr&quot;
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Marie Martin"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 1 98 76 54 32"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"marie.martin@agent-france.fr"</span>
         }
       },
-      &quot;serviceProviderParty&quot;: {
-        &quot;endPointID&quot;: {
-          &quot;schemeID&quot;: &quot;0225&quot;,
-          &quot;value&quot;: &quot;119821782&quot;
+      <span class="jk">"serviceProviderParty"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+          <span class="jk">"value"</span>: <span class="js">"119821782"</span>
         },
-        &quot;industryClassificationCode&quot;: {
-          &quot;name&quot;: &quot;Billing Service&quot;,
-          &quot;listID&quot;: &quot;ROLE&quot;,
-          &quot;value&quot;: &quot;BILLING&quot;
+        <span class="jk">"industryClassificationCode"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Billing Service"</span>,
+          <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+          <span class="jk">"value"</span>: <span class="js">"BILLING"</span>
         },
-        &quot;partyIdentification&quot;: [
+        <span class="jk">"partyIdentification"</span>: [
           {
-            &quot;id&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;111222333&quot;
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"111222333"</span>
             }
           }
         ],
-        &quot;partyName&quot;: {
-          &quot;name&quot;: &quot;Facturation Pro France&quot;
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Facturation Pro France"</span>
         },
-        &quot;postalAddress&quot;: {
-          &quot;streetName&quot;: &quot;789 Boulevard Haussmann&quot;,
-          &quot;additionalStreetName&quot;: &quot;Suite 100&quot;,
-          &quot;cityName&quot;: &quot;Paris&quot;,
-          &quot;postalZone&quot;: &quot;75009&quot;,
-          &quot;countrySubentity&quot;: &quot;Ile-de-France&quot;,
-          &quot;addressLine&quot;: [
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"789 Boulevard Haussmann"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Suite 100"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"75009"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Ile-de-France"</span>,
+          <span class="jk">"addressLine"</span>: [
             {
-              &quot;line&quot;: &quot;Business Center&quot;
+              <span class="jk">"line"</span>: <span class="js">"Business Center"</span>
             }
           ],
-          &quot;country&quot;: {
-            &quot;identificationCode&quot;: {
-              &quot;countryCode&quot;: &quot;FRA&quot;
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
             }
           }
         },
-        &quot;partyTaxScheme&quot;: [
+        <span class="jk">"partyTaxScheme"</span>: [
           {
-            &quot;companyID&quot;: &quot;FR11122233344&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"companyID"</span>: <span class="js">"FR11122233344"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;partyLegalEntity&quot;: {
-          &quot;registrationName&quot;: &quot;Facturation Pro France SA&quot;,
-          &quot;companyID&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;111222333&quot;
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Facturation Pro France SA"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"111222333"</span>
           }
         },
-        &quot;contact&quot;: {
-          &quot;name&quot;: &quot;Pierre Bernard&quot;,
-          &quot;telephone&quot;: &quot;+33 1 11 22 33 44&quot;,
-          &quot;electronicMail&quot;: &quot;pierre.bernard@facturation-pro.fr&quot;
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Pierre Bernard"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 1 11 22 33 44"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"pierre.bernard@facturation-pro.fr"</span>
         }
       }
     }
   },
-  &quot;accountingCustomerParty&quot;: {
-    &quot;party&quot;: {
-      &quot;endPointID&quot;: {
-        &quot;schemeID&quot;: &quot;0225&quot;,
-        &quot;value&quot;: &quot;264031015_26403101500000_TESTCODE_CT&quot;
+  <span class="jk">"accountingCustomerParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+        <span class="jk">"value"</span>: <span class="js">"264031015_26403101500000_TESTCODE_CT"</span>
       },
-      &quot;partyIdentification&quot;: [
+      <span class="jk">"partyIdentification"</span>: [
         {
-          &quot;id&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;555666777&quot;
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"555666777"</span>
           }
         }
       ],
-      &quot;partyName&quot;: {
-        &quot;name&quot;: &quot;Client Industrie France SA&quot;
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Client Industrie France SA"</span>
       },
-      &quot;postalAddress&quot;: {
-        &quot;streetName&quot;: &quot;100 Rue de l'Industrie&quot;,
-        &quot;additionalStreetName&quot;: &quot;Zone Industrielle Nord&quot;,
-        &quot;cityName&quot;: &quot;Lyon&quot;,
-        &quot;postalZone&quot;: &quot;69001&quot;,
-        &quot;countrySubentity&quot;: &quot;Auvergne-Rhone-Alpes&quot;,
-        &quot;addressLine&quot;: [
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"100 Rue de l'Industrie"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Zone Industrielle Nord"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Lyon"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"69001"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Auvergne-Rhone-Alpes"</span>,
+        <span class="jk">"addressLine"</span>: [
           {
-            &quot;line&quot;: &quot;Batiment B&quot;
+            <span class="jk">"line"</span>: <span class="js">"Batiment B"</span>
           }
         ],
-        &quot;country&quot;: {
-          &quot;identificationCode&quot;: {
-            &quot;countryCode&quot;: &quot;FRA&quot;
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
           }
         }
       },
-      &quot;partyTaxScheme&quot;: [
+      <span class="jk">"partyTaxScheme"</span>: [
         {
-          &quot;companyID&quot;: &quot;784671695&quot;,
-          &quot;taxScheme&quot;: {
-            &quot;id&quot;: {
-              &quot;value&quot;: &quot;VAT&quot;
+          <span class="jk">"companyID"</span>: <span class="js">"784671695"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
             }
           }
         }
       ],
-      &quot;partyLegalEntity&quot;: {
-        &quot;registrationName&quot;: &quot;Client Industrie France SA&quot;,
-        &quot;companyID&quot;: {
-          &quot;schemeID&quot;: &quot;_0002&quot;,
-          &quot;value&quot;: &quot;555666777&quot;
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Client Industrie France SA"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+          <span class="jk">"value"</span>: <span class="js">"555666777"</span>
         },
-        &quot;companyLegalForm&quot;: &quot;SA au capital de 500000 EUR&quot;
+        <span class="jk">"companyLegalForm"</span>: <span class="js">"SA au capital de 500000 EUR"</span>
       },
-      &quot;contact&quot;: {
-        &quot;name&quot;: &quot;Sophie Leroy&quot;,
-        &quot;telephone&quot;: &quot;+33 4 72 00 00 00&quot;,
-        &quot;electronicMail&quot;: &quot;sophie.leroy@client-industrie.fr&quot;
+      <span class="jk">"contact"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Sophie Leroy"</span>,
+        <span class="jk">"telephone"</span>: <span class="js">"+33 4 72 00 00 00"</span>,
+        <span class="jk">"electronicMail"</span>: <span class="js">"sophie.leroy@client-industrie.fr"</span>
       },
-      &quot;agentParty&quot;: {
-        &quot;endPointID&quot;: {
-          &quot;schemeID&quot;: &quot;0225&quot;,
-          &quot;value&quot;: &quot;264031015_26403101500000_TESTCODE_CT&quot;
+      <span class="jk">"agentParty"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+          <span class="jk">"value"</span>: <span class="js">"264031015_26403101500000_TESTCODE_CT"</span>
         },
-        &quot;industryClassificationCode&quot;: {
-          &quot;name&quot;: &quot;Buyer Agent&quot;,
-          &quot;listID&quot;: &quot;ROLE&quot;,
-          &quot;value&quot;: &quot;BUYER_AGENT&quot;
+        <span class="jk">"industryClassificationCode"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Buyer Agent"</span>,
+          <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+          <span class="jk">"value"</span>: <span class="js">"BUYER_AGENT"</span>
         },
-        &quot;partyIdentification&quot;: [
+        <span class="jk">"partyIdentification"</span>: [
           {
-            &quot;id&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;444555666&quot;
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"444555666"</span>
             }
           }
         ],
-        &quot;partyName&quot;: {
-          &quot;name&quot;: &quot;Agence Achat France&quot;
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Agence Achat France"</span>
         },
-        &quot;postalAddress&quot;: {
-          &quot;streetName&quot;: &quot;200 Avenue de la Republique&quot;,
-          &quot;cityName&quot;: &quot;Marseille&quot;,
-          &quot;postalZone&quot;: &quot;13001&quot;,
-          &quot;countrySubentity&quot;: &quot;Provence-Alpes-Cote d'Azur&quot;,
-          &quot;country&quot;: {
-            &quot;identificationCode&quot;: {
-              &quot;countryCode&quot;: &quot;FRA&quot;
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"200 Avenue de la Republique"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Marseille"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"13001"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
             }
           }
         },
-        &quot;partyTaxScheme&quot;: [
+        <span class="jk">"partyTaxScheme"</span>: [
           {
-            &quot;companyID&quot;: &quot;FR44455566677&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"companyID"</span>: <span class="js">"FR44455566677"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;partyLegalEntity&quot;: {
-          &quot;registrationName&quot;: &quot;Agence Achat France SARL&quot;,
-          &quot;companyID&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;444555666&quot;
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Agence Achat France SARL"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"444555666"</span>
           }
         },
-        &quot;contact&quot;: {
-          &quot;name&quot;: &quot;Luc Petit&quot;,
-          &quot;telephone&quot;: &quot;+33 4 91 00 00 00&quot;,
-          &quot;electronicMail&quot;: &quot;luc.petit@agence-achat.fr&quot;
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Luc Petit"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 4 91 00 00 00"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"luc.petit@agence-achat.fr"</span>
         }
       },
-      &quot;serviceProviderParty&quot;: {
-        &quot;endPointID&quot;: {
-          &quot;schemeID&quot;: &quot;0225&quot;,
-          &quot;value&quot;: &quot;264031015_26403101500000_TESTCODE_CT&quot;
+      <span class="jk">"serviceProviderParty"</span>: {
+        <span class="jk">"endPointID"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+          <span class="jk">"value"</span>: <span class="js">"264031015_26403101500000_TESTCODE_CT"</span>
         },
-        &quot;industryClassificationCode&quot;: {
-          &quot;name&quot;: &quot;Addressed To&quot;,
-          &quot;listID&quot;: &quot;ROLE&quot;,
-          &quot;value&quot;: &quot;ADDRESSED_TO&quot;
+        <span class="jk">"industryClassificationCode"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Addressed To"</span>,
+          <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+          <span class="jk">"value"</span>: <span class="js">"ADDRESSED_TO"</span>
         },
-        &quot;partyIdentification&quot;: [
+        <span class="jk">"partyIdentification"</span>: [
           {
-            &quot;id&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;333444555&quot;
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"333444555"</span>
             }
           }
         ],
-        &quot;partyName&quot;: {
-          &quot;name&quot;: &quot;Reception Service France&quot;
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Reception Service France"</span>
         },
-        &quot;postalAddress&quot;: {
-          &quot;streetName&quot;: &quot;300 Boulevard de la Victoire&quot;,
-          &quot;additionalStreetName&quot;: &quot;Etage 2&quot;,
-          &quot;cityName&quot;: &quot;Toulouse&quot;,
-          &quot;postalZone&quot;: &quot;31000&quot;,
-          &quot;countrySubentity&quot;: &quot;Occitanie&quot;,
-          &quot;addressLine&quot;: [
+        <span class="jk">"postalAddress"</span>: {
+          <span class="jk">"streetName"</span>: <span class="js">"300 Boulevard de la Victoire"</span>,
+          <span class="jk">"additionalStreetName"</span>: <span class="js">"Etage 2"</span>,
+          <span class="jk">"cityName"</span>: <span class="js">"Toulouse"</span>,
+          <span class="jk">"postalZone"</span>: <span class="js">"31000"</span>,
+          <span class="jk">"countrySubentity"</span>: <span class="js">"Occitanie"</span>,
+          <span class="jk">"addressLine"</span>: [
             {
-              &quot;line&quot;: &quot;Bureau 201&quot;
+              <span class="jk">"line"</span>: <span class="js">"Bureau 201"</span>
             }
           ],
-          &quot;country&quot;: {
-            &quot;identificationCode&quot;: {
-              &quot;countryCode&quot;: &quot;FRA&quot;
+          <span class="jk">"country"</span>: {
+            <span class="jk">"identificationCode"</span>: {
+              <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
             }
           }
         },
-        &quot;partyTaxScheme&quot;: [
+        <span class="jk">"partyTaxScheme"</span>: [
           {
-            &quot;companyID&quot;: &quot;FR33344455566&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"companyID"</span>: <span class="js">"FR33344455566"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;partyLegalEntity&quot;: {
-          &quot;registrationName&quot;: &quot;Reception Service France SAS&quot;,
-          &quot;companyID&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;333444555&quot;
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Reception Service France SAS"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"333444555"</span>
           }
         },
-        &quot;contact&quot;: {
-          &quot;name&quot;: &quot;Emma Blanc&quot;,
-          &quot;telephone&quot;: &quot;+33 5 61 00 00 00&quot;,
-          &quot;electronicMail&quot;: &quot;emma.blanc@reception-service.fr&quot;
+        <span class="jk">"contact"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Emma Blanc"</span>,
+          <span class="jk">"telephone"</span>: <span class="js">"+33 5 61 00 00 00"</span>,
+          <span class="jk">"electronicMail"</span>: <span class="js">"emma.blanc@reception-service.fr"</span>
         }
       }
     }
   },
-  &quot;payeeParty&quot;: {
-    &quot;endPointID&quot;: {
-      &quot;schemeID&quot;: &quot;0225&quot;,
-      &quot;value&quot;: &quot;264031015_26403101500000_TESTCODE_CT&quot;
+  <span class="jk">"payeeParty"</span>: {
+    <span class="jk">"endPointID"</span>: {
+      <span class="jk">"schemeID"</span>: <span class="js">"0225"</span>,
+      <span class="jk">"value"</span>: <span class="js">"264031015_26403101500000_TESTCODE_CT"</span>
     },
-    &quot;industryClassificationCode&quot;: {
-      &quot;name&quot;: &quot;Payee&quot;,
-      &quot;listID&quot;: &quot;ROLE&quot;,
-      &quot;value&quot;: &quot;PAYEE&quot;
+    <span class="jk">"industryClassificationCode"</span>: {
+      <span class="jk">"name"</span>: <span class="js">"Payee"</span>,
+      <span class="jk">"listID"</span>: <span class="js">"ROLE"</span>,
+      <span class="jk">"value"</span>: <span class="js">"PAYEE"</span>
     },
-    &quot;partyIdentification&quot;: [
+    <span class="jk">"partyIdentification"</span>: [
       {
-        &quot;id&quot;: {
-          &quot;schemeID&quot;: &quot;_0002&quot;,
-          &quot;value&quot;: &quot;777888999&quot;
+        <span class="jk">"id"</span>: {
+          <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+          <span class="jk">"value"</span>: <span class="js">"777888999"</span>
         }
       }
     ],
-    &quot;partyName&quot;: {
-      &quot;name&quot;: &quot;Beneficiaire Paiement France&quot;
+    <span class="jk">"partyName"</span>: {
+      <span class="jk">"name"</span>: <span class="js">"Beneficiaire Paiement France"</span>
     },
-    &quot;postalAddress&quot;: {
-      &quot;streetName&quot;: &quot;400 Rue du Commerce&quot;,
-      &quot;additionalStreetName&quot;: &quot;Immeuble Central&quot;,
-      &quot;cityName&quot;: &quot;Bordeaux&quot;,
-      &quot;postalZone&quot;: &quot;33000&quot;,
-      &quot;countrySubentity&quot;: &quot;Nouvelle-Aquitaine&quot;,
-      &quot;addressLine&quot;: [
+    <span class="jk">"postalAddress"</span>: {
+      <span class="jk">"streetName"</span>: <span class="js">"400 Rue du Commerce"</span>,
+      <span class="jk">"additionalStreetName"</span>: <span class="js">"Immeuble Central"</span>,
+      <span class="jk">"cityName"</span>: <span class="js">"Bordeaux"</span>,
+      <span class="jk">"postalZone"</span>: <span class="js">"33000"</span>,
+      <span class="jk">"countrySubentity"</span>: <span class="js">"Nouvelle-Aquitaine"</span>,
+      <span class="jk">"addressLine"</span>: [
         {
-          &quot;line&quot;: &quot;RDC&quot;
+          <span class="jk">"line"</span>: <span class="js">"RDC"</span>
         }
       ],
-      &quot;country&quot;: {
-        &quot;identificationCode&quot;: {
-          &quot;countryCode&quot;: &quot;FRA&quot;
+      <span class="jk">"country"</span>: {
+        <span class="jk">"identificationCode"</span>: {
+          <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
         }
       }
     },
-    &quot;partyTaxScheme&quot;: [
+    <span class="jk">"partyTaxScheme"</span>: [
       {
-        &quot;companyID&quot;: &quot;FR77788899900&quot;,
-        &quot;taxScheme&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;VAT&quot;
+        <span class="jk">"companyID"</span>: <span class="js">"FR77788899900"</span>,
+        <span class="jk">"taxScheme"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"VAT"</span>
           }
         }
       }
     ],
-    &quot;partyLegalEntity&quot;: {
-      &quot;registrationName&quot;: &quot;Beneficiaire Paiement France SA&quot;,
-      &quot;companyID&quot;: {
-        &quot;schemeID&quot;: &quot;_0002&quot;,
-        &quot;value&quot;: &quot;777888999&quot;
+    <span class="jk">"partyLegalEntity"</span>: {
+      <span class="jk">"registrationName"</span>: <span class="js">"Beneficiaire Paiement France SA"</span>,
+      <span class="jk">"companyID"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+        <span class="jk">"value"</span>: <span class="js">"777888999"</span>
       }
     },
-    &quot;contact&quot;: {
-      &quot;name&quot;: &quot;Thomas Moreau&quot;,
-      &quot;telephone&quot;: &quot;+33 5 56 00 00 00&quot;,
-      &quot;electronicMail&quot;: &quot;thomas.moreau@beneficiaire.fr&quot;
+    <span class="jk">"contact"</span>: {
+      <span class="jk">"name"</span>: <span class="js">"Thomas Moreau"</span>,
+      <span class="jk">"telephone"</span>: <span class="js">"+33 5 56 00 00 00"</span>,
+      <span class="jk">"electronicMail"</span>: <span class="js">"thomas.moreau@beneficiaire.fr"</span>
     }
   },
-  &quot;taxRepresentativeParty&quot;: {
-    &quot;partyName&quot;: {
-      &quot;name&quot;: &quot;Representant Fiscal France&quot;
+  <span class="jk">"taxRepresentativeParty"</span>: {
+    <span class="jk">"partyName"</span>: {
+      <span class="jk">"name"</span>: <span class="js">"Representant Fiscal France"</span>
     },
-    &quot;postalAddress&quot;: {
-      &quot;streetName&quot;: &quot;500 Avenue Fiscal&quot;,
-      &quot;additionalStreetName&quot;: &quot;Bureau Fiscal&quot;,
-      &quot;cityName&quot;: &quot;Nice&quot;,
-      &quot;postalZone&quot;: &quot;06000&quot;,
-      &quot;countrySubentity&quot;: &quot;Provence-Alpes-Cote d'Azur&quot;,
-      &quot;addressLine&quot;: [
+    <span class="jk">"postalAddress"</span>: {
+      <span class="jk">"streetName"</span>: <span class="js">"500 Avenue Fiscal"</span>,
+      <span class="jk">"additionalStreetName"</span>: <span class="js">"Bureau Fiscal"</span>,
+      <span class="jk">"cityName"</span>: <span class="js">"Nice"</span>,
+      <span class="jk">"postalZone"</span>: <span class="js">"06000"</span>,
+      <span class="jk">"countrySubentity"</span>: <span class="js">"Provence-Alpes-Cote d'Azur"</span>,
+      <span class="jk">"addressLine"</span>: [
         {
-          &quot;line&quot;: &quot;Etage 1&quot;
+          <span class="jk">"line"</span>: <span class="js">"Etage 1"</span>
         }
       ],
-      &quot;country&quot;: {
-        &quot;identificationCode&quot;: {
-          &quot;countryCode&quot;: &quot;FRA&quot;
+      <span class="jk">"country"</span>: {
+        <span class="jk">"identificationCode"</span>: {
+          <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
         }
       }
     },
-    &quot;partyTaxScheme&quot;: [
+    <span class="jk">"partyTaxScheme"</span>: [
       {
-        &quot;companyID&quot;: &quot;FR66677788899&quot;,
-        &quot;taxScheme&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;VAT&quot;
+        <span class="jk">"companyID"</span>: <span class="js">"FR66677788899"</span>,
+        <span class="jk">"taxScheme"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"VAT"</span>
           }
         }
       }
     ]
   },
-  &quot;delivery&quot;: {
-    &quot;actualDeliveryDate&quot;: &quot;2026-04-10&quot;,
-    &quot;deliveryLocation&quot;: {
-      &quot;id&quot;: {
-        &quot;schemeID&quot;: &quot;_0088&quot;,
-        &quot;value&quot;: &quot;LOC-DELIVERY-001&quot;
+  <span class="jk">"delivery"</span>: {
+    <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2026-04-10"</span>,
+    <span class="jk">"deliveryLocation"</span>: {
+      <span class="jk">"id"</span>: {
+        <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+        <span class="jk">"value"</span>: <span class="js">"LOC-DELIVERY-001"</span>
       },
-      &quot;address&quot;: {
-        &quot;streetName&quot;: &quot;600 Rue de Livraison&quot;,
-        &quot;additionalStreetName&quot;: &quot;Entrepot A&quot;,
-        &quot;cityName&quot;: &quot;Nantes&quot;,
-        &quot;postalZone&quot;: &quot;44000&quot;,
-        &quot;countrySubentity&quot;: &quot;Pays de la Loire&quot;,
-        &quot;addressLine&quot;: [
+      <span class="jk">"address"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+        <span class="jk">"addressLine"</span>: [
           {
-            &quot;line&quot;: &quot;Quai 5&quot;
+            <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
           }
         ],
-        &quot;country&quot;: {
-          &quot;identificationCode&quot;: {
-            &quot;countryCode&quot;: &quot;FRA&quot;
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
           }
         }
       }
     },
-    &quot;deliveryParty&quot;: {
-      &quot;partyName&quot;: {
-        &quot;name&quot;: &quot;Transport Express France&quot;
+    <span class="jk">"deliveryParty"</span>: {
+      <span class="jk">"partyName"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
       },
-      &quot;partyLegalEntity&quot;: {
-        &quot;registrationName&quot;: &quot;Transport Express France SARL&quot;
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
       }
     }
   },
-  &quot;paymentMeans&quot;: {
-    &quot;paymentMeansCode&quot;: {
-      &quot;name&quot;: &quot;Credit transfer&quot;,
-      &quot;value&quot;: &quot;30&quot;
+  <span class="jk">"paymentMeans"</span>: {
+    <span class="jk">"paymentMeansCode"</span>: {
+      <span class="jk">"name"</span>: <span class="js">"Credit transfer"</span>,
+      <span class="jk">"value"</span>: <span class="js">"30"</span>
     },
-    &quot;paymentDueDate&quot;: &quot;2026-05-15&quot;,
-    &quot;instructionNote&quot;: &quot;Virement SEPA uniquement&quot;,
-    &quot;paymentID&quot;: [
+    <span class="jk">"paymentDueDate"</span>: <span class="js">"2026-05-15"</span>,
+    <span class="jk">"instructionNote"</span>: <span class="js">"Virement SEPA uniquement"</span>,
+    <span class="jk">"paymentID"</span>: [
       {
-        &quot;value&quot;: &quot;PAY-ID-2025-001&quot;
+        <span class="jk">"value"</span>: <span class="js">"PAY-ID-2025-001"</span>
       }
     ],
-    &quot;cardAccount&quot;: {
-      &quot;primaryAccountNumberID&quot;: &quot;************1234&quot;,
-      &quot;networkID&quot;: &quot;VISA&quot;
+    <span class="jk">"cardAccount"</span>: {
+      <span class="jk">"primaryAccountNumberID"</span>: <span class="js">"************1234"</span>,
+      <span class="jk">"networkID"</span>: <span class="js">"VISA"</span>
     },
-    &quot;payeeFinancialAccount&quot;: {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;FR7630001007941234567890185&quot;
+    <span class="jk">"payeeFinancialAccount"</span>: {
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"FR7630001007941234567890185"</span>
       },
-      &quot;name&quot;: &quot;Compte Principal ACME France&quot;,
-      &quot;financialInstitutionBranch&quot;: {
-        &quot;id&quot;: &quot;BNPAFRPP&quot;
+      <span class="jk">"name"</span>: <span class="js">"Compte Principal ACME France"</span>,
+      <span class="jk">"financialInstitutionBranch"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"BNPAFRPP"</span>
       }
     },
-    &quot;paymentMandate&quot;: {
-      &quot;id&quot;: {
-        &quot;value&quot;: &quot;MANDATE-2025-001&quot;
+    <span class="jk">"paymentMandate"</span>: {
+      <span class="jk">"id"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"MANDATE-2025-001"</span>
       },
-      &quot;payerParty&quot;: {
-        &quot;partyIdentification&quot;: [
+      <span class="jk">"payerParty"</span>: {
+        <span class="jk">"partyIdentification"</span>: [
           {
-            &quot;id&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;222333444&quot;
+            <span class="jk">"id"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"222333444"</span>
             }
           }
         ],
-        &quot;partyName&quot;: {
-          &quot;name&quot;: &quot;Payeur Delegue France&quot;
+        <span class="jk">"partyName"</span>: {
+          <span class="jk">"name"</span>: <span class="js">"Payeur Delegue France"</span>
         },
-        &quot;partyLegalEntity&quot;: {
-          &quot;registrationName&quot;: &quot;Payeur Delegue France SAS&quot;,
-          &quot;companyID&quot;: {
-            &quot;schemeID&quot;: &quot;_0002&quot;,
-            &quot;value&quot;: &quot;222333444&quot;
+        <span class="jk">"partyLegalEntity"</span>: {
+          <span class="jk">"registrationName"</span>: <span class="js">"Payeur Delegue France SAS"</span>,
+          <span class="jk">"companyID"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+            <span class="jk">"value"</span>: <span class="js">"222333444"</span>
           }
         }
       },
-      &quot;payerFinancialAccount&quot;: {
-        &quot;id&quot;: {
-          &quot;value&quot;: &quot;FR7630004000031234567890143&quot;
+      <span class="jk">"payerFinancialAccount"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"FR7630004000031234567890143"</span>
         }
       }
     }
   },
-  &quot;paymentTerms&quot;: {
-    &quot;note&quot;: &quot;Paiement a 30 jours fin de mois. Penalites de retard: <span class="jn">3</span> fois le taux d'interet legal.&quot;
+  <span class="jk">"paymentTerms"</span>: {
+    <span class="jk">"note"</span>: <span class="js">"Paiement a 30 jours fin de mois. Penalites de retard: 3 fois le taux d'interet legal."</span>
   },
-  &quot;prepaidPayment&quot;: {
-    &quot;id&quot;: &quot;PREPAID-2025-001&quot;,
-    &quot;paidAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">200.0</span>
+  <span class="jk">"prepaidPayment"</span>: {
+    <span class="jk">"id"</span>: <span class="js">"PREPAID-2025-001"</span>,
+    <span class="jk">"paidAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">200.0</span>
     },
-    &quot;receivedDate&quot;: &quot;2026-04-06&quot;,
-    &quot;instructionID&quot;: &quot;PREPAY-INST-001&quot;
+    <span class="jk">"receivedDate"</span>: <span class="js">"2026-04-06"</span>,
+    <span class="jk">"instructionID"</span>: <span class="js">"PREPAY-INST-001"</span>
   },
-  &quot;allowanceCharge&quot;: [
+  <span class="jk">"allowanceCharge"</span>: [
     {
-      &quot;chargeIndicator&quot;: <span class="jb">false</span>,
-      &quot;allowanceChargeReason&quot;: &quot;Remise commerciale annuelle&quot;,
-      &quot;allowanceChargeReasonCode&quot;: &quot;DISCOUNT&quot;,
-      &quot;multiplierFactorNumeric&quot;: <span class="jn">5.0</span>,
-      &quot;amount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">100.0</span>
+      "chargeIndicator": <span class="jb">false</span>,
+      <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise commerciale annuelle"</span>,
+      <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+      <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">5.0</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">100.0</span>
       },
-      &quot;baseAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">2000.0</span>
+      <span class="jk">"baseAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">2000.0</span>
       },
-      &quot;taxCategory&quot;: {
-        &quot;id&quot;: &quot;S&quot;,
-        &quot;percent&quot;: <span class="jn">20.0</span>,
-        &quot;taxScheme&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;VAT&quot;
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+        <span class="jk">"taxScheme"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"VAT"</span>
           }
         }
       }
     },
     {
-      &quot;chargeIndicator&quot;: <span class="jb">true</span>,
-      &quot;allowanceChargeReason&quot;: &quot;Frais de dossier&quot;,
-      &quot;allowanceChargeReasonCode&quot;: &quot;CLERICAL_SERVICES&quot;,
-      &quot;amount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">25.0</span>
+      "chargeIndicator": <span class="jb">true</span>,
+      <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Frais de dossier"</span>,
+      <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"CLERICAL_SERVICES"</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">25.0</span>
       },
-      &quot;taxCategory&quot;: {
-        &quot;id&quot;: &quot;S&quot;,
-        &quot;percent&quot;: <span class="jn">20.0</span>,
-        &quot;taxScheme&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;VAT&quot;
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+        <span class="jk">"taxScheme"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"VAT"</span>
           }
         }
       }
     }
   ],
-  &quot;taxTotal&quot;: [
+  <span class="jk">"taxTotal"</span>: [
     {
-      &quot;taxAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">285.0</span>
+      <span class="jk">"taxAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">285.0</span>
       },
-      &quot;taxSubtotal&quot;: [
+      <span class="jk">"taxSubtotal"</span>: [
         {
-          &quot;taxableAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">1425.0</span>
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">1425.0</span>
           },
-          &quot;taxAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">285.0</span>
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">285.0</span>
           },
-          &quot;taxCategory&quot;: {
-            &quot;id&quot;: &quot;S&quot;,
-            &quot;percent&quot;: <span class="jn">20.0</span>,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         },
         {
-          &quot;taxableAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">500.0</span>
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">500.0</span>
           },
-          &quot;taxAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">0.0</span>
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">0.0</span>
           },
-          &quot;taxCategory&quot;: {
-            &quot;id&quot;: &quot;E&quot;,
-            &quot;percent&quot;: <span class="jn">0.0</span>,
-            &quot;taxExemptionReason&quot;: &quot;Exoneration selon article 261-4-1 du CGI&quot;,
-            &quot;taxExemptionReasonCode&quot;: &quot;VATEX_EU_132_1C&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"E"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+            <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI"</span>,
+            <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
@@ -1641,490 +1641,490 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
       ]
     }
   ],
-  &quot;legalMonetaryTotal&quot;: {
-    &quot;lineExtensionAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">2000.0</span>
+  <span class="jk">"legalMonetaryTotal"</span>: {
+    <span class="jk">"lineExtensionAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">2000.0</span>
     },
-    &quot;taxExclusiveAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">1925.0</span>
+    <span class="jk">"taxExclusiveAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">1925.0</span>
     },
-    &quot;taxInclusiveAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">2210.0</span>
+    <span class="jk">"taxInclusiveAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">2210.0</span>
     },
-    &quot;allowanceTotalAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">100.0</span>
+    <span class="jk">"allowanceTotalAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">100.0</span>
     },
-    &quot;chargeTotalAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">25.0</span>
+    <span class="jk">"chargeTotalAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">25.0</span>
     },
-    &quot;prepaidAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">200.0</span>
+    <span class="jk">"prepaidAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">200.0</span>
     },
-    &quot;payableRoundingAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">0.0</span>
+    <span class="jk">"payableRoundingAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">0.0</span>
     },
-    &quot;payableAmount&quot;: {
-      &quot;currencyID&quot;: &quot;EUR&quot;,
-      &quot;value&quot;: <span class="jn">2010.0</span>
+    <span class="jk">"payableAmount"</span>: {
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+      <span class="jk">"value"</span>: <span class="jn">2010.0</span>
     }
   },
-  &quot;additionalDocumentReference&quot;: [
+  <span class="jk">"additionalDocumentReference"</span>: [
     {
-      &quot;id&quot;: &quot;ATTACH-001&quot;,
-      &quot;documentTypeCode&quot;: &quot;130&quot;
+      <span class="jk">"id"</span>: <span class="js">"ATTACH-001"</span>,
+      <span class="jk">"documentTypeCode"</span>: <span class="js">"130"</span>
     },
     {
-      &quot;id&quot;: &quot;ATTACH-002&quot;,
-      &quot;documentDescription&quot;: &quot;Specifications techniques du projet&quot;,
-      &quot;attachment&quot;: {
-        &quot;embeddedDocumentBinaryObject&quot;: {
-          &quot;value&quot;: &quot;UERGIGNvbnRlbnQ=&quot;,
-          &quot;mimeCode&quot;: &quot;application/pdf&quot;,
-          &quot;filename&quot;: &quot;specifications.pdf&quot;
+      <span class="jk">"id"</span>: <span class="js">"ATTACH-002"</span>,
+      <span class="jk">"documentDescription"</span>: <span class="js">"Specifications techniques du projet"</span>,
+      <span class="jk">"attachment"</span>: {
+        <span class="jk">"embeddedDocumentBinaryObject"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"UERGIGNvbnRlbnQ="</span>,
+          <span class="jk">"mimeCode"</span>: <span class="js">"application/pdf"</span>,
+          <span class="jk">"filename"</span>: <span class="js">"specifications.pdf"</span>
         }
       }
     },
     {
-      &quot;id&quot;: &quot;ATTACH-003&quot;,
-      &quot;documentDescription&quot;: &quot;Plan de livraison&quot;,
-      &quot;attachment&quot;: {
-        &quot;externalReference&quot;: {
-          &quot;uri&quot;: &quot;https://example.com/docs/plan-livraison.pdf&quot;
+      <span class="jk">"id"</span>: <span class="js">"ATTACH-003"</span>,
+      <span class="jk">"documentDescription"</span>: <span class="js">"Plan de livraison"</span>,
+      <span class="jk">"attachment"</span>: {
+        <span class="jk">"externalReference"</span>: {
+          <span class="jk">"uri"</span>: <span class="js">"https://example.com/docs/plan-livraison.pdf"</span>
         }
       }
     }
   ],
-  &quot;invoiceLine&quot;: [
+  <span class="jk">"invoiceLine"</span>: [
     {
-      &quot;id&quot;: &quot;1&quot;,
-      &quot;note&quot;: [
-        &quot;Ligne 1 - Produit principal avec remise volume&quot;
+      <span class="jk">"id"</span>: <span class="js">"1"</span>,
+      <span class="jk">"note"</span>: [
+        <span class="js">"Ligne 1 - Produit principal avec remise volume"</span>
       ],
-      &quot;invoicedQuantity&quot;: {
-        &quot;quantity&quot;: <span class="jn">10.0</span>,
-        &quot;unitCode&quot;: &quot;EA&quot;
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
       },
-      &quot;lineExtensionAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">900.0</span>
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">900.0</span>
       },
-      &quot;accountingCost&quot;: &quot;LINE-ACCT-001&quot;,
-      &quot;invoicePeriod&quot;: {
-        &quot;startDate&quot;: &quot;2026-04-01&quot;,
-        &quot;endDate&quot;: &quot;2026-05-15&quot;,
-        &quot;descriptionCode&quot;: &quot;35&quot;
+      <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-001"</span>,
+      <span class="jk">"invoicePeriod"</span>: {
+        <span class="jk">"startDate"</span>: <span class="js">"2026-04-01"</span>,
+        <span class="jk">"endDate"</span>: <span class="js">"2026-05-15"</span>,
+        <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
       },
-      &quot;orderLineReference&quot;: [
+      <span class="jk">"orderLineReference"</span>: [
         {
-          &quot;lineId&quot;: &quot;PO-LINE-001&quot;,
-          &quot;salesOrderLineId&quot;: &quot;SO-LINE-001&quot;,
-          &quot;orderReference&quot;: {
-            &quot;id&quot;: &quot;PO-2025-00123&quot;,
-            &quot;salesOrderID&quot;: &quot;SO-2025-00456&quot;
+          <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-001"</span>,
+          <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-001"</span>,
+          <span class="jk">"orderReference"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"PO-2025-00123"</span>,
+            <span class="jk">"salesOrderID"</span>: <span class="js">"SO-2025-00456"</span>
           }
         }
       ],
-      &quot;despatchLineReference&quot;: {
-        &quot;lineID&quot;: &quot;DESP-LINE-001&quot;
+      <span class="jk">"despatchLineReference"</span>: {
+        <span class="jk">"lineID"</span>: <span class="js">"DESP-LINE-001"</span>
       },
-      &quot;receiptLineReference&quot;: {
-        &quot;lineID&quot;: &quot;RCPT-LINE-001&quot;
+      <span class="jk">"receiptLineReference"</span>: {
+        <span class="jk">"lineID"</span>: <span class="js">"RCPT-LINE-001"</span>
       },
-      &quot;billingReference&quot;: [
+      <span class="jk">"billingReference"</span>: [
         {
-          &quot;additionalDocumentReference&quot;: {
-            &quot;id&quot;: &quot;INV-FR-2024-00100&quot;,
-            &quot;issueDate&quot;: &quot;2024-12-15&quot;,
-            &quot;documentTypeCode&quot;: &quot;380&quot;,
-            &quot;documentStatusCode&quot;: &quot;ORIGINAL&quot;
+          <span class="jk">"additionalDocumentReference"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00100"</span>,
+            <span class="jk">"issueDate"</span>: <span class="js">"2024-12-15"</span>,
+            <span class="jk">"documentTypeCode"</span>: <span class="js">"380"</span>,
+            <span class="jk">"documentStatusCode"</span>: <span class="js">"ORIGINAL"</span>
           },
-          &quot;billingReferenceLine&quot;: {
-            &quot;id&quot;: &quot;1&quot;,
-            &quot;amount&quot;: {
-              &quot;currencyID&quot;: &quot;EUR&quot;,
-              &quot;value&quot;: <span class="jn">500.0</span>
+          <span class="jk">"billingReferenceLine"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"1"</span>,
+            <span class="jk">"amount"</span>: {
+              <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+              <span class="jk">"value"</span>: <span class="jn">500.0</span>
             }
           }
         }
       ],
-      &quot;documentReference&quot;: {
-        &quot;id&quot;: {
-          &quot;value&quot;: &quot;DOC-REF-001&quot;,
-          &quot;schemeID&quot;: &quot;ABT&quot;
+      <span class="jk">"documentReference"</span>: {
+        <span class="jk">"id"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"DOC-REF-001"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"ABT"</span>
         }
       },
-      &quot;lineDelivery&quot;: {
-        &quot;actualDeliveryDate&quot;: &quot;2026-04-10&quot;,
-        &quot;deliveryPeriod&quot;: {
-          &quot;startDate&quot;: &quot;2026-04-08&quot;,
-          &quot;endDate&quot;: &quot;2026-04-12&quot;
+      <span class="jk">"lineDelivery"</span>: {
+        <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2026-04-10"</span>,
+        <span class="jk">"deliveryPeriod"</span>: {
+          <span class="jk">"startDate"</span>: <span class="js">"2026-04-08"</span>,
+          <span class="jk">"endDate"</span>: <span class="js">"2026-04-12"</span>
         },
-        &quot;deliveryLocation&quot;: {
-          &quot;id&quot;: {
-            &quot;schemeID&quot;: &quot;_0088&quot;,
-            &quot;value&quot;: &quot;LOC-LINE-001&quot;
+        <span class="jk">"deliveryLocation"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0088"</span>,
+            <span class="jk">"value"</span>: <span class="js">"LOC-LINE-001"</span>
           },
-          &quot;description&quot;: &quot;Entrepot principal Nantes&quot;,
-          &quot;address&quot;: {
-            &quot;streetName&quot;: &quot;600 Rue de Livraison&quot;,
-            &quot;additionalStreetName&quot;: &quot;Entrepot A&quot;,
-            &quot;cityName&quot;: &quot;Nantes&quot;,
-            &quot;postalZone&quot;: &quot;44000&quot;,
-            &quot;countrySubentity&quot;: &quot;Pays de la Loire&quot;,
-            &quot;addressLine&quot;: [
+          <span class="jk">"description"</span>: <span class="js">"Entrepot principal Nantes"</span>,
+          <span class="jk">"address"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"600 Rue de Livraison"</span>,
+            <span class="jk">"additionalStreetName"</span>: <span class="js">"Entrepot A"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Nantes"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"44000"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Pays de la Loire"</span>,
+            <span class="jk">"addressLine"</span>: [
               {
-                &quot;line&quot;: &quot;Quai 5&quot;
+                <span class="jk">"line"</span>: <span class="js">"Quai 5"</span>
               }
             ],
-            &quot;country&quot;: {
-              &quot;identificationCode&quot;: {
-                &quot;countryCode&quot;: &quot;FRA&quot;
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
               }
             }
           }
         },
-        &quot;deliveryParty&quot;: {
-          &quot;partyName&quot;: {
-            &quot;name&quot;: &quot;Transport Express France&quot;
+        <span class="jk">"deliveryParty"</span>: {
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Transport Express France"</span>
           },
-          &quot;partyLegalEntity&quot;: {
-            &quot;registrationName&quot;: &quot;Transport Express France SARL&quot;
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Transport Express France SARL"</span>
           }
         }
       },
-      &quot;allowanceCharge&quot;: [
+      <span class="jk">"allowanceCharge"</span>: [
         {
-          &quot;chargeIndicator&quot;: <span class="jb">false</span>,
-          &quot;allowanceChargeReason&quot;: &quot;Remise volume&quot;,
-          &quot;allowanceChargeReasonCode&quot;: &quot;DISCOUNT&quot;,
-          &quot;multiplierFactorNumeric&quot;: <span class="jn">10.0</span>,
-          &quot;amount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">100.0</span>
+          "chargeIndicator": <span class="jb">false</span>,
+          <span class="jk">"allowanceChargeReason"</span>: <span class="js">"Remise volume"</span>,
+          <span class="jk">"allowanceChargeReasonCode"</span>: <span class="js">"DISCOUNT"</span>,
+          <span class="jk">"multiplierFactorNumeric"</span>: <span class="jn">10.0</span>,
+          <span class="jk">"amount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">100.0</span>
           },
-          &quot;baseAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">1000.0</span>
+          <span class="jk">"baseAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">1000.0</span>
           }
         }
       ],
-      &quot;item&quot;: {
-        &quot;description&quot;: &quot;Widget Premium - Version 2025 avec fonctionnalites avancees&quot;,
-        &quot;packQuantity&quot;: {
-          &quot;quantity&quot;: <span class="jn">10.0</span>,
-          &quot;unitCode&quot;: &quot;EA&quot;
+      <span class="jk">"item"</span>: {
+        <span class="jk">"description"</span>: <span class="js">"Widget Premium - Version 2025 avec fonctionnalites avancees"</span>,
+        <span class="jk">"packQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">10.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
         },
-        &quot;name&quot;: &quot;Widget Premium V2025&quot;,
-        &quot;buyersItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;BUYER-SKU-001&quot;
+        <span class="jk">"name"</span>: <span class="js">"Widget Premium V2025"</span>,
+        <span class="jk">"buyersItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"BUYER-SKU-001"</span>
           }
         },
-        &quot;sellersItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;SELLER-SKU-WP2025&quot;
+        <span class="jk">"sellersItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"SELLER-SKU-WP2025"</span>
           }
         },
-        &quot;standardItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;schemeID&quot;: &quot;_0160&quot;,
-            &quot;value&quot;: &quot;3456789012345&quot;
+        <span class="jk">"standardItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"_0160"</span>,
+            <span class="jk">"value"</span>: <span class="js">"3456789012345"</span>
           }
         },
-        &quot;additionalItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;schemeID&quot;: &quot;INTERNAL&quot;,
-            &quot;value&quot;: &quot;INT-WP-2025-001&quot;
+        <span class="jk">"additionalItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"schemeID"</span>: <span class="js">"INTERNAL"</span>,
+            <span class="jk">"value"</span>: <span class="js">"INT-WP-2025-001"</span>
           }
         },
-        &quot;originCountry&quot;: {
-          &quot;identificationCode&quot;: {
-            &quot;countryCode&quot;: &quot;FRA&quot;
+        <span class="jk">"originCountry"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FRA"</span>
           }
         },
-        &quot;commodityClassification&quot;: [
+        <span class="jk">"commodityClassification"</span>: [
           {
-            &quot;itemClassificationCode&quot;: {
-              &quot;listID&quot;: &quot;STI&quot;,
-              &quot;value&quot;: &quot;44423000&quot;
+            <span class="jk">"itemClassificationCode"</span>: {
+              <span class="jk">"listID"</span>: <span class="js">"STI"</span>,
+              <span class="jk">"value"</span>: <span class="js">"44423000"</span>
             }
           }
         ],
-        &quot;classifiedTaxCategory&quot;: [
+        <span class="jk">"classifiedTaxCategory"</span>: [
           {
-            &quot;id&quot;: &quot;S&quot;,
-            &quot;percent&quot;: <span class="jn">20.0</span>,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;additionalItemProperty&quot;: [
+        <span class="jk">"additionalItemProperty"</span>: [
           {
-            &quot;name&quot;: &quot;Couleur&quot;,
-            &quot;value&quot;: &quot;Bleu&quot;,
-            &quot;nameCode&quot;: &quot;COLOR&quot;
+            <span class="jk">"name"</span>: <span class="js">"Couleur"</span>,
+            <span class="jk">"value"</span>: <span class="js">"Bleu"</span>,
+            <span class="jk">"nameCode"</span>: <span class="js">"COLOR"</span>
           },
           {
-            &quot;name&quot;: &quot;Poids&quot;,
-            &quot;value&quot;: &quot;2.5 KGM&quot;,
-            &quot;nameCode&quot;: &quot;WEIGHT&quot;,
-            &quot;valueQuantity&quot;: {
-              &quot;quantity&quot;: <span class="jn">2.5</span>,
-              &quot;unitCode&quot;: &quot;KGM&quot;
+            <span class="jk">"name"</span>: <span class="js">"Poids"</span>,
+            <span class="jk">"value"</span>: <span class="js">"2.5 KGM"</span>,
+            <span class="jk">"nameCode"</span>: <span class="js">"WEIGHT"</span>,
+            <span class="jk">"valueQuantity"</span>: {
+              <span class="jk">"quantity"</span>: <span class="jn">2.5</span>,
+              <span class="jk">"unitCode"</span>: <span class="js">"KGM"</span>
             }
           },
           {
-            &quot;name&quot;: &quot;Dimensions&quot;,
-            &quot;value&quot;: &quot;30x20x10&quot;,
-            &quot;nameCode&quot;: &quot;DIMENSIONS&quot;
+            <span class="jk">"name"</span>: <span class="js">"Dimensions"</span>,
+            <span class="jk">"value"</span>: <span class="js">"30x20x10"</span>,
+            <span class="jk">"nameCode"</span>: <span class="js">"DIMENSIONS"</span>
           }
         ],
-        &quot;manufacturerParty&quot;: {
-          &quot;partyIdentification&quot;: [
+        <span class="jk">"manufacturerParty"</span>: {
+          <span class="jk">"partyIdentification"</span>: [
             {
-              &quot;id&quot;: {
-                &quot;schemeID&quot;: &quot;_0002&quot;,
-                &quot;value&quot;: &quot;888999000&quot;
+              <span class="jk">"id"</span>: {
+                <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+                <span class="jk">"value"</span>: <span class="js">"888999000"</span>
               }
             }
           ],
-          &quot;partyName&quot;: {
-            &quot;name&quot;: &quot;Fabricant Widgets France&quot;
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Fabricant Widgets France"</span>
           },
-          &quot;partyLegalEntity&quot;: {
-            &quot;registrationName&quot;: &quot;Fabricant Widgets France SA&quot;,
-            &quot;companyID&quot;: {
-              &quot;schemeID&quot;: &quot;_0002&quot;,
-              &quot;value&quot;: &quot;888999000&quot;
+          <span class="jk">"partyLegalEntity"</span>: {
+            <span class="jk">"registrationName"</span>: <span class="js">"Fabricant Widgets France SA"</span>,
+            <span class="jk">"companyID"</span>: {
+              <span class="jk">"schemeID"</span>: <span class="js">"_0002"</span>,
+              <span class="jk">"value"</span>: <span class="js">"888999000"</span>
             }
           }
         }
       },
-      &quot;price&quot;: {
-        &quot;priceAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">100.0</span>
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
         },
-        &quot;baseQuantity&quot;: {
-          &quot;quantity&quot;: <span class="jn">1.0</span>,
-          &quot;unitCode&quot;: &quot;EA&quot;
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
         },
-        &quot;allowanceCharge&quot;: {
-          &quot;chargeIndicator&quot;: <span class="jb">false</span>,
-          &quot;amount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">5.0</span>
+        <span class="jk">"allowanceCharge"</span>: {
+          "chargeIndicator": <span class="jb">false</span>,
+          <span class="jk">"amount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">5.0</span>
           },
-          &quot;baseAmount&quot;: {
-            &quot;currencyID&quot;: &quot;EUR&quot;,
-            &quot;value&quot;: <span class="jn">105.0</span>
+          <span class="jk">"baseAmount"</span>: {
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+            <span class="jk">"value"</span>: <span class="jn">105.0</span>
           }
         }
       },
-      &quot;taxTotal&quot;: {
-        &quot;taxAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">180.0</span>
+      <span class="jk">"taxTotal"</span>: {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">180.0</span>
         }
       },
-      &quot;deliveryTerms&quot;: {
-        &quot;id&quot;: &quot;DAP&quot;
+      <span class="jk">"deliveryTerms"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"DAP"</span>
       }
     },
     {
-      &quot;id&quot;: &quot;2&quot;,
-      &quot;note&quot;: [
-        &quot;Ligne 2 - Service associe&quot;
+      <span class="jk">"id"</span>: <span class="js">"2"</span>,
+      <span class="jk">"note"</span>: [
+        <span class="js">"Ligne 2 - Service associe"</span>
       ],
-      &quot;invoicedQuantity&quot;: {
-        &quot;quantity&quot;: <span class="jn">5.0</span>,
-        &quot;unitCode&quot;: &quot;HUR&quot;
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">5.0</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
       },
-      &quot;lineExtensionAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">500.0</span>
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">500.0</span>
       },
-      &quot;accountingCost&quot;: &quot;LINE-ACCT-002&quot;,
-      &quot;invoicePeriod&quot;: {
-        &quot;startDate&quot;: &quot;2026-04-01&quot;,
-        &quot;endDate&quot;: &quot;2026-05-15&quot;,
-        &quot;descriptionCode&quot;: &quot;35&quot;
+      <span class="jk">"accountingCost"</span>: <span class="js">"LINE-ACCT-002"</span>,
+      <span class="jk">"invoicePeriod"</span>: {
+        <span class="jk">"startDate"</span>: <span class="js">"2026-04-01"</span>,
+        <span class="jk">"endDate"</span>: <span class="js">"2026-05-15"</span>,
+        <span class="jk">"descriptionCode"</span>: <span class="js">"35"</span>
       },
-      &quot;orderLineReference&quot;: [
+      <span class="jk">"orderLineReference"</span>: [
         {
-          &quot;lineId&quot;: &quot;PO-LINE-002&quot;,
-          &quot;salesOrderLineId&quot;: &quot;SO-LINE-002&quot;
+          <span class="jk">"lineId"</span>: <span class="js">"PO-LINE-002"</span>,
+          <span class="jk">"salesOrderLineId"</span>: <span class="js">"SO-LINE-002"</span>
         }
       ],
-      &quot;item&quot;: {
-        &quot;description&quot;: &quot;Service d'installation et configuration&quot;,
-        &quot;name&quot;: &quot;Installation Premium&quot;,
-        &quot;sellersItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;SELLER-SVC-INSTALL&quot;
+      <span class="jk">"item"</span>: {
+        <span class="jk">"description"</span>: <span class="js">"Service d'installation et configuration"</span>,
+        <span class="jk">"name"</span>: <span class="js">"Installation Premium"</span>,
+        <span class="jk">"sellersItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"SELLER-SVC-INSTALL"</span>
           }
         },
-        &quot;classifiedTaxCategory&quot;: [
+        <span class="jk">"classifiedTaxCategory"</span>: [
           {
-            &quot;id&quot;: &quot;S&quot;,
-            &quot;percent&quot;: <span class="jn">20.0</span>,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ],
-        &quot;additionalItemProperty&quot;: [
+        <span class="jk">"additionalItemProperty"</span>: [
           {
-            &quot;name&quot;: &quot;Type de service&quot;,
-            &quot;value&quot;: &quot;Installation sur site&quot;,
-            &quot;nameCode&quot;: &quot;SERVICE_TYPE&quot;
+            <span class="jk">"name"</span>: <span class="js">"Type de service"</span>,
+            <span class="jk">"value"</span>: <span class="js">"Installation sur site"</span>,
+            <span class="jk">"nameCode"</span>: <span class="js">"SERVICE_TYPE"</span>
           }
         ]
       },
-      &quot;price&quot;: {
-        &quot;priceAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">100.0</span>
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
         },
-        &quot;baseQuantity&quot;: {
-          &quot;quantity&quot;: <span class="jn">1.0</span>,
-          &quot;unitCode&quot;: &quot;HUR&quot;
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"HUR"</span>
         }
       },
-      &quot;taxTotal&quot;: {
-        &quot;taxAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">100.0</span>
+      <span class="jk">"taxTotal"</span>: {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
         }
       },
-      &quot;deliveryTerms&quot;: {
-        &quot;id&quot;: &quot;DAP&quot;
+      <span class="jk">"deliveryTerms"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"DAP"</span>
       }
     },
     {
-      &quot;id&quot;: &quot;3&quot;,
-      &quot;note&quot;: [
-        &quot;Ligne 3 - Produit exonere de TVA&quot;
+      <span class="jk">"id"</span>: <span class="js">"3"</span>,
+      <span class="jk">"note"</span>: [
+        <span class="js">"Ligne 3 - Produit exonere de TVA"</span>
       ],
-      &quot;invoicedQuantity&quot;: {
-        &quot;quantity&quot;: <span class="jn">2.0</span>,
-        &quot;unitCode&quot;: &quot;EA&quot;
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">2.0</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
       },
-      &quot;lineExtensionAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">500.0</span>
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">500.0</span>
       },
-      &quot;billingReference&quot;: [
+      <span class="jk">"billingReference"</span>: [
         {
-          &quot;additionalDocumentReference&quot;: {
-            &quot;id&quot;: &quot;INV-FR-2024-00200&quot;,
-            &quot;issueDate&quot;: &quot;2024-11-01&quot;,
-            &quot;documentTypeCode&quot;: &quot;381&quot;,
-            &quot;documentStatusCode&quot;: &quot;CORRECTED&quot;
+          <span class="jk">"additionalDocumentReference"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"INV-FR-2024-00200"</span>,
+            <span class="jk">"issueDate"</span>: <span class="js">"2024-11-01"</span>,
+            <span class="jk">"documentTypeCode"</span>: <span class="js">"381"</span>,
+            <span class="jk">"documentStatusCode"</span>: <span class="js">"CORRECTED"</span>
           }
         }
       ],
-      &quot;item&quot;: {
-        &quot;description&quot;: &quot;Equipement medical exonere de TVA&quot;,
-        &quot;name&quot;: &quot;Equipement Medical Type A&quot;,
-        &quot;sellersItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;SELLER-MED-001&quot;
+      <span class="jk">"item"</span>: {
+        <span class="jk">"description"</span>: <span class="js">"Equipement medical exonere de TVA"</span>,
+        <span class="jk">"name"</span>: <span class="js">"Equipement Medical Type A"</span>,
+        <span class="jk">"sellersItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"SELLER-MED-001"</span>
           }
         },
-        &quot;classifiedTaxCategory&quot;: [
+        <span class="jk">"classifiedTaxCategory"</span>: [
           {
-            &quot;id&quot;: &quot;E&quot;,
-            &quot;percent&quot;: <span class="jn">0.0</span>,
-            &quot;taxExemptionReason&quot;: &quot;Exoneration selon article 261-4-1 du CGI - Equipement medical&quot;,
-            &quot;taxExemptionReasonCode&quot;: &quot;VATEX_EU_132_1C&quot;,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"id"</span>: <span class="js">"E"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">0.0</span>,
+            <span class="jk">"taxExemptionReason"</span>: <span class="js">"Exoneration selon article 261-4-1 du CGI - Equipement medical"</span>,
+            <span class="jk">"taxExemptionReasonCode"</span>: <span class="js">"VATEX_EU_132_1C"</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ]
       },
-      &quot;price&quot;: {
-        &quot;priceAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">250.0</span>
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">250.0</span>
         },
-        &quot;baseQuantity&quot;: {
-          &quot;quantity&quot;: <span class="jn">1.0</span>,
-          &quot;unitCode&quot;: &quot;EA&quot;
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
         }
       },
-      &quot;taxTotal&quot;: {
-        &quot;taxAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">0.0</span>
+      <span class="jk">"taxTotal"</span>: {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">0.0</span>
         }
       },
-      &quot;deliveryTerms&quot;: {
-        &quot;id&quot;: &quot;DAP&quot;
+      <span class="jk">"deliveryTerms"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"DAP"</span>
       }
     },
     {
-      &quot;id&quot;: &quot;4&quot;,
-      &quot;note&quot;: [
-        &quot;Ligne 4 - Produit simple sans extras&quot;
+      <span class="jk">"id"</span>: <span class="js">"4"</span>,
+      <span class="jk">"note"</span>: [
+        <span class="js">"Ligne 4 - Produit simple sans extras"</span>
       ],
-      &quot;invoicedQuantity&quot;: {
-        &quot;quantity&quot;: <span class="jn">1.0</span>,
-        &quot;unitCode&quot;: &quot;EA&quot;
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
       },
-      &quot;lineExtensionAmount&quot;: {
-        &quot;currencyID&quot;: &quot;EUR&quot;,
-        &quot;value&quot;: <span class="jn">100.0</span>
+      <span class="jk">"lineExtensionAmount"</span>: {
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+        <span class="jk">"value"</span>: <span class="jn">100.0</span>
       },
-      &quot;item&quot;: {
-        &quot;description&quot;: &quot;Accessoire standard&quot;,
-        &quot;name&quot;: &quot;Accessoire Standard AS-100&quot;,
-        &quot;sellersItemIdentification&quot;: {
-          &quot;id&quot;: {
-            &quot;value&quot;: &quot;SELLER-ACC-100&quot;
+      <span class="jk">"item"</span>: {
+        <span class="jk">"description"</span>: <span class="js">"Accessoire standard"</span>,
+        <span class="jk">"name"</span>: <span class="js">"Accessoire Standard AS-100"</span>,
+        <span class="jk">"sellersItemIdentification"</span>: {
+          <span class="jk">"id"</span>: {
+            <span class="jk">"value"</span>: <span class="js">"SELLER-ACC-100"</span>
           }
         },
-        &quot;classifiedTaxCategory&quot;: [
+        <span class="jk">"classifiedTaxCategory"</span>: [
           {
-            &quot;id&quot;: &quot;S&quot;,
-            &quot;percent&quot;: <span class="jn">20.0</span>,
-            &quot;taxScheme&quot;: {
-              &quot;id&quot;: {
-                &quot;value&quot;: &quot;VAT&quot;
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20.0</span>,
+            <span class="jk">"taxScheme"</span>: {
+              <span class="jk">"id"</span>: {
+                <span class="jk">"value"</span>: <span class="js">"VAT"</span>
               }
             }
           }
         ]
       },
-      &quot;price&quot;: {
-        &quot;priceAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">100.0</span>
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">100.0</span>
         },
-        &quot;baseQuantity&quot;: {
-          &quot;quantity&quot;: <span class="jn">1.0</span>,
-          &quot;unitCode&quot;: &quot;EA&quot;
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1.0</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"EA"</span>
         }
       },
-      &quot;taxTotal&quot;: {
-        &quot;taxAmount&quot;: {
-          &quot;currencyID&quot;: &quot;EUR&quot;,
-          &quot;value&quot;: <span class="jn">20.0</span>
+      <span class="jk">"taxTotal"</span>: {
+        <span class="jk">"taxAmount"</span>: {
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>,
+          <span class="jk">"value"</span>: <span class="jn">20.0</span>
         }
       }
     }
