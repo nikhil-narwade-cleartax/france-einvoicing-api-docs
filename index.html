@@ -4827,9 +4827,48 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   <span class="jk">"paginationMetadata"</span>: <span class="jb">null</span>
 }</code></pre></div>
 
-<div class="tw"><table class="ht"><thead><tr><th>Error Code</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>300107</code></td><td>Invalid date range in filter</td></tr>
-<tr><td><code>300108</code></td><td>Invalid filter request</td></tr>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 400 Missing required parameter</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"400"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"start-date is required"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 401 Unauthorized</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"401"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Unauthorized"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 403 Forbidden</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"403"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"FORBIDDEN"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="tw"><table class="ht"><thead><tr><th>HTTP Status</th><th>Error Code</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>400</code></td><td><code>400</code></td><td>Missing required parameter (<code>start-date</code>, <code>end-date</code>)</td></tr>
+<tr><td><code>400</code></td><td><code>300107</code></td><td>Invalid date range in filter</td></tr>
+<tr><td><code>400</code></td><td><code>300108</code></td><td>Invalid filter request</td></tr>
+<tr><td><code>401</code></td><td><code>401</code></td><td>Missing or invalid auth token</td></tr>
+<tr><td><code>403</code></td><td><code>403</code></td><td>Valid token but user lacks required role</td></tr>
 </tbody></table></div>
 
 <hr><h2 id="receive-getdoc">Get Document</h2>
