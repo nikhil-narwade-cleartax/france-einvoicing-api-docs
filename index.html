@@ -151,7 +151,6 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="send" data-a="sample-381" onclick="go('send','Send e-Invoice','sample-381')">Credit Note (381)</a>
 <a class="ni s2" data-p="send" data-a="sample-384" onclick="go('send','Send e-Invoice','sample-384')">Corrective Invoice (384)</a><a class="ni s1" data-p="send" data-a="response" onclick="go('send','Send e-Invoice','response')">Sample Response</a></div><div class="sb-sec"><div class="sb-lbl">Receive Flow</div>
 <a class="ni" data-p="receive" onclick="go('receive','Receive e-Invoice')">Receive e-Invoice</a>
-<a class="ni s1" data-p="receive" data-a="receive-how" onclick="go('receive','Receive e-Invoice','receive-how')">How It Works</a>
 <a class="ni s1" data-p="receive" data-a="receive-query" onclick="go('receive','Receive e-Invoice','receive-query')">Query Documents <span class="post" style="background:#48bb78">GET</span></a>
 <a class="ni s2" data-p="receive" data-a="receive-query-headers" onclick="go('receive','Receive e-Invoice','receive-query-headers')">Request Headers</a>
 <a class="ni s2" data-p="receive" data-a="receive-query-params" onclick="go('receive','Receive e-Invoice','receive-query-params')">Query Parameters</a>
@@ -4703,7 +4702,8 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 
 </div><div id="pg-receive" class="pg"><div class="sb-lbl" style="color:#718096;margin-bottom:4px">RECEIVE FLOW</div><h1>Receive e-Invoice</h1><div class="ep"><div class="ep-h"><span class="mt mt-g">GET</span><span class="ep-u">/einvoice/v1/documents/query</span></div></div><p>ClearTax receives invoices from your suppliers via Peppol, validates and normalises them, and makes them available for you to pull into your system. ClearTax acts as your PA (C3) &mdash; handling format detection (UBL, CII, Factur-X), schema validation, and storage on your behalf.</p>
 
-<h2 id="receive-how">Receive Flow</h2>
+<h2 id="receive-query">Query Documents</h2>
+<p>Retrieve a list of purchase e-invoice documents filtered by date range. Use this endpoint to pull received invoices into your ERP or accounting system.</p>
 <div style="margin:20px 0;padding:24px;background:#f7fafc;border-radius:10px;border:1px solid #e2e8f0;overflow-x:auto">
 <svg viewBox="0 0 580 80" style="width:100%;max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
 <rect x="10" y="20" width="90" height="40" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5"/>
