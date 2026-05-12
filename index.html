@@ -4719,6 +4719,8 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 </svg>
 </div>
 
+<p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, &ldquo;Mandatory&rdquo; means the field will always be present; &ldquo;Optional&rdquo; means it may or may not be present depending on what the seller included. Refer to the <a href="#" onclick="go('send','Send e-Invoice','schema');return false" style="color:#2D5BE3;text-decoration:underline">Send Flow &mdash; Request Schema</a> for the complete field reference.</p>
+
 <hr><h2 id="receive-query-headers">Request Headers</h2>
 <div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Authentication token. Format: <code>1.{token_value}</code></td></tr>
@@ -4832,9 +4834,6 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <hr><h2 id="receive-getdoc">Get Document</h2>
 <div class="co co-w"><strong>Pending from engineering:</strong> Endpoint URL, request parameters, and sample request/response for fetching a single purchase document by its document ID or document number.</div>
 
-<hr><h2>Response Field Reference</h2>
-<p>The invoice data returned in the Receive flow uses the <strong>same PINT JSON field structure</strong> as the Send flow (453 fields across 16 groups). In the Receive context, &ldquo;Mandatory&rdquo; means the field will always be present; &ldquo;Optional&rdquo; means it may or may not be present depending on what the seller included.</p>
-<p>Refer to the <a href="#" onclick="go('send','Send e-Invoice','schema');return false" style="color:#2D5BE3;text-decoration:underline">Send Flow &mdash; Request Schema</a> for the complete field reference.</p>
 
 </div>
 
