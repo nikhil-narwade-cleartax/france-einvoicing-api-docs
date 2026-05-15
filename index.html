@@ -150,7 +150,11 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="send" data-a="sample-380" onclick="go('send','Send e-Invoice','sample-380')">Invoice (380)</a>
 <a class="ni s2" data-p="send" data-a="sample-381" onclick="go('send','Send e-Invoice','sample-381')">Credit Note (381)</a>
 <a class="ni s2" data-p="send" data-a="sample-384" onclick="go('send','Send e-Invoice','sample-384')">Corrective Invoice (384)</a><a class="ni s1" data-p="send" data-a="response" onclick="go('send','Send e-Invoice','response')">Sample Response</a>
-<a class="ni s1" data-p="send" data-a="send-getstatus" onclick="go('send','Send e-Invoice','send-getstatus')">Get Status <span class="post" style="background:#48bb78">GET</span></a></div><div class="sb-sec"><div class="sb-lbl">Receive Flow</div>
+<a class="ni s1" data-p="send" data-a="send-getstatus" onclick="go('send','Send e-Invoice','send-getstatus')">Get Status <span class="post" style="background:#48bb78">GET</span></a>
+<a class="ni s2" data-p="send" data-a="send-getstatus-headers" onclick="go('send','Send e-Invoice','send-getstatus-headers')">Request Headers</a>
+<a class="ni s2" data-p="send" data-a="send-getstatus-sample" onclick="go('send','Send e-Invoice','send-getstatus-sample')">Sample Request</a>
+<a class="ni s2" data-p="send" data-a="send-getstatus-response" onclick="go('send','Send e-Invoice','send-getstatus-response')">Sample Response</a>
+<a class="ni s2" data-p="send" data-a="send-getstatus-statuses" onclick="go('send','Send e-Invoice','send-getstatus-statuses')">Status Values</a></div><div class="sb-sec"><div class="sb-lbl">Receive Flow</div>
 <a class="ni" data-p="receive" onclick="go('receive','Receive e-Invoice')">Receive e-Invoice</a>
 <a class="ni s1" data-p="receive" data-a="receive-query" onclick="go('receive','Receive e-Invoice','receive-query')">Query Documents <span class="post" style="background:#48bb78">GET</span></a>
 <a class="ni s2" data-p="receive" data-a="receive-query-headers" onclick="go('receive','Receive e-Invoice','receive-query-headers')">Request Headers</a>
@@ -158,6 +162,10 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="receive" data-a="receive-query-sample" onclick="go('receive','Receive e-Invoice','receive-query-sample')">Sample Request</a>
 <a class="ni s2" data-p="receive" data-a="receive-query-response" onclick="go('receive','Receive e-Invoice','receive-query-response')">Sample Response</a>
 <a class="ni s1" data-p="receive" data-a="receive-getdoc" onclick="go('receive','Receive e-Invoice','receive-getdoc')">Get Document <span class="post" style="background:#48bb78">GET</span></a>
+<a class="ni s2" data-p="receive" data-a="receive-getdoc-headers" onclick="go('receive','Receive e-Invoice','receive-getdoc-headers')">Request Headers</a>
+<a class="ni s2" data-p="receive" data-a="receive-getdoc-params" onclick="go('receive','Receive e-Invoice','receive-getdoc-params')">Query Parameters</a>
+<a class="ni s2" data-p="receive" data-a="receive-getdoc-sample" onclick="go('receive','Receive e-Invoice','receive-getdoc-sample')">Sample Request</a>
+<a class="ni s2" data-p="receive" data-a="receive-getdoc-response" onclick="go('receive','Receive e-Invoice','receive-getdoc-response')">Sample Response</a>
 </div>
 <div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -4712,7 +4720,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 
 <p>After submitting an invoice, use this endpoint to track its lifecycle — from submission through buyer actions to payment.</p>
 
-<hr><h3>Request Headers</h3>
+<hr><h3 id="send-getstatus-headers">Request Headers</h3>
 <div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr>
@@ -4725,7 +4733,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>document_id</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>ClearTax document ID (from Query API <code>DocumentId</code> field)</td></tr>
 </tbody></table></div>
 
-<hr><h3>Sample Request</h3>
+<hr><h3 id="send-getstatus-sample">Sample Request</h3>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
 <pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents/6a0478c61274944f56dcf1d0/status?einvoice-type=SALES' \
 --header 'x-clear-country-code: FR' \
@@ -4733,7 +4741,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --header 'x-clear-siren: 328746599'</code></pre></div>
 
-<hr><h3>Sample Response</h3>
+<hr><h3 id="send-getstatus-response">Sample Response</h3>
 <h4>Success (200 OK)</h4>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
 <pre><code>{
@@ -4743,7 +4751,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>
 }</code></pre></div>
 
-<h4>Status Values</h4>
+<h4 id="send-getstatus-statuses">Status Values</h4>
 <div class="tw"><table class="ht"><thead><tr><th>Status</th><th>Code</th><th>Description</th><th>Terminal</th></tr></thead><tbody>
 <tr><td>Pending</td><td>&mdash;</td><td>Invoice ingested, not yet submitted</td><td>No</td></tr>
 <tr><td>Failed</td><td>&mdash;</td><td>Validation or delivery failure</td><td>No</td></tr>
@@ -4977,28 +4985,28 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <code style="font-size:14px;font-weight:600;color:#276749">/einvoice/v1/documents</code>
 </div>
 
-<hr><h3>Request Headers</h3>
+<hr><h3 id="receive-getdoc-headers">Request Headers</h3>
 <div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>fr</code></td></tr>
 <tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>602348716</code></td></tr>
 </tbody></table></div>
 
-<hr><h3>Query Parameters</h3>
+<hr><h3 id="receive-getdoc-params">Query Parameters</h3>
 <div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
 <tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> or <code>PURCHASE</code></td></tr>
 <tr><td>document-id</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-cm">Conditional</span></td><td>ClearTax document ID. Required if <code>document-number</code> is not provided.</td></tr>
 <tr><td>document-number</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-cm">Conditional</span></td><td>Invoice number. Required if <code>document-id</code> is not provided.</td></tr>
 </tbody></table></div>
 
-<hr><h3>Sample Request</h3>
+<hr><h3 id="receive-getdoc-sample">Sample Request</h3>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
 <pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents?document-id=6a0478f0f3e6b82ade9cd2e7&amp;einvoice-type=PURCHASE' \
 --header 'x-clear-country-code: fr' \
 --header 'x-clear-siren: 602348716' \
 --header 'x-cleartax-auth-token: {your_auth_token}'</code></pre></div>
 
-<hr><h3>Sample Response</h3>
+<hr><h3 id="receive-getdoc-response">Sample Response</h3>
 
 <h4>Success (200 OK)</h4>
 <p>Returns the full invoice payload in PINT JSON format — same field structure as the Send flow request schema (453 fields across 16 groups).</p>
