@@ -157,6 +157,7 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="receive" data-a="receive-query-sample" onclick="go('receive','Receive e-Invoice','receive-query-sample')">Sample Request</a>
 <a class="ni s2" data-p="receive" data-a="receive-query-response" onclick="go('receive','Receive e-Invoice','receive-query-response')">Sample Response</a>
 <a class="ni s1" data-p="receive" data-a="receive-getdoc" onclick="go('receive','Receive e-Invoice','receive-getdoc')">Get Document <span class="post" style="background:#48bb78">GET</span></a>
+<a class="ni s1" data-p="receive" data-a="receive-getstatus" onclick="go('receive','Receive e-Invoice','receive-getstatus')">Get Status <span class="post" style="background:#48bb78">GET</span></a>
 </div>
 <div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -167,11 +168,12 @@ tr.gr td{font-weight:600}
 <div class="tw"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th><th>Status</th></tr></thead><tbody>
 <tr style="background:#f7fafc"><td colspan="4" style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#718096;padding:10px 11px">Send Flow</td></tr>
 <tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/documents/send</code></td><td>Submit one or more invoice documents for validation and routing to the buyer via Peppol.</td><td>Available</td></tr>
-<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/{document_id}/status</code></td><td>Get document current lifecycle status and check whether this document was successfully reported to PPF.</td><td>Coming soon</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/{document_id}/status</code></td><td>Get current lifecycle status of a document.</td><td>Available</td></tr>
 <tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/print</code></td><td>Get the PDF version of an e-invoice based on the invoice identifiers.</td><td>Coming soon</td></tr>
 <tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/documents/email</code></td><td>Send an e-invoice to the buyer via email.</td><td>Coming soon</td></tr>
 <tr style="background:#f7fafc"><td colspan="4" style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#718096;padding:10px 11px">Receive Flow</td></tr>
 <tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/query</code></td><td>Retrieve a list of purchase e-invoice documents filtered by date range, type, and pagination.</td><td>Available</td></tr>
+<tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents</code></td><td>Retrieve full invoice payload by document ID or document number.</td><td>Available</td></tr>
 </tbody></table></div>
 
 <h2>Supported document types</h2><div class="tw"><table><thead><tr><th>Code</th><th>Type</th><th>Category</th><th>Status</th></tr></thead><tbody><tr><td><code>380</code></td><td>Commercial invoice</td><td>Invoice</td><td>Available</td></tr><tr><td><code>381</code></td><td>Credit note</td><td>Credit Note</td><td>Available</td></tr><tr><td><code>384</code></td><td>Corrected invoice</td><td>Invoice</td><td>Available</td></tr><tr><td><code>261</code></td><td>Self billed credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>262</code></td><td>Consolidated credit note - goods and services</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>386</code></td><td>Prepayment invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>389</code></td><td>Self-billed invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>393</code></td><td>Factored invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>396</code></td><td>Factored credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>471</code></td><td>Self-billed corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>472</code></td><td>Factored corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>473</code></td><td>Self billed factored corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>500</code></td><td>Self prepayment invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>501</code></td><td>Self billed factored invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>502</code></td><td>Self billed factored credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>503</code></td><td>Prepayment credit note</td><td>Credit Note</td><td>Coming soon</td></tr></tbody></table></div><h2>Validations</h2>
@@ -4872,8 +4874,233 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 </tbody></table></div>
 
 <hr><h2 id="receive-getdoc">Get Document</h2>
-<div class="co co-w"><strong>Pending from engineering:</strong> Endpoint URL, request parameters, and sample request/response for fetching a single purchase document by its document ID or document number.</div>
+<p>Retrieve the full invoice payload by document ID or document number. Works for both SALES and PURCHASE documents.</p>
 
+<div style="margin:16px 0;padding:12px 16px;background:#f0fff4;border-radius:8px;border:1px solid #c6f6d5;display:flex;align-items:center;gap:10px">
+<span class="mt mt-g" style="flex-shrink:0">GET</span>
+<code style="font-size:14px;font-weight:600;color:#276749">/einvoice/v1/documents</code>
+</div>
+
+<hr><h3>Request Headers</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
+<tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
+<tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>fr</code></td></tr>
+<tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>602348716</code></td></tr>
+</tbody></table></div>
+
+<hr><h3>Query Parameters</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> or <code>PURCHASE</code></td></tr>
+<tr><td>document-id</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-cm">Conditional</span></td><td>ClearTax document ID. Required if <code>document-number</code> is not provided.</td></tr>
+<tr><td>document-number</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-cm">Conditional</span></td><td>Invoice number. Required if <code>document-id</code> is not provided.</td></tr>
+</tbody></table></div>
+
+<hr><h3>Sample Request</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents?document-id=6a0478f0f3e6b82ade9cd2e7&amp;einvoice-type=PURCHASE' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 602348716' \
+--header 'x-cleartax-auth-token: {your_auth_token}'</code></pre></div>
+
+<hr><h3>Sample Response</h3>
+
+<h4>Success (200 OK)</h4>
+<p>Returns the full invoice payload in PINT JSON format — same field structure as the Send flow request schema (453 fields across 16 groups).</p>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Full Invoice Payload (truncated for brevity)</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"id"</span>: <span class="js">"CN-FR-2026-Test-003"</span>,
+  <span class="jk">"issueDate"</span>: <span class="js">"2026-05-13"</span>,
+  <span class="jk">"invoiceTypeCode"</span>: {
+    <span class="jk">"value"</span>: <span class="js">"381"</span>
+  },
+  <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+  <span class="jk">"buyerReference"</span>: <span class="js">"BUYER-REF-2025-001"</span>,
+  <span class="jk">"accountingSupplierParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"partyName"</span>: { <span class="jk">"name"</span>: <span class="js">"ACME France SARL"</span> },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"123 Rue de la Paix"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+        <span class="jk">"country"</span>: { <span class="jk">"identificationCode"</span>: { <span class="jk">"countryCode"</span>: <span class="js">"FR"</span> } }
+      }
+    }
+  },
+  <span class="jk">"accountingCustomerParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"partyName"</span>: { <span class="jk">"name"</span>: <span class="js">"Client Industrie France SA"</span> },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"100 Rue de l'Industrie"</span>,
+        <span class="jk">"cityName"</span>: <span class="js">"Lyon"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"69001"</span>
+      }
+    }
+  },
+  <span class="jk">"legalMonetaryTotal"</span>: {
+    <span class="jk">"taxExclusiveAmount"</span>: { <span class="jk">"value"</span>: <span class="jn">4050.0</span> },
+    <span class="jk">"taxInclusiveAmount"</span>: { <span class="jk">"value"</span>: <span class="jn">4770.0</span> },
+    <span class="jk">"payableAmount"</span>: { <span class="jk">"value"</span>: <span class="jn">4770.0</span> }
+  },
+  <span class="jk">"invoiceLine"</span>: [
+    {
+      <span class="jk">"id"</span>: <span class="js">"1"</span>,
+      <span class="jk">"invoicedQuantity"</span>: { <span class="jk">"value"</span>: <span class="jn">10.0</span>, <span class="jk">"unitCode"</span>: <span class="js">"C62"</span> },
+      <span class="jk">"lineExtensionAmount"</span>: { <span class="jk">"value"</span>: <span class="jn">2000.0</span> },
+      <span class="jk">"item"</span>: { <span class="jk">"name"</span>: <span class="js">"Consulting services - Phase 1"</span> }
+    }
+  ]
+}</code></pre></div>
+
+<h4>Error Responses</h4>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 404 Document not found</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"404"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Document with number '6a0478f0f3e6b82ade9cd2e71' not found"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 401 Unauthorized</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"401"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Unauthorized"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 403 Forbidden</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"403"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"FORBIDDEN"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<!-- ================================================================ -->
+<!-- GET STATUS -->
+<!-- ================================================================ -->
+<hr><h2 id="receive-getstatus">Get Status</h2>
+<p>Check the current lifecycle status of a document. Works for both SALES and PURCHASE documents.</p>
+
+<div style="margin:16px 0;padding:12px 16px;background:#f0fff4;border-radius:8px;border:1px solid #c6f6d5;display:flex;align-items:center;gap:10px">
+<span class="mt mt-g" style="flex-shrink:0">GET</span>
+<code style="font-size:14px;font-weight:600;color:#276749">/einvoice/v1/documents/{document_id}/status</code>
+</div>
+
+<hr><h3>Request Headers</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
+<tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
+<tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr>
+<tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>328746599</code></td></tr>
+<tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> or <code>PURCHASE</code></td></tr>
+</tbody></table></div>
+
+<hr><h3>Path Parameters</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>document_id</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>ClearTax document ID (from Query API <code>DocumentId</code> field)</td></tr>
+</tbody></table></div>
+
+<hr><h3>Query Parameters</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> or <code>PURCHASE</code></td></tr>
+</tbody></table></div>
+
+<hr><h3>Sample Request</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api.fr.cleartax.com/einvoice/v1/documents/6a0478c61274944f56dcf1d0/status?einvoice-type=SALES' \
+--header 'x-clear-country-code: FR' \
+--header 'x-einvoice-type: SALES' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--header 'x-clear-siren: 328746599'</code></pre></div>
+
+<hr><h3>Sample Response</h3>
+
+<h4>Success (200 OK)</h4>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="js">"true"</span>,
+  <span class="jk">"DocumentId"</span>: <span class="js">"6a0478c61274944f56dcf1d0"</span>,
+  <span class="jk">"Status"</span>: <span class="js">"Received"</span>,
+  <span class="jk">"ErrorDetails"</span>: <span class="jb">null</span>
+}</code></pre></div>
+
+<h4>Response Fields</h4>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Success</td><td><span class="tp tp-text">String</span></td><td><code>"true"</code> if request was successful.</td></tr>
+<tr><td>DocumentId</td><td><span class="tp tp-id">String</span></td><td>ClearTax document ID.</td></tr>
+<tr><td>Status</td><td><span class="tp tp-code">String</span></td><td>Current lifecycle status. See Status Values below.</td></tr>
+<tr><td>ErrorDetails</td><td><span class="tp tp-text">Object</span></td><td>Error details if applicable. <code>null</code> when no errors.</td></tr>
+</tbody></table></div>
+
+<h4>Status Values</h4>
+<div class="tw"><table class="ht"><thead><tr><th>Status</th><th>Code</th><th>Description</th><th>Terminal</th></tr></thead><tbody>
+<tr><td>Pending</td><td>&mdash;</td><td>Invoice ingested, not yet submitted</td><td>No</td></tr>
+<tr><td>Failed</td><td>&mdash;</td><td>Validation or delivery failure</td><td>No</td></tr>
+<tr><td>Submitted</td><td>200</td><td>Filed with PPF, delivered to buyer PA</td><td>No</td></tr>
+<tr><td>Received</td><td>202</td><td>Buyer's platform received the invoice</td><td>No</td></tr>
+<tr><td>Made Available</td><td>203</td><td>Invoice accessible to the buyer</td><td>No</td></tr>
+<tr><td>Acknowledged</td><td>204</td><td>Buyer is reviewing</td><td>No</td></tr>
+<tr><td>Approved</td><td>205</td><td>Buyer approved the invoice</td><td>No</td></tr>
+<tr><td>Partially Approved</td><td>206</td><td>Buyer approved some line items</td><td>No</td></tr>
+<tr><td>Disputed</td><td>207</td><td>Buyer flagged a problem</td><td>No</td></tr>
+<tr><td>Suspended</td><td>208</td><td>Buyer needs more documents</td><td>No</td></tr>
+<tr><td>Completed</td><td>209</td><td>Seller provided additional info</td><td>No</td></tr>
+<tr><td>Refused</td><td>210</td><td>Buyer permanently rejected</td><td><strong>Yes</strong></td></tr>
+<tr><td>Payment Sent</td><td>211</td><td>Buyer initiated payment</td><td>No</td></tr>
+<tr><td>Payment Collected</td><td>212</td><td>Seller confirmed payment received</td><td><strong>Yes</strong></td></tr>
+</tbody></table></div>
+
+<h4>Error Responses</h4>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 404 Document not found</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"300102"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"You don't have any data present for the selected Document Details"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 401 Unauthorized</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"401"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Unauthorized"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; 403 Forbidden</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"403"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"FORBIDDEN"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
 
 </div>
 
