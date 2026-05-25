@@ -167,6 +167,18 @@ tr.gr td{font-weight:600}
 <a class="ni s2" data-p="receive" data-a="receive-getdoc-sample" onclick="go('receive','Receive e-Invoice','receive-getdoc-sample')">Sample Request</a>
 <a class="ni s2" data-p="receive" data-a="receive-getdoc-response" onclick="go('receive','Receive e-Invoice','receive-getdoc-response')">Sample Response</a>
 </div>
+<div class="sb-sec"><div class="sb-lbl">Lifecycle Actions</div>
+<a class="ni" data-p="actions" onclick="go('actions','Lifecycle Actions')">Lifecycle Actions <span class="post">POST</span></a>
+<a class="ni s1" data-p="actions" data-a="actions-headers" onclick="go('actions','Lifecycle Actions','actions-headers')">Request Headers</a>
+<a class="ni s1" data-p="actions" data-a="actions-body" onclick="go('actions','Lifecycle Actions','actions-body')">Request Body</a>
+<a class="ni s1" data-p="actions" data-a="actions-types" onclick="go('actions','Lifecycle Actions','actions-types')">Action Types</a>
+<a class="ni s1" data-p="actions" data-a="actions-actiondata" onclick="go('actions','Lifecycle Actions','actions-actiondata')">ActionData Schemas</a>
+<a class="ni s1" data-p="actions" data-a="actions-reasons" onclick="go('actions','Lifecycle Actions','actions-reasons')">Reason Codes</a>
+<a class="ni s1" data-p="actions" data-a="actions-transitions" onclick="go('actions','Lifecycle Actions','actions-transitions')">Status Transitions</a>
+<a class="ni s1" data-p="actions" data-a="actions-response" onclick="go('actions','Lifecycle Actions','actions-response')">Response</a>
+<a class="ni s1" data-p="actions" data-a="actions-errors" onclick="go('actions','Lifecycle Actions','actions-errors')">Error Codes</a>
+<a class="ni s1" data-p="actions" data-a="actions-examples" onclick="go('actions','Lifecycle Actions','actions-examples')">Examples</a>
+</div>
 <div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
 <a class="ni" data-p="codes" onclick="go('codes','Code Lists')">Code Lists</a>
@@ -180,6 +192,8 @@ tr.gr td{font-weight:600}
 <tr style="background:#f7fafc"><td colspan="4" style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#718096;padding:10px 11px">Receive Flow</td></tr>
 <tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents/query</code></td><td>Retrieve a list of purchase e-invoice documents filtered by date range, type, and pagination.</td><td>Available</td></tr>
 <tr><td><span class="mt mt-g">GET</span></td><td><code>/einvoice/v1/documents</code></td><td>Retrieve full invoice payload by document ID or document number.</td><td>Available</td></tr>
+<tr style="background:#f7fafc"><td colspan="4" style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#718096;padding:10px 11px">Lifecycle Actions</td></tr>
+<tr><td><span class="mt mt-p">POST</span></td><td><code>/einvoice/v1/action</code></td><td>Perform lifecycle actions on invoices (acknowledge, approve, refuse, dispute, suspend, etc.).</td><td>Available</td></tr>
 </tbody></table></div>
 
 <h2>Supported document types</h2><div class="tw"><table><thead><tr><th>Code</th><th>Type</th><th>Category</th><th>Status</th></tr></thead><tbody><tr><td><code>380</code></td><td>Commercial invoice</td><td>Invoice</td><td>Available</td></tr><tr><td><code>381</code></td><td>Credit note</td><td>Credit Note</td><td>Available</td></tr><tr><td><code>384</code></td><td>Corrected invoice</td><td>Invoice</td><td>Available</td></tr><tr><td><code>261</code></td><td>Self billed credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>262</code></td><td>Consolidated credit note - goods and services</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>386</code></td><td>Prepayment invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>389</code></td><td>Self-billed invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>393</code></td><td>Factored invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>396</code></td><td>Factored credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>471</code></td><td>Self-billed corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>472</code></td><td>Factored corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>473</code></td><td>Self billed factored corrective invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>500</code></td><td>Self prepayment invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>501</code></td><td>Self billed factored invoice</td><td>Invoice</td><td>Coming soon</td></tr><tr><td><code>502</code></td><td>Self billed factored credit note</td><td>Credit Note</td><td>Coming soon</td></tr><tr><td><code>503</code></td><td>Prepayment credit note</td><td>Credit Note</td><td>Coming soon</td></tr></tbody></table></div><h2>Validations</h2>
@@ -5089,6 +5103,372 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <!-- ================================================================ -->
 <!-- GET STATUS -->
 <!-- ================================================================ -->
+
+</div>
+
+<div id="pg-actions" class="pg"><div class="sb-lbl" style="color:#718096;margin-bottom:4px">LIFECYCLE ACTIONS</div><h1>Lifecycle Actions</h1><div class="ep"><div class="ep-h"><span class="mt mt-p">POST</span><span class="ep-u">/einvoice/v1/action?einvoice-type={PURCHASE|SALES}</span></div></div>
+<p>Perform lifecycle actions on invoices. Buyer actions (acknowledge, approve, dispute, suspend, refuse) are taken on purchase documents. Seller actions (complete) are taken on sales documents. Actions are processed asynchronously &mdash; poll <a href="#" onclick="go('send','Send e-Invoice','send-getstatus');return false" style="color:#2D5BE3;text-decoration:underline">Get Status</a> to check the updated status.</p>
+
+<hr><h2 id="actions-headers">Request Headers</h2>
+<div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody>
+<tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
+<tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr>
+<tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>fr</code></td></tr>
+<tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>196001333</code></td></tr>
+<tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code> or <code>SALES</code></td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-body">Request Body</h2>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"invoiceId"</span>: <span class="js">"6a07547bdfd6ba52319fa87d"</span>,
+  <span class="jk">"actionType"</span>: <span class="js">"REFUSE"</span>,
+  <span class="jk">"actionData"</span>: {
+    <span class="jk">"reasonCodes"</span>: [<span class="js">"TX_TVA_ERR"</span>],
+    <span class="jk">"comment"</span>: <span class="js">"VAT calculation incorrect: expected 20% but received 19%"</span>
+  }
+}</code></pre></div>
+
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>invoiceId</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>ClearTax document ID.</td></tr>
+<tr><td>actionType</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Action to perform. See Action Types below.</td></tr>
+<tr><td>actionData</td><td><span class="tp tp-text">Object</span></td><td><span class="cb cb-cm">Conditional</span></td><td>Required for DISPUTE, SUSPEND, REFUSE. Pass <code>{}</code> or omit for other actions.</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-types">Action Types</h2>
+
+<h3>Buyer Actions (<code>einvoice-type: PURCHASE</code>)</h3>
+<div class="tw"><table class="ht"><thead><tr><th>actionType</th><th>Status</th><th>Code</th><th>actionData</th><th>PPF</th></tr></thead><tbody>
+<tr><td><code>ACKNOWLEDGE</code></td><td>Acknowledged</td><td>204</td><td>Not required</td><td>No</td></tr>
+<tr><td><code>APPROVE</code></td><td>Approved</td><td>205</td><td>Not required</td><td>No</td></tr>
+<tr><td><code>DISPUTE</code></td><td>Disputed</td><td>207</td><td>reasonCodes + comment (optional)</td><td>No</td></tr>
+<tr><td><code>SUSPEND</code></td><td>Suspended</td><td>208</td><td>reasonCodes + comment</td><td>No</td></tr>
+<tr><td><code>REFUSE</code></td><td>Refused</td><td>210</td><td>reasonCodes + comment</td><td><strong>Yes</strong></td></tr>
+<tr><td><code>SEND_PAYMENT</code></td><td>Payment Sent</td><td>211</td><td>Not required</td><td>No</td></tr>
+</tbody></table></div>
+
+<h3>Seller Actions (<code>einvoice-type: SALES</code>)</h3>
+<div class="tw"><table class="ht"><thead><tr><th>actionType</th><th>Status</th><th>Code</th><th>actionData</th><th>PPF</th></tr></thead><tbody>
+<tr><td><code>COMPLETE</code></td><td>Completed</td><td>209</td><td>Not required</td><td>No</td></tr>
+</tbody></table></div>
+
+<div class="co co-i" style="margin-top:12px"><strong>Only REFUSE (210) is reported to PPF.</strong> All other actions are exchanged between platforms only. Refuse is one of 4 mandatory DGFiP statuses (200, 210, 212, 213) and must be reported within 24 hours.</div>
+
+<hr><h2 id="actions-actiondata">ActionData Schemas</h2>
+
+<h3>Dispute</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"actionData"</span>: {
+    <span class="jk">"reasonCodes"</span>: [<span class="js">"TX_TVA_ERR"</span>],
+    <span class="jk">"comment"</span>: <span class="js">"VAT rate should be 20% not 19%."</span>
+  }
+}</code></pre></div>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>reasonCodes</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Reason code(s) from the Dispute reason code list.</td></tr>
+<tr><td>comment</td><td><span class="tp tp-text">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>Free-text comment.</td></tr>
+</tbody></table></div>
+
+<h3>Suspend</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"actionData"</span>: {
+    <span class="jk">"reasonCodes"</span>: [<span class="js">"JUSTIF_ABS"</span>],
+    <span class="jk">"comment"</span>: <span class="js">"Awaiting missing purchase order documentation."</span>
+  }
+}</code></pre></div>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>reasonCodes</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>One of: JUSTIF_ABS, MONTANTTOTAL_ERR, CMD_ERR, REF_CT_ABSENT.</td></tr>
+<tr><td>comment</td><td><span class="tp tp-text">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Free-text comment explaining suspension.</td></tr>
+</tbody></table></div>
+
+<h3>Refuse</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"actionData"</span>: {
+    <span class="jk">"reasonCodes"</span>: [<span class="js">"DEST_ERR"</span>],
+    <span class="jk">"comment"</span>: <span class="js">"Invoice addressed to wrong entity."</span>
+  }
+}</code></pre></div>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>reasonCodes</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Reason code(s) from the Refuse reason code list.</td></tr>
+<tr><td>comment</td><td><span class="tp tp-text">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Free-text comment. Required for Refuse.</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-reasons">Reason Codes</h2>
+
+<h3>Refuse (24 codes)</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Code</th><th>English</th></tr></thead><tbody>
+<tr><td><code>MONTANTTOTAL_ERR</code></td><td>Wrong total amount</td></tr>
+<tr><td><code>CALCUL_ERR</code></td><td>Calculation error</td></tr>
+<tr><td><code>TX_TVA_ERR</code></td><td>Incorrect VAT rate</td></tr>
+<tr><td><code>PU_ERR</code></td><td>Wrong unit price</td></tr>
+<tr><td><code>REM_ERR</code></td><td>Wrong discount</td></tr>
+<tr><td><code>CMD_ERR</code></td><td>Wrong or missing PO number</td></tr>
+<tr><td><code>QTE_ERR</code></td><td>Wrong quantity</td></tr>
+<tr><td><code>ART_ERR</code></td><td>Wrong article</td></tr>
+<tr><td><code>QUALITE_ERR</code></td><td>Defective quality</td></tr>
+<tr><td><code>LIVR_INCOMP</code></td><td>Delivery issue</td></tr>
+<tr><td><code>REF_CT_ABSENT</code></td><td>Missing contractual reference</td></tr>
+<tr><td><code>REF_ERR</code></td><td>Incorrect reference</td></tr>
+<tr><td><code>SIRET_ERR</code></td><td>Wrong or missing SIRET</td></tr>
+<tr><td><code>COORD_BANC_ERR</code></td><td>Wrong bank details</td></tr>
+<tr><td><code>CODE_ROUTAGE_ERR</code></td><td>Wrong routing code</td></tr>
+<tr><td><code>ADR_ERR</code></td><td>Wrong billing address</td></tr>
+<tr><td><code>NON_CONFORME</code></td><td>Missing legal mention</td></tr>
+<tr><td><code>MODPAI_ERR</code></td><td>Wrong payment terms</td></tr>
+<tr><td><code>DEST_ERR</code></td><td>Wrong recipient</td></tr>
+<tr><td><code>EMMET_INC</code></td><td>Unknown sender</td></tr>
+<tr><td><code>TRANSAC_INC</code></td><td>Unknown transaction</td></tr>
+<tr><td><code>CONTRAT_TERM</code></td><td>Contract terminated</td></tr>
+<tr><td><code>DOUBLON</code></td><td>Duplicate invoice</td></tr>
+<tr><td><code>DOUBLE_FACT</code></td><td>Already invoiced</td></tr>
+</tbody></table></div>
+
+<h3>Dispute (24 codes)</h3>
+<p>Same as Refuse except: no <code>COORD_BANC_ERR</code>, plus <code>AUTRE</code> (Other reason).</p>
+
+<h3>Suspend (4 codes)</h3>
+<div class="tw"><table class="ht"><thead><tr><th>Code</th><th>English</th></tr></thead><tbody>
+<tr><td><code>JUSTIF_ABS</code></td><td>Missing documents</td></tr>
+<tr><td><code>MONTANTTOTAL_ERR</code></td><td>Wrong total amount</td></tr>
+<tr><td><code>CMD_ERR</code></td><td>Wrong or missing PO number</td></tr>
+<tr><td><code>REF_CT_ABSENT</code></td><td>Missing contractual reference</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-transitions">Status Transitions</h2>
+<p>The API validates that the action is allowed for the invoice's current status.</p>
+<div class="tw"><table class="ht"><thead><tr><th>Current Status</th><th>Allowed Actions</th></tr></thead><tbody>
+<tr><td>203 (Made Available)</td><td>ACKNOWLEDGE, APPROVE, DISPUTE, SUSPEND, REFUSE, CONFIRM_PAYMENT</td></tr>
+<tr><td>204 (Acknowledged)</td><td>APPROVE, DISPUTE, SUSPEND, REFUSE, SEND_PAYMENT, CONFIRM_PAYMENT</td></tr>
+<tr><td>205 (Approved)</td><td>SEND_PAYMENT, CONFIRM_PAYMENT</td></tr>
+<tr><td>206 (Partially Approved)</td><td>DISPUTE, COMPLETE, CONFIRM_PAYMENT</td></tr>
+<tr><td>207 (Disputed)</td><td>APPROVE, REFUSE</td></tr>
+<tr><td>208 (Suspended)</td><td>APPROVE, REFUSE</td></tr>
+<tr><td>209 (Completed)</td><td>APPROVE, DISPUTE</td></tr>
+<tr><td>211 (Payment Sent)</td><td>CONFIRM_PAYMENT</td></tr>
+<tr><td>210 (Refused)</td><td>&mdash; (Terminal)</td></tr>
+<tr><td>212 (Collected)</td><td>&mdash; (Terminal)</td></tr>
+<tr><td>213 (Rejected)</td><td>&mdash; (Terminal)</td></tr>
+<tr><td>220 (Cancelled)</td><td>&mdash; (Terminal)</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-response">Response</h2>
+
+<h3>Success (200 OK)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">true</span>,
+  <span class="jk">"DocumentId"</span>: <span class="js">"6a101ff719601436fa850e8e"</span>,
+  <span class="jk">"PpfReportingRequired"</span>: <span class="jb">true</span>,
+  <span class="jk">"Message"</span>: <span class="js">"Action is in progress"</span>
+}</code></pre></div>
+
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>
+<tr><td>Success</td><td><span class="tp tp-text">Boolean</span></td><td><code>true</code> if the action was accepted.</td></tr>
+<tr><td>DocumentId</td><td><span class="tp tp-id">String</span></td><td>ClearTax document ID.</td></tr>
+<tr><td>PpfReportingRequired</td><td><span class="tp tp-text">Boolean</span></td><td><code>true</code> if this action triggers PPF reporting. Poll Get Status for PPF acceptance.</td></tr>
+<tr><td>Message</td><td><span class="tp tp-text">String</span></td><td>Processing status message.</td></tr>
+</tbody></table></div>
+
+<p style="font-size:12px;color:#718096;margin-top:8px"><strong>Note:</strong> Actions are processed asynchronously. The response confirms the action was accepted, not that the status has changed. Poll <strong>Get Status</strong> to check the updated lifecycle status.</p>
+
+<h3>Success &mdash; Idempotent (already in target status)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">true</span>,
+  <span class="jk">"DocumentId"</span>: <span class="js">"6a101ff719601436fa850e8e"</span>,
+  <span class="jk">"PpfReportingRequired"</span>: <span class="jb">true</span>,
+  <span class="jk">"Message"</span>: <span class="js">"Invoice is already in status REFUSED"</span>
+}</code></pre></div>
+<p style="font-size:12px;color:#718096">If the invoice is already in the target status, the API returns success (not an error). The <code>Message</code> field indicates the action was already applied.</p>
+
+<hr><h2 id="actions-errors">Error Codes</h2>
+
+<h3>Invalid Flow (400)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"INVALID_FLOW"</span>,
+    <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Action REFUSE is not compatible with seller flow"</span>
+  }
+}</code></pre></div>
+
+<h3>Invalid Status Transition (400)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"INVALID_STATUS_TRANSITION"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Cannot transition from terminal state REFUSED to ACCEPTED"</span>
+  }
+}</code></pre></div>
+
+<h3>Unsupported Action (400)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"UNSUPPORTED_ACTION"</span>,
+    <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Action type SOME_UNSUPPORTED_ACTION is not handled"</span>
+  }
+}</code></pre></div>
+
+<h3>Invalid Action Data (400)</h3>
+<p>Covers: missing actionData, invalid format, missing reason code, missing comment, empty reason code.</p>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Missing actionData</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"INVALID_ACTION_DATA"</span>,
+    <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Action REFUSE requires actionData"</span>
+  }
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Missing reason code</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"INVALID_ACTION_DATA"</span>,
+    <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Action REFUSE requires reasonCode in actionData"</span>
+  }
+}</code></pre></div>
+
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; Missing comment</span></div>
+<pre><code>{
+  <span class="jk">"Success"</span>: <span class="jb">false</span>,
+  <span class="jk">"ErrorDetails"</span>: {
+    <span class="jk">"ErrorCode"</span>: <span class="js">"INVALID_ACTION_DATA"</span>,
+    <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+    <span class="jk">"ErrorMessage"</span>: <span class="js">"Action REFUSE requires a comment"</span>
+  }
+}</code></pre></div>
+
+<h3>Invoice Not Found (404)</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span></div>
+<pre><code>{
+  <span class="jk">"ErrorDetails"</span>: [
+    {
+      <span class="jk">"ErrorCode"</span>: <span class="js">"INVOICE_NOT_FOUND"</span>,
+      <span class="jk">"ErrorMessage"</span>: <span class="js">"Invoice not found: 6a07547bdfd6ba52319fa87e"</span>,
+      <span class="jk">"ErrorSource"</span>: <span class="js">"CLEARTAX"</span>,
+      <span class="jk">"Path"</span>: <span class="jb">null</span>
+    }
+  ]
+}</code></pre></div>
+
+<h3>401 / 403</h3>
+<p>Standard ClearTax platform error format (same as other APIs).</p>
+
+<div class="tw"><table class="ht"><thead><tr><th>Error Code</th><th>HTTP</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>INVALID_FLOW</code></td><td>400</td><td>Action not compatible with einvoice-type (buyer/seller mismatch)</td></tr>
+<tr><td><code>INVALID_STATUS_TRANSITION</code></td><td>400</td><td>Action not allowed for current status or terminal status</td></tr>
+<tr><td><code>UNSUPPORTED_ACTION</code></td><td>400</td><td>Action type not recognized or not yet supported</td></tr>
+<tr><td><code>INVALID_ACTION_DATA</code></td><td>400</td><td>Missing or invalid actionData, reason codes, or comment</td></tr>
+<tr><td><code>INVOICE_NOT_FOUND</code></td><td>404</td><td>No invoice found with the given ID</td></tr>
+<tr><td><code>401</code></td><td>401</td><td>Missing or invalid auth token</td></tr>
+<tr><td><code>403</code></td><td>403</td><td>Valid token but insufficient permissions</td></tr>
+</tbody></table></div>
+
+<hr><h2 id="actions-examples">Examples</h2>
+
+<h3>Buyer Acknowledges Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=PURCHASE' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: PURCHASE' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "ACKNOWLEDGE",
+  "actionData": {}
+}'</code></pre></div>
+
+<h3>Buyer Approves Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=PURCHASE' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: PURCHASE' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "APPROVE",
+  "actionData": {}
+}'</code></pre></div>
+
+<h3>Buyer Disputes Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=PURCHASE' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: PURCHASE' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "DISPUTE",
+  "actionData": {
+    "reasonCodes": ["TX_TVA_ERR"],
+    "comment": "VAT rate should be 20% not 19%."
+  }
+}'</code></pre></div>
+
+<h3>Buyer Suspends Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=PURCHASE' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: PURCHASE' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "SUSPEND",
+  "actionData": {
+    "reasonCodes": ["JUSTIF_ABS"],
+    "comment": "Awaiting missing purchase order documentation."
+  }
+}'</code></pre></div>
+
+<h3>Buyer Refuses Invoice</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=PURCHASE' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: PURCHASE' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "REFUSE",
+  "actionData": {
+    "reasonCodes": ["TX_TVA_ERR"],
+    "comment": "VAT calculation incorrect: expected 20% but received 19%."
+  }
+}'</code></pre></div>
+
+<h3>Seller Marks Complete</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=SALES' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: SALES' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "COMPLETE",
+  "actionData": {}
+}'</code></pre></div>
 
 </div>
 
