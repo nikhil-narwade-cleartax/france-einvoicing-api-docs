@@ -235,7 +235,7 @@ tr.gr td{font-weight:600}
 <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#48bb78"/></marker>
 </defs>
 </svg>
-</div><hr><h2 id="headers">Request Headers</h2><div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody><tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr><tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr><tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> for outbound invoices</td></tr><tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 9-digit SIREN. e.g. <code>732829320</code></td></tr><tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 14-digit SIRET</td></tr><tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr></tbody></table></div><hr><h2 id="body">Request Body</h2><p>The request body wraps one or more documents. The invoice data is <strong>Base64-encoded JSON</strong> inside <code>documentData</code>.</p><div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>documents</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>List of invoice documents.</td></tr><tr><td>documents[].documentData</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Base64-encoded JSON of the invoice object.</td></tr></tbody></table></div><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+</div><hr><h2 id="headers">Request Headers</h2><div class="tw"><table class="ht"><thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Value / Description</th></tr></thead><tbody><tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr><tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr><tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> for outbound invoices</td></tr><tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Seller's 9-digit SIREN. e.g. <code>732829320</code></td></tr><tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>Seller's 14-digit SIRET</td></tr><tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr></tbody></table></div><hr><h2 id="body">Request Body</h2><p>The request body wraps one or more documents. The invoice data is <strong>Base64-encoded JSON</strong> inside <code>documentData</code>.</p><div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>documents</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>List of invoice documents.</td></tr><tr><td>documents[].documentData</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Base64-encoded JSON of the invoice object.</td></tr></tbody></table></div><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"documents"</span>: [
     {
       <span class="jk">"documentData"</span>: <span class="js">"eyJpZCI6IklOVi0wMDEiLC4uLn0="</span>
@@ -4734,6 +4734,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr>
 <tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>328746599</code></td></tr>
+<tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>14-digit SIRET</td></tr>
 <tr><td>x-einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>SALES</code> or <code>PURCHASE</code></td></tr>
 </tbody></table></div>
 
@@ -4842,14 +4843,15 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Authentication token. Format: <code>1.{token_value}</code></td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>FR</code></td></tr>
 <tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN of the buyer entity. e.g. <code>784671695</code></td></tr>
+<tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>14-digit SIRET</td></tr>
 <tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code></td></tr>
 </tbody></table></div>
 
 <hr><h2 id="receive-query-params">Query Parameters</h2>
 <div class="tw"><table class="ht"><thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
 <tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code></td></tr>
-<tr><td>start-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Start of date range. Format: <code>YYYY-MM-DD</code>. No maximum date range limit.</td></tr>
-<tr><td>end-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>End of date range. Format: <code>YYYY-MM-DD</code>. No maximum date range limit.</td></tr>
+<tr><td>start-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Start of date range. Format: <code>YYYY-MM-DD</code>. Maximum range: 3 days.</td></tr>
+<tr><td>end-date</td><td><span class="tp tp-date">Date</span></td><td><span class="cb cb-req">Mandatory</span></td><td>End of date range. Format: <code>YYYY-MM-DD</code>. Maximum range: 3 days.</td></tr>
 <tr><td>page-number</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>0-based page index. Default: <code>0</code></td></tr>
 <tr><td>page-size</td><td><span class="tp tp-text">Integer</span></td><td><span class="cb cb-opt">Optional</span></td><td>Number of results per page. Default: <code>100</code></td></tr>
 </tbody></table></div>
@@ -4996,6 +4998,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>x-cleartax-auth-token</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Your workspace auth token</td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>fr</code></td></tr>
 <tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>602348716</code></td></tr>
+<tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>14-digit SIRET</td></tr>
 </tbody></table></div>
 
 <hr><h3 id="receive-getdoc-params">Query Parameters</h3>
@@ -5115,6 +5118,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>Content-Type</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>application/json</code></td></tr>
 <tr><td>x-clear-country-code</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>fr</code></td></tr>
 <tr><td>x-clear-siren</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>9-digit SIREN. e.g. <code>196001333</code></td></tr>
+<tr><td>x-clear-siret</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-opt">Optional</span></td><td>14-digit SIRET</td></tr>
 <tr><td>einvoice-type</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td><code>PURCHASE</code> or <code>SALES</code></td></tr>
 </tbody></table></div>
 
@@ -5144,7 +5148,6 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td><code>DISPUTE</code></td><td>Disputed</td><td>207</td><td>reasonCodes + comment (optional)</td><td>No</td></tr>
 <tr><td><code>SUSPEND</code></td><td>Suspended</td><td>208</td><td>reasonCodes + comment</td><td>No</td></tr>
 <tr><td><code>REFUSE</code></td><td>Refused</td><td>210</td><td>reasonCodes + comment</td><td><strong>Yes</strong></td></tr>
-<tr><td><code>SEND_PAYMENT</code></td><td>Payment Sent</td><td>211</td><td>Not required</td><td>No</td></tr>
 </tbody></table></div>
 
 <h3>Seller Actions (<code>einvoice-type: SALES</code>)</h3>
@@ -5239,12 +5242,11 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <hr><h2 id="actions-transitions">Status Transitions</h2>
 <p>The API validates that the action is allowed for the invoice's current status.</p>
 <div class="tw"><table class="ht"><thead><tr><th>Current Status</th><th>Allowed Actions</th></tr></thead><tbody>
-<tr><td>203 (Made Available)</td><td>ACKNOWLEDGE, APPROVE, DISPUTE, SUSPEND, REFUSE, CONFIRM_PAYMENT</td></tr>
-<tr><td>204 (Acknowledged)</td><td>APPROVE, DISPUTE, SUSPEND, REFUSE, SEND_PAYMENT, CONFIRM_PAYMENT</td></tr>
-<tr><td>205 (Approved)</td><td>SEND_PAYMENT, CONFIRM_PAYMENT</td></tr>
-<tr><td>206 (Partially Approved)</td><td>DISPUTE, COMPLETE, CONFIRM_PAYMENT</td></tr>
-<tr><td>207 (Disputed)</td><td>APPROVE, REFUSE</td></tr>
-<tr><td>208 (Suspended)</td><td>APPROVE, REFUSE</td></tr>
+<tr><td>203 (Made Available)</td><td>ACKNOWLEDGE, APPROVE, DISPUTE, SUSPEND, REFUSE, CONFIRM_PAYMENT (Seller)</td></tr>
+<tr><td>204 (Acknowledged)</td><td>APPROVE, DISPUTE, SUSPEND, REFUSE, CONFIRM_PAYMENT (Seller)</td></tr>
+<tr><td>205 (Approved)</td><td>CONFIRM_PAYMENT (Seller)</td></tr>
+<tr><td>207 (Disputed)</td><td>APPROVE, REFUSE, CANCELLED (Auto)</td></tr>
+<tr><td>208 (Suspended)</td><td>APPROVE, REFUSE, COMPLETE (Seller)</td></tr>
 <tr><td>209 (Completed)</td><td>APPROVE, DISPUTE</td></tr>
 <tr><td>211 (Payment Sent)</td><td>CONFIRM_PAYMENT</td></tr>
 <tr><td>210 (Refused)</td><td>&mdash; (Terminal)</td></tr>
