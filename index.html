@@ -5121,7 +5121,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <hr><h2 id="actions-body">Request Body</h2>
 <div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
 <pre><code>{
-  <span class="jk">"invoiceId"</span>: <span class="js">"6a07547bdfd6ba52319fa87d"</span>,
+  <span class="jk">"documentId"</span>: <span class="js">"6a07547bdfd6ba52319fa87d"</span>,
   <span class="jk">"actionType"</span>: <span class="js">"REFUSE"</span>,
   <span class="jk">"actionData"</span>: {
     <span class="jk">"reasonCodes"</span>: [<span class="js">"TX_TVA_ERR"</span>],
@@ -5130,7 +5130,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 }</code></pre></div>
 
 <div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
-<tr><td>invoiceId</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>ClearTax document ID.</td></tr>
+<tr><td>documentId</td><td><span class="tp tp-id">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>ClearTax document ID.</td></tr>
 <tr><td>actionType</td><td><span class="tp tp-code">Enum</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Action to perform. See Action Types below.</td></tr>
 <tr><td>actionData</td><td><span class="tp tp-text">Object</span></td><td><span class="cb cb-cm">Conditional</span></td><td>Required for DISPUTE, SUSPEND, REFUSE. Pass <code>{}</code> or omit for other actions.</td></tr>
 </tbody></table></div>
@@ -5386,7 +5386,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "ACKNOWLEDGE",
   "actionData": {}
 }'</code></pre></div>
@@ -5400,7 +5400,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "APPROVE",
   "actionData": {}
 }'</code></pre></div>
@@ -5414,7 +5414,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "DISPUTE",
   "actionData": {
     "reasonCodes": ["TX_TVA_ERR"],
@@ -5431,7 +5431,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "SUSPEND",
   "actionData": {
     "reasonCodes": ["JUSTIF_ABS"],
@@ -5448,7 +5448,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: PURCHASE' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "REFUSE",
   "actionData": {
     "reasonCodes": ["TX_TVA_ERR"],
@@ -5465,7 +5465,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 --header 'einvoice-type: SALES' \
 --header 'x-cleartax-auth-token: {your_auth_token}' \
 --data '{
-  "invoiceId": "6a07547bdfd6ba52319fa87d",
+  "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "COMPLETE",
   "actionData": {}
 }'</code></pre></div>
