@@ -5153,7 +5153,10 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <h3>Seller Actions (<code>einvoice-type: SALES</code>)</h3>
 <div class="tw"><table class="ht"><thead><tr><th>actionType</th><th>Status</th><th>Code</th><th>actionData</th><th>PPF</th></tr></thead><tbody>
 <tr><td><code>COMPLETE</code></td><td>Completed</td><td>209</td><td>Not required</td><td>No</td></tr>
+<tr><td><code>CONFIRM_PAYMENT</code></td><td>Collected</td><td>212</td><td>ConfirmPaymentActionData</td><td><strong>Conditional (BT-8)</strong></td></tr>
 </tbody></table></div>
+
+<div class="co co-w" style="margin-top:12px"><strong>Note:</strong> CONFIRM_PAYMENT is not yet implemented. This documentation is shared for estimation purposes. Implementation timeline to be confirmed.</div>
 
 <div class="co co-i" style="margin-top:12px"><strong>Only REFUSE (210) is reported to PPF.</strong> All other actions are exchanged between platforms only. Refuse is one of 4 mandatory DGFiP statuses (200, 210, 212, 213) and must be reported within 24 hours.</div>
 
@@ -5197,6 +5200,24 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>reasonCodes</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Reason code(s) from the Refuse reason code list.</td></tr>
 <tr><td>comment</td><td><span class="tp tp-text">String</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Free-text comment. Required for Refuse.</td></tr>
 </tbody></table></div>
+
+<h3>Confirm Payment</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"actionData"</span>: {
+    <span class="jk">"vatRateSplit"</span>: [
+      { <span class="jk">"rate"</span>: <span class="jn">20.0</span>, <span class="jk">"amountCollectedIncludingVat"</span>: <span class="jn">120.00</span> },
+      { <span class="jk">"rate"</span>: <span class="jn">5.5</span>, <span class="jk">"amountCollectedIncludingVat"</span>: <span class="jn">63.30</span> }
+    ]
+  }
+}</code></pre></div>
+<div class="tw"><table class="ht"><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody>
+<tr><td>vatRateSplit</td><td><span class="tp tp-code">Array</span></td><td><span class="cb cb-req">Mandatory</span></td><td>One entry per VAT rate on the invoice.</td></tr>
+<tr><td>vatRateSplit[].rate</td><td><span class="tp tp-text">Number</span></td><td><span class="cb cb-req">Mandatory</span></td><td>VAT rate percentage (e.g. 20.0, 5.5, 0.0).</td></tr>
+<tr><td>vatRateSplit[].amountCollectedIncludingVat</td><td><span class="tp tp-text">Number</span></td><td><span class="cb cb-req">Mandatory</span></td><td>Amount collected for this rate in EUR (including VAT). Max 19 digits, max 6 decimal places. Separator: (.). Negative values allowed for refunds/disbursements.</td></tr>
+</tbody></table></div>
+
+<div class="co co-i" style="margin-top:8px"><strong>PPF Reporting:</strong> CONFIRM_PAYMENT is reported to PPF only when VAT is due on collection (BT-8). For goods invoices (VAT on debits), the payment confirmation is sent to the buyer only, not to PPF.</div>
 
 <hr><h2 id="actions-reasons">Reason Codes</h2>
 
@@ -5470,6 +5491,25 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   "documentId": "6a07547bdfd6ba52319fa87d",
   "actionType": "COMPLETE",
   "actionData": {}
+}'</code></pre></div>
+
+<h3>Seller Confirms Payment</h3>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/action?einvoice-type=SALES' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: fr' \
+--header 'x-clear-siren: 196001333' \
+--header 'einvoice-type: SALES' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "documentId": "6a07547bdfd6ba52319fa87d",
+  "actionType": "CONFIRM_PAYMENT",
+  "actionData": {
+    "vatRateSplit": [
+      { "rate": 20.0, "amountCollectedIncludingVat": 120.00 },
+      { "rate": 5.5, "amountCollectedIncludingVat": 63.30 }
+    ]
+  }
 }'</code></pre></div>
 
 </div>
