@@ -189,11 +189,11 @@ tr.gr td{font-weight:600}
 <a class="ni s1" data-p="ereporting" data-a="ereport-validations" onclick="go('ereporting','E-Reporting Upload','ereport-validations')">Validation Rules</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-response" onclick="go('ereporting','E-Reporting Upload','ereport-response')">Response</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-errors" onclick="go('ereporting','E-Reporting Upload','ereport-errors')">Error Codes</a>
-<a class="ni s1" data-p="ereporting" data-a="ereport-codes" onclick="go('ereporting','E-Reporting Upload','ereport-codes')">E-Reporting Code Lists</a>
+
 </div><div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
 <a class="ni" data-p="codes" onclick="go('codes','E-Invoicing Code Lists')">E-Invoicing Code Lists</a>
-<a class="ni" data-p="limits" onclick="go('limits','API Limits')">API Limits</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send and Receive APIs for France e-invoicing.</p>
+<a class="ni" data-p="limits" onclick="go('limits','API Limits')">API Limits</a><a class="ni" data-p="ereport-codelists" onclick="go('ereport-codelists','E-Reporting Code Lists')">E-Reporting Code Lists</a></div></div><div id="mn"><div class="tb">Documentation / <span id="bc">Overview</span></div><div class="cw"><div id="pg-intro" class="pg ac"><h1>France E-Invoicing API</h1><p>ClearTax is a certified <strong>Plateforme Agr&eacute;&eacute;e (PA)</strong> for the French e-invoicing mandate. This documentation covers the Send and Receive APIs for France e-invoicing.</p>
 
 <h2>Methods and Endpoints</h2>
 <div class="tw"><table><thead><tr><th>Method</th><th>Endpoint</th><th>Description</th><th>Status</th></tr></thead><tbody>
@@ -5703,7 +5703,8 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>404</td><td><code>Not Found</code></td><td>Wrong path or unsupported einvoice-type</td></tr>
 </tbody></table></div>
 
-<hr><h2 id="ereport-codes">E-Reporting Code Lists</h2>
+
+</div><div id="pg-ereport-codelists" class="pg"><h1>E-Reporting Code Lists</h1>
 <p>Where a field accepts only specific values, the accepted codes are listed here.</p>
 
 <h3>Invoice Type Codes</h3>
@@ -5776,6 +5777,7 @@ Exonération de TVA - Article 261 D-3° du Code Général des Impôts</td></tr><
 <div class="tw"><table class="ht"><thead><tr><th>Code</th><th>Description</th></tr></thead><tbody>
 <tr><td><span style="color:#2D5BE3;font-weight:600">Mainland France</span></td><td>FR</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">Guadeloupe</span></td><td>GP</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">Martinique</span></td><td>MQ</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">Réunion</span></td><td>RE</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">French Guiana</span></td><td>GF</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">Mayotte</span></td><td>YT</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">French Polynesia</span></td><td>PF</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">New Caledonia</span></td><td>NC</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">Saint Barthélemy</span></td><td>BL</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">Saint Martin (French)</span></td><td>MF</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">Saint Pierre &amp; Miquelon</span></td><td>PM</td></tr><tr style="background:#f7fafc"><td><span style="color:#2D5BE3;font-weight:600">Wallis &amp; Futuna</span></td><td>WF</td></tr><tr><td><span style="color:#2D5BE3;font-weight:600">French Southern Territories</span></td><td>TF</td></tr>
 </tbody></table></div>
+
 
 
 </div><div id="pg-limits" class="pg">
