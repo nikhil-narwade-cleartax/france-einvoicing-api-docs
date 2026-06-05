@@ -191,6 +191,7 @@ tr.gr td{font-weight:600}
 <a class="ni s1" data-p="ereporting" data-a="ereport-samples" onclick="go('ereporting','E-Reporting Upload','ereport-samples')">Sample Payloads</a>
 <a class="ni s2" data-p="ereporting" data-a="ereport-sample-b2b" onclick="go('ereporting','E-Reporting Upload','ereport-sample-b2b')">B2B Sales</a>
 <a class="ni s2" data-p="ereporting" data-a="ereport-sample-purchase" onclick="go('ereporting','E-Reporting Upload','ereport-sample-purchase')">B2B Purchase</a>
+<a class="ni s2" data-p="ereporting" data-a="ereport-sample-b2c" onclick="go('ereporting','E-Reporting Upload','ereport-sample-b2c')">B2C Sales</a>
 
 </div><div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -6129,7 +6130,94 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-<div class="co co-i"><strong>B2C sample payload</strong> will be added once the individual B2C invoice schema is confirmed with engineering.</div>
+<h3 id="ereport-sample-b2c">B2C Sales (SALES_B2C_EREPORT)</h3><p>Individual B2C transaction uploaded by the seller &mdash; this is the JSON that gets Base64-encoded into <code>documentData</code>. ClearTax auto-consolidates these before PPF submission.</p><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2C Sales Object (DocumentData decoded)</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
+  <span class="jk">"id"</span>: <span class="js">"B2C-AGG-20260521"</span>,
+  <span class="jk">"issueDate"</span>: <span class="js">"2026-05-21"</span>,
+  <span class="jk">"invoiceTypeCode"</span>: {
+    <span class="jk">"value"</span>: <span class="js">"380"</span>
+  },
+  <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+  <span class="jk">"invoicePeriod"</span>: {
+    <span class="jk">"startDate"</span>: <span class="js">"2026-05-21"</span>,
+    <span class="jk">"endDate"</span>: <span class="js">"2026-05-21"</span>,
+    <span class="jk">"descriptionCode"</span>: <span class="js">"1"</span>
+  },
+  <span class="jk">"accountingSupplierParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"declarant@example-fr.com"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FR"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"328746599"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Exemple SAS"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"328746599"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"0002"</span>
+        }
+      }
+    }
+  },
+  <span class="jk">"taxTotal"</span>: [
+    {
+      <span class="jk">"taxAmount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">504</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxSubtotal"</span>: [
+        {
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">2100</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">420</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20</span>
+          }
+        },
+        {
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">840</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">84</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">10</span>
+          }
+        }
+      ]
+    }
+  ],
+  <span class="jk">"legalMonetaryTotal"</span>: {
+    <span class="jk">"taxExclusiveAmount"</span>: {
+      <span class="jk">"value"</span>: <span class="jn">2940</span>,
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+    }
+  }
+}</code></pre></div>
 
 
 </div><div id="pg-ereport-codelists" class="pg"><h1>E-Reporting Code Lists</h1>
