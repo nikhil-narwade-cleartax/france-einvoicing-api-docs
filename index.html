@@ -5579,7 +5579,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <div class="co co-w" style="margin-top:8px"><strong>Payment reporting</strong> (Flow 10.2 / 10.4) is not yet available.</div>
 
 <hr><h2 id="ereport-schema-b2b">Request Schema &mdash; B2B International</h2>
-<p>The B2B e-reporting payload contains <strong>87 fields</strong> organised into groups. Fields marked <span class="cb cb-req">Mandatory</span> must be provided; <span class="cb" style="background:#EBF0FF;color:#2D5BE3">System</span> fields are auto-populated by ClearTax.</p>
+<div class="search-wrap"><span class="si-icon">&#128269;</span><input type="text" id="ereport-field-search" placeholder="Search by field name, TT code, or JSON path..." oninput="filterEreportFields(this.value)"><div class="search-count" id="ereport-search-count"></div><div class="sg-acts"><a onclick="expandAllEreport()">Expand all groups</a><a onclick="collapseAllEreport()">Collapse all groups</a></div></div><p>The B2B e-reporting payload contains <strong>87 fields</strong> organised into groups. Fields marked <span class="cb cb-req">Mandatory</span> must be provided; <span class="cb" style="background:#EBF0FF;color:#2D5BE3">System</span> fields are auto-populated by ClearTax.</p>
 
 <div class="sg" id="ereport-b2b-transmission-header"><div class="sg-h" onclick="toggleGroup(this)"><span class="sg-arrow">&#9654;</span><span class="sg-name">Transmission Header</span><span class="sg-count">16 fields</span></div><div class="sg-body" style="display:none">
 <div class="tw"><table class="ft"><thead><tr><th style="width:18%">Path</th><th style="width:14%">Business Term</th><th style="width:8%">TT Ref</th><th style="width:32%">Description</th><th style="width:8%">Type</th><th style="width:8%">Required</th><th style="width:14%">Example</th></tr></thead><tbody class="searchable">
@@ -12554,4 +12554,25 @@ window.addEventListener('scroll',function(){requestAnimationFrame(trackScroll)})
 function toggleGroup(el){el.classList.toggle('open');var b=el.nextElementSibling;b.style.display=b.style.display==='none'?'':'none'}
 function expandAll(){document.querySelectorAll('.sg-h').forEach(function(h){h.classList.add('open');h.nextElementSibling.style.display=''})}
 function collapseAll(){document.querySelectorAll('.sg-h').forEach(function(h){h.classList.remove('open');h.nextElementSibling.style.display='none'})}
+
+function filterEreportFields(q){
+q=q.toLowerCase().trim();
+var page=document.getElementById('pg-ereporting');
+if(!page)return;
+var rows=page.querySelectorAll('.searchable tr');
+var shown=0,total=rows.length;
+rows.forEach(function(r){
+if(!q){r.style.display='';shown++;return}
+var bt=r.getAttribute('data-bt')||'';
+var nm=r.getAttribute('data-name')||'';
+var pt=r.getAttribute('data-path')||'';
+if(bt.indexOf(q)!==-1||nm.indexOf(q)!==-1||pt.indexOf(q)!==-1){r.style.display='';shown++}
+else{r.style.display='none'}
+});
+var ct=document.getElementById('ereport-search-count');
+if(q){ct.textContent=shown+' of '+total+' fields matching "'+q+'"';page.querySelectorAll('.sg').forEach(function(g){var hasMatch=false;g.querySelectorAll('.searchable tr').forEach(function(r){if(r.style.display!=='none')hasMatch=true});var b=g.querySelector('.sg-body');if(hasMatch){b.style.display=''}else{b.style.display='none'}})}
+else{ct.textContent='';collapseAllEreport()}
+}
+function expandAllEreport(){var page=document.getElementById('pg-ereporting');if(!page)return;page.querySelectorAll('.sg-body').forEach(function(b){b.style.display=''})}
+function collapseAllEreport(){var page=document.getElementById('pg-ereporting');if(!page)return;page.querySelectorAll('.sg-body').forEach(function(b){b.style.display='none'})}
 </script></body></html>
