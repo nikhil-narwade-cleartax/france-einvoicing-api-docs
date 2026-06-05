@@ -188,6 +188,7 @@ tr.gr td{font-weight:600}
 <a class="ni s1" data-p="ereporting" data-a="ereport-schema-b2c" onclick="go('ereporting','E-Reporting Upload','ereport-schema-b2c')">Schema — B2C</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-response" onclick="go('ereporting','E-Reporting Upload','ereport-response')">Response</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-errors" onclick="go('ereporting','E-Reporting Upload','ereport-errors')">Error Codes</a>
+<a class="ni s1" data-p="ereporting" data-a="ereport-samples" onclick="go('ereporting','E-Reporting Upload','ereport-samples')">Sample Payloads</a>
 
 </div><div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -5702,6 +5703,473 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 <tr><td>404</td><td><code>Not Found</code></td><td>Wrong path or unsupported einvoice-type</td></tr>
 </tbody></table></div>
 
+
+<hr><h2 id="ereport-samples">Sample Payloads</h2>
+
+<h3>B2B Sales (SALES_B2B_EREPORT)</h3>
+<p>French seller reporting a cross-border sale to a German buyer. Invoice type 380, billing framework B1 (goods).</p>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/documents/upload?einvoice-type=SALES_B2B_EREPORT' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: FR' \
+--header 'x-einvoice-type: SALES_B2B_EREPORT' \
+--header 'x-clear-siren: 328746599' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "documents": [
+    {
+      "documentData": "&lt;Base64-encoded JSON below&gt;",
+      "documentFormat": "JSON"
+    }
+  ],
+  "schema": "CLEAR_UNIFIED_SCHEMA"
+}'</code></pre></div>
+
+<p style="font-size:12px;color:#718096;margin-top:4px">Decoded <code>documentData</code> payload:</p>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Sales Payload</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"id"</span>: <span class="js">"FR-INV-2026-000511"</span>,
+  <span class="jk">"issueDate"</span>: <span class="js">"2026-05-21"</span>,
+  <span class="jk">"invoiceTypeCode"</span>: {
+    <span class="jk">"value"</span>: <span class="js">"380"</span>
+  },
+  <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+  <span class="jk">"dueDate"</span>: <span class="js">"2026-06-20"</span>,
+  <span class="jk">"profileID"</span>: <span class="js">"B1"</span>,
+  <span class="jk">"notes"</span>: [
+    {
+      <span class="jk">"value"</span>: <span class="js">"#PMT#Net 30 days bank transfer."</span>
+    }
+  ],
+  <span class="jk">"invoicePeriod"</span>: {
+    <span class="jk">"startDate"</span>: <span class="js">"2026-05-01"</span>,
+    <span class="jk">"endDate"</span>: <span class="js">"2026-05-31"</span>,
+    <span class="jk">"descriptionCode"</span>: <span class="js">"3"</span>
+  },
+  <span class="jk">"accountingSupplierParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"declarant@example-fr.com"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FR"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR76328746599"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Exemple SAS"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"328746599"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"0002"</span>
+        }
+      }
+    }
+  },
+  <span class="jk">"accountingCustomerParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"DE"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"DE123456789"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Beispiel GmbH"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"DE111222333000"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"0223"</span>
+        }
+      }
+    }
+  },
+  <span class="jk">"delivery"</span>: {
+    <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2026-05-18"</span>,
+    <span class="jk">"deliveryLocation"</span>: {
+      <span class="jk">"address"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"Logistik-Allee 5"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Halle A"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"Tor 12"</span>
+          }
+        ],
+        <span class="jk">"cityName"</span>: <span class="js">"Hamburg"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"20095"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Hamburg"</span>,
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"DE"</span>
+          }
+        }
+      }
+    }
+  },
+  <span class="jk">"allowanceCharge"</span>: [
+    {
+      <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">50</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20</span>
+      }
+    },
+    {
+      <span class="jk">"chargeIndicator"</span>: <span class="jb">true</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">30</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20</span>
+      }
+    }
+  ],
+  <span class="jk">"taxTotal"</span>: [
+    {
+      <span class="jk">"taxAmount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">196</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxSubtotal"</span>: [
+        {
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">980</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">196</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20</span>
+          }
+        }
+      ]
+    }
+  ],
+  <span class="jk">"legalMonetaryTotal"</span>: {
+    <span class="jk">"taxExclusiveAmount"</span>: {
+      <span class="jk">"value"</span>: <span class="jn">980</span>,
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+    },
+    <span class="jk">"taxInclusiveAmount"</span>: {
+      <span class="jk">"value"</span>: <span class="jn">1176</span>,
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+    }
+  },
+  <span class="jk">"invoiceLine"</span>: [
+    {
+      <span class="jk">"id"</span>: <span class="js">"1"</span>,
+      <span class="jk">"note"</span>: [
+        "#PMD#Item shipped under DDP Incoterms"
+      ],
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">10</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"PCE"</span>
+      },
+      <span class="jk">"invoicePeriod"</span>: {
+        <span class="jk">"startDate"</span>: <span class="js">"2026-05-01"</span>,
+        <span class="jk">"endDate"</span>: <span class="js">"2026-05-31"</span>
+      },
+      <span class="jk">"lineDelivery"</span>: {
+        <span class="jk">"deliveryParty"</span>: {
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Hamburg Distribution Hub"</span>
+          }
+        },
+        <span class="jk">"deliveryLocation"</span>: {
+          <span class="jk">"address"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"Logistik-Allee 5"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Hamburg"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"20095"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Hamburg"</span>,
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"DE"</span>
+              }
+            }
+          }
+        }
+      },
+      <span class="jk">"item"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Widget Premium A1"</span>
+      },
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"value"</span>: <span class="jn">100</span>,
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+        },
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"PCE"</span>
+        }
+      }
+    }
+  ]
+}</code></pre></div>
+
+<h3>B2B Purchase (PURCHASE_B2B_EREPORT)</h3>
+<p>French buyer reporting a purchase from a German supplier (reverse charge). Declarant is the French buyer. Same structure as B2B Sales with seller/buyer roles swapped.</p>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/documents/upload?einvoice-type=PURCHASE_B2B_EREPORT' \
+--header 'content-type: application/json' \
+--header 'x-clear-country-code: FR' \
+--header 'x-einvoice-type: PURCHASE_B2B_EREPORT' \
+--header 'x-clear-siren: 328746599' \
+--header 'x-cleartax-auth-token: {your_auth_token}' \
+--data '{
+  "documents": [
+    {
+      "documentData": "&lt;Base64-encoded JSON below&gt;",
+      "documentFormat": "JSON"
+    }
+  ],
+  "schema": "CLEAR_UNIFIED_SCHEMA"
+}'</code></pre></div>
+
+<p style="font-size:12px;color:#718096;margin-top:4px">Decoded <code>documentData</code> payload:</p>
+<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Purchase Payload</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
+<pre><code>{
+  <span class="jk">"id"</span>: <span class="js">"FR-PUR-2026-000311"</span>,
+  <span class="jk">"issueDate"</span>: <span class="js">"2026-05-21"</span>,
+  <span class="jk">"invoiceTypeCode"</span>: {
+    <span class="jk">"value"</span>: <span class="js">"380"</span>
+  },
+  <span class="jk">"documentCurrencyCode"</span>: <span class="js">"EUR"</span>,
+  <span class="jk">"dueDate"</span>: <span class="js">"2026-06-20"</span>,
+  <span class="jk">"profileID"</span>: <span class="js">"B1"</span>,
+  <span class="jk">"notes"</span>: [
+    {
+      <span class="jk">"value"</span>: <span class="js">"#PMT#Net 30 days bank transfer."</span>
+    }
+  ],
+  <span class="jk">"invoicePeriod"</span>: {
+    <span class="jk">"startDate"</span>: <span class="js">"2026-05-01"</span>,
+    <span class="jk">"endDate"</span>: <span class="js">"2026-05-31"</span>,
+    <span class="jk">"descriptionCode"</span>: <span class="js">"3"</span>
+  },
+  <span class="jk">"accountingSupplierParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"supplier_endpoint_id"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"DE"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"DE123456789"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Beispiel GmbH"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"DE111222333000"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"0223"</span>
+        }
+      }
+    }
+  },
+  <span class="jk">"accountingCustomerParty"</span>: {
+    <span class="jk">"party"</span>: {
+      <span class="jk">"endPointID"</span>: {
+        <span class="jk">"value"</span>: <span class="js">"328746599"</span>
+      },
+      <span class="jk">"postalAddress"</span>: {
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FR"</span>
+          }
+        }
+      },
+      <span class="jk">"partyTaxScheme"</span>: [
+        {
+          <span class="jk">"companyID"</span>: <span class="js">"FR76328746599"</span>,
+          <span class="jk">"taxScheme"</span>: {
+            <span class="jk">"id"</span>: {
+              <span class="jk">"value"</span>: <span class="js">"VAT"</span>
+            }
+          }
+        }
+      ],
+      <span class="jk">"partyLegalEntity"</span>: {
+        <span class="jk">"registrationName"</span>: <span class="js">"Exemple SAS"</span>,
+        <span class="jk">"companyID"</span>: {
+          <span class="jk">"value"</span>: <span class="js">"328746599"</span>,
+          <span class="jk">"schemeID"</span>: <span class="js">"0002"</span>
+        }
+      }
+    }
+  },
+  <span class="jk">"delivery"</span>: {
+    <span class="jk">"actualDeliveryDate"</span>: <span class="js">"2026-05-18"</span>,
+    <span class="jk">"deliveryLocation"</span>: {
+      <span class="jk">"address"</span>: {
+        <span class="jk">"streetName"</span>: <span class="js">"Rue de Rivoli 12"</span>,
+        <span class="jk">"additionalStreetName"</span>: <span class="js">"Bâtiment B"</span>,
+        <span class="jk">"addressLine"</span>: [
+          {
+            <span class="jk">"line"</span>: <span class="js">"Porte 3"</span>
+          }
+        ],
+        <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+        <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+        <span class="jk">"countrySubentity"</span>: <span class="js">"Île-de-France"</span>,
+        <span class="jk">"country"</span>: {
+          <span class="jk">"identificationCode"</span>: {
+            <span class="jk">"countryCode"</span>: <span class="js">"FR"</span>
+          }
+        }
+      }
+    }
+  },
+  <span class="jk">"allowanceCharge"</span>: [
+    {
+      <span class="jk">"chargeIndicator"</span>: <span class="jb">false</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">50</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20</span>
+      }
+    },
+    {
+      <span class="jk">"chargeIndicator"</span>: <span class="jb">true</span>,
+      <span class="jk">"amount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">30</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxCategory"</span>: {
+        <span class="jk">"id"</span>: <span class="js">"S"</span>,
+        <span class="jk">"percent"</span>: <span class="jn">20</span>
+      }
+    }
+  ],
+  <span class="jk">"taxTotal"</span>: [
+    {
+      <span class="jk">"taxAmount"</span>: {
+        <span class="jk">"value"</span>: <span class="jn">196</span>,
+        <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+      },
+      <span class="jk">"taxSubtotal"</span>: [
+        {
+          <span class="jk">"taxableAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">980</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxAmount"</span>: {
+            <span class="jk">"value"</span>: <span class="jn">196</span>,
+            <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+          },
+          <span class="jk">"taxCategory"</span>: {
+            <span class="jk">"id"</span>: <span class="js">"S"</span>,
+            <span class="jk">"percent"</span>: <span class="jn">20</span>
+          }
+        }
+      ]
+    }
+  ],
+  <span class="jk">"legalMonetaryTotal"</span>: {
+    <span class="jk">"taxExclusiveAmount"</span>: {
+      <span class="jk">"value"</span>: <span class="jn">980</span>,
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+    },
+    <span class="jk">"taxInclusiveAmount"</span>: {
+      <span class="jk">"value"</span>: <span class="jn">1176</span>,
+      <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+    }
+  },
+  <span class="jk">"invoiceLine"</span>: [
+    {
+      <span class="jk">"id"</span>: <span class="js">"1"</span>,
+      <span class="jk">"note"</span>: [
+        "#PMD#Item shipped under DDP Incoterms"
+      ],
+      <span class="jk">"invoicedQuantity"</span>: {
+        <span class="jk">"quantity"</span>: <span class="jn">10</span>,
+        <span class="jk">"unitCode"</span>: <span class="js">"PCE"</span>
+      },
+      <span class="jk">"invoicePeriod"</span>: {
+        <span class="jk">"startDate"</span>: <span class="js">"2026-05-01"</span>,
+        <span class="jk">"endDate"</span>: <span class="js">"2026-05-31"</span>
+      },
+      <span class="jk">"lineDelivery"</span>: {
+        <span class="jk">"deliveryParty"</span>: {
+          <span class="jk">"partyName"</span>: {
+            <span class="jk">"name"</span>: <span class="js">"Paris Receiving Hub"</span>
+          }
+        },
+        <span class="jk">"deliveryLocation"</span>: {
+          <span class="jk">"address"</span>: {
+            <span class="jk">"streetName"</span>: <span class="js">"Rue de Rivoli 12"</span>,
+            <span class="jk">"cityName"</span>: <span class="js">"Paris"</span>,
+            <span class="jk">"postalZone"</span>: <span class="js">"75001"</span>,
+            <span class="jk">"countrySubentity"</span>: <span class="js">"Île-de-France"</span>,
+            <span class="jk">"country"</span>: {
+              <span class="jk">"identificationCode"</span>: {
+                <span class="jk">"countryCode"</span>: <span class="js">"FR"</span>
+              }
+            }
+          }
+        }
+      },
+      <span class="jk">"item"</span>: {
+        <span class="jk">"name"</span>: <span class="js">"Industrial Widget A1 (imported)"</span>
+      },
+      <span class="jk">"price"</span>: {
+        <span class="jk">"priceAmount"</span>: {
+          <span class="jk">"value"</span>: <span class="jn">100</span>,
+          <span class="jk">"currencyID"</span>: <span class="js">"EUR"</span>
+        },
+        <span class="jk">"baseQuantity"</span>: {
+          <span class="jk">"quantity"</span>: <span class="jn">1</span>,
+          <span class="jk">"unitCode"</span>: <span class="js">"PCE"</span>
+        }
+      }
+    }
+  ]
+}</code></pre></div>
+
+<div class="co co-i"><strong>B2C sample payload</strong> will be added once the individual B2C invoice schema is confirmed with engineering.</div>
 
 </div><div id="pg-ereport-codelists" class="pg"><h1>E-Reporting Code Lists</h1>
 <p>Where a field accepts only specific values, the accepted codes are listed here.</p>
