@@ -189,6 +189,8 @@ tr.gr td{font-weight:600}
 <a class="ni s1" data-p="ereporting" data-a="ereport-response" onclick="go('ereporting','E-Reporting Upload','ereport-response')">Response</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-errors" onclick="go('ereporting','E-Reporting Upload','ereport-errors')">Error Codes</a>
 <a class="ni s1" data-p="ereporting" data-a="ereport-samples" onclick="go('ereporting','E-Reporting Upload','ereport-samples')">Sample Payloads</a>
+<a class="ni s2" data-p="ereporting" data-a="ereport-sample-b2b" onclick="go('ereporting','E-Reporting Upload','ereport-sample-b2b')">B2B Sales</a>
+<a class="ni s2" data-p="ereporting" data-a="ereport-sample-purchase" onclick="go('ereporting','E-Reporting Upload','ereport-sample-purchase')">B2B Purchase</a>
 
 </div><div class="sb-sec"><div class="sb-lbl">Resources</div>
 <a class="ni" data-p="validations" onclick="go('validations','Validations')">Validations</a><a class="ni" data-p="errors" onclick="go('errors','Error Messages')">Error Messages</a>
@@ -5706,28 +5708,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 
 <hr><h2 id="ereport-samples">Sample Payloads</h2>
 
-<h3>B2B Sales (SALES_B2B_EREPORT)</h3>
-<p>French seller reporting a cross-border sale to a German buyer. Invoice type 380, billing framework B1 (goods).</p>
-<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
-<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/documents/upload?einvoice-type=SALES_B2B_EREPORT' \
---header 'content-type: application/json' \
---header 'x-clear-country-code: FR' \
---header 'x-einvoice-type: SALES_B2B_EREPORT' \
---header 'x-clear-siren: 328746599' \
---header 'x-cleartax-auth-token: {your_auth_token}' \
---data '{
-  "documents": [
-    {
-      "documentData": "&lt;Base64-encoded JSON below&gt;",
-      "documentFormat": "JSON"
-    }
-  ],
-  "schema": "CLEAR_UNIFIED_SCHEMA"
-}'</code></pre></div>
-
-<p style="font-size:12px;color:#718096;margin-top:4px">Decoded <code>documentData</code> payload:</p>
-<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Sales Payload</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
-<pre><code>{
+<h3 id="ereport-sample-b2b">B2B Sales (SALES_B2B_EREPORT)</h3><p>French seller reporting a cross-border sale to a German buyer &mdash; this is the JSON that gets Base64-encoded into <code>documentData</code>.</p><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Sales Object (DocumentData decoded)</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"id"</span>: <span class="js">"FR-INV-2026-000511"</span>,
   <span class="jk">"issueDate"</span>: <span class="js">"2026-05-21"</span>,
   <span class="jk">"invoiceTypeCode"</span>: {
@@ -5936,28 +5917,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
   ]
 }</code></pre></div>
 
-<h3>B2B Purchase (PURCHASE_B2B_EREPORT)</h3>
-<p>French buyer reporting a purchase from a German supplier (reverse charge). Declarant is the French buyer. Same structure as B2B Sales with seller/buyer roles swapped.</p>
-<div class="cbl"><div class="cbl-h"><span class="cbl-l">curl</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
-<pre><code>curl --location 'https://api-sandbox.fr.cleartax.com/einvoice/v1/documents/upload?einvoice-type=PURCHASE_B2B_EREPORT' \
---header 'content-type: application/json' \
---header 'x-clear-country-code: FR' \
---header 'x-einvoice-type: PURCHASE_B2B_EREPORT' \
---header 'x-clear-siren: 328746599' \
---header 'x-cleartax-auth-token: {your_auth_token}' \
---data '{
-  "documents": [
-    {
-      "documentData": "&lt;Base64-encoded JSON below&gt;",
-      "documentFormat": "JSON"
-    }
-  ],
-  "schema": "CLEAR_UNIFIED_SCHEMA"
-}'</code></pre></div>
-
-<p style="font-size:12px;color:#718096;margin-top:4px">Decoded <code>documentData</code> payload:</p>
-<div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Purchase Payload</span><button class="cpb" onclick="cpcd(this)">Copy</button></div>
-<pre><code>{
+<h3 id="ereport-sample-purchase">B2B Purchase (PURCHASE_B2B_EREPORT)</h3><p>French buyer reporting a purchase from a German supplier (reverse charge) &mdash; this is the JSON that gets Base64-encoded into <code>documentData</code>.</p><div class="cbl"><div class="cbl-h"><span class="cbl-l">JSON &mdash; B2B Purchase Object (DocumentData decoded)</span><button class="cpb" onclick="cpcd(this)">Copy</button></div><pre><code>{
   <span class="jk">"id"</span>: <span class="js">"FR-PUR-2026-000311"</span>,
   <span class="jk">"issueDate"</span>: <span class="js">"2026-05-21"</span>,
   <span class="jk">"invoiceTypeCode"</span>: {
@@ -6170,6 +6130,7 @@ Content-Type:         application/json</code></pre></div><div class="cbl"><div c
 }</code></pre></div>
 
 <div class="co co-i"><strong>B2C sample payload</strong> will be added once the individual B2C invoice schema is confirmed with engineering.</div>
+
 
 </div><div id="pg-ereport-codelists" class="pg"><h1>E-Reporting Code Lists</h1>
 <p>Where a field accepts only specific values, the accepted codes are listed here.</p>
